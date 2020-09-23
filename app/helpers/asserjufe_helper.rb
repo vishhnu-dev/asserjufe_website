@@ -1,0 +1,2 @@
+module AsserjufeHelper
+end
