@@ -1,0 +1,23 @@
+/* css to scss example */
+
+/* CSS */
+.header {
+	height: 100%;
+}
+.header .sub-header {
+	height: 100%;
+}
+.header .sub-header a {
+	font-size: 10px;
+}
+
+/* SCSS */
+.header {
+	height: 100%;
+	.sub-header {
+		height: 100%;
+		a {
+			font-size: 10px;
+		}
+	}
+}

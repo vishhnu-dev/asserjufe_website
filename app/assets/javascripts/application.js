@@ -10,14 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require Bootstrap/bootstrap.min
-//= require Owlcarousel/owl.carousel.min
-//= require AdminLTE/adminlte.min
+//= require jquery
+//= require bootstrap
+//= require owl-carousel/owl.carousel.min
+//= require admin-lte/admin-lte.min
 
 $(document).ready(function(){
 	// TOLLTIP BOX

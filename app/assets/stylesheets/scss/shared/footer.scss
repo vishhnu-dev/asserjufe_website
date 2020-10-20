@@ -1,0 +1,23 @@
+/* css to scss example */
+
+/* CSS */
+.footer {
+	height: 100%;
+}
+.footer .sub-footer {
+	height: 100%;
+}
+.footer .sub-footer a {
+	font-size: 10px;
+}
+
+/* SCSS */
+.footer {
+	height: 100%;
+	.sub-footer {
+		height: 100%;
+		a {
+			font-size: 10px;
+		}
+	}
+}

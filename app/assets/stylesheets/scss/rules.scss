@@ -5,18 +5,20 @@
 /* ------------------------------------------------ */
 /* CLASSES DO SISTEMA */
 /*
-	Classes de texto
+	Classes de alinhamento de texto
 	-----------------------------
 	text-left
 	text-center
 	text-right
 	text-justify
 
+	Classes de text-transform
+	-----------------------------
 	text-lowercase
 	text-uppercase
 	text-capitalize
 
-	Classes de background
+	Classes de background-color
 	-----------------------------
 	bg-primary
 	bg-success
@@ -30,13 +32,14 @@
 /* CORES */
 $main-color: #0e5600;
 $secundary-color: #0000ff;
+$white-color: #ffffff;
+$black-color: #000000;
 
 /* TEXTO */
 $font-base: 16px;       
 $font-large: 18px;       
 $font-small: 12px;
-$white-color: #ffffff;
-$black-color: #000000;
+
 
 /* CLASSES GERAIS DO SISTEMA */
 .main-color {

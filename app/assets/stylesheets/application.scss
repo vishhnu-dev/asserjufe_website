@@ -1,2 +1,19 @@
+
+/* owl-carousel */
+@import "owl-carousel/owl.carousel.min";
+@import "owl-carousel/owl.theme.default.min";
+
+/* "bootstrap-sprockets" must be imported before "bootstrap" */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* admin-lte for backend*/
+@import "admin-lte/admin-lte.min";
+@import "admin-lte/skins/skin-green.min";
+
 /* Regras globais da aplicação */
 @import "scss/rules";
+
+/* shared */
+@import "scss/shared/header";
+@import "scss/shared/footer";
