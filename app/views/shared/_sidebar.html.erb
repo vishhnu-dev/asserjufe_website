@@ -1,0 +1,50 @@
+<aside class="main-sidebar">
+  <section class="sidebar">
+    <ul class="sidebar-menu tree" data-widget="tree">
+      
+      <li class="header" style="color:white;">MENU</li>
+      <%# if not current_usuario.mestre? %>
+        <li>
+          <a href="<%# solicitacoes_path %>">
+            <i class="fa fa-circle-o text-blue"></i> <span>Minhas Solicitações</span>
+          </a>
+        </li>
+      <%# end %>
+      <li>
+        <a href="<%# solicitacoes_path(solicitacao:{f:{status:[0]}}) %>">
+          <i class="fa fa-circle-o text-yellow"></i> <span>Aguardando Boleto</span>
+        </a>
+      </li>
+      <li>
+        <a href="<%# solicitacoes_path(solicitacao:{f:{status:[1]}}) %>">
+          <i class="fa fa-circle-o text-green"></i> <span>Boletos Gerados</span>
+        </a>
+      </li>
+
+      <%# if current_usuario.mestre? %>
+        <li class="treeview">
+          <a href="">
+            <i class="fa fa-cog"></i> <span>ADMINISTRAÇÃO</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <a href="<%# usuarios_path %>">
+                <i class="fa fa-users"></i>
+                <span>Usuários</span>
+              </a>
+            </li>
+            <li>
+              <a href="<%# new_usuario_path %>">
+                <i class="fa fa-user-plus"></i>
+                <span>Cadastrar Usuário</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      <%# end %>
+    </ul>
+  </section>
+</aside>

@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.3.8'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 
+# Native gems #
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
@@ -22,16 +23,19 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Custom gems #
+# FontAwesome
+gem 'font-awesome-rails'
+# Wice_grid
+gem 'wice_grid'
+# Pundit
+gem 'pundit'
 # Devise
 gem 'devise'
 # Devise i18n
 gem 'devise-i18n'
-# Jquery
+# Carrierwave
 gem 'jquery-rails'
-# FontAwesome
-gem 'font-awesome-rails'
-# Popper
-gem 'popper_js', '~> 1.14.5'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

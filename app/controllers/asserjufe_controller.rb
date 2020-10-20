@@ -1,5 +1,5 @@
 class AsserjufeController < ApplicationController
-  def index
+  def home
   	@page_title = "Página Inicial"
   end
 end

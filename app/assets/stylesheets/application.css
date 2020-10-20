@@ -12,7 +12,10 @@
  *
  *= require_tree .
  *= require_self
- *= Bootstrap/bootstrap.min.css
- *= Owlcarousel/owl.carousel.min.css
- *= Owlcarousel/owl.theme.default.min.css
+ *= require Bootstrap/bootstrap.min.css
+ *= require Owlcarousel/owl.carousel.min.css
+ *= require Owlcarousel/owl.theme.default.min.css
+ *= require AdminLTE/AdminLTE.min
+ *= require AdminLTE/skins/skin-green.min
+ *= require application.scss
  */

@@ -20,6 +20,17 @@
     </head>
 
   <body>
-    <%= yield %>
+    <!-- header -->
+    <section class="header">
+        <%= render partial: 'shared/header' %>
+    </section>
+    <!-- conteúdo -->
+    <section class="content">
+        <%= yield %>    
+    </section>
+    <!-- footer -->
+    <section class="footer">
+        <%= render partial: 'shared/footer' %>
+    </section>
   </body>
 </html>
