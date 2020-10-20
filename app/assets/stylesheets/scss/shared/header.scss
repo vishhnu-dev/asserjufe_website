@@ -1,20 +1,20 @@
 /* css to scss example */
 
 /* CSS */
-.header {
+.something {
 	height: 100%;
 }
-.header .sub-header {
+.something .sub-something {
 	height: 100%;
 }
-.header .sub-header a {
+.something .sub-something a {
 	font-size: 10px;
 }
 
 /* SCSS */
-.header {
+.something {
 	height: 100%;
-	.sub-header {
+	.sub-something {
 		height: 100%;
 		a {
 			font-size: 10px;

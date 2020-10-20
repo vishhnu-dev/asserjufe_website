@@ -1,23 +1,26 @@
 /* css to scss example */
 
 /* CSS */
-.footer {
+.someclass {
 	height: 100%;
 }
-.footer .sub-footer {
+.someclass .sub-someclass {
 	height: 100%;
 }
-.footer .sub-footer a {
+.someclass .sub-someclass a {
 	font-size: 10px;
 }
 
 /* SCSS */
-.footer {
+.someclass {
 	height: 100%;
-	.sub-footer {
+	.sub-someclass {
 		height: 100%;
 		a {
 			font-size: 10px;
+			&:hover{
+				// do something on hover
+			}
 		}
 	}
 }

@@ -16,7 +16,7 @@
 //= require jquery
 //= require bootstrap
 //= require owl-carousel/owl.carousel.min
-//= require admin-lte/admin-lte.min
+//admin-lte/admin-lte.min
 
 $(document).ready(function(){
 	// TOLLTIP BOX
