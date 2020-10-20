@@ -35,5 +35,28 @@ $secundary-color: #0000ff;
 $font-base: 16px;       
 $font-large: 18px;       
 $font-small: 12px;
-$font-white: #ffffff;
-$font-black: #000000;
+$white-color: #ffffff;
+$black-color: #000000;
+
+/* CLASSES GERAIS DO SISTEMA */
+.main-color {
+	color: $main-color;
+}
+.secundary-color {
+	color: $secundary-color;
+}
+.font-base {
+	font-size: $font-base;
+}
+.font-large {
+	font-size: $font-large;
+}
+.font-small {
+	font-size: $font-small;
+}
+.white-color {
+	color: $white-color;
+}
+.black-color {
+	color: $black-color;
+}
