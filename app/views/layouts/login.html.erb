@@ -28,28 +28,31 @@
         <p class="login-box-msg" style="font-size: 13px;">Utilize seu e-mail e senha para realizar o login</p>
 
         <!-- login form -->
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%# render "layouts/shared/messages"%>  
+
+          <div class="form-group has-feedback">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+            <span class="fa fa-envelope form-control-feedback">*</span>
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+          <div class="form-group has-feedback">
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+            <span class="fa fa-lock form-control-feedback">*</span>
           </div>
-          <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" id="exampleInputFile">
-            <p class="help-block">Example block-level help text here.</p>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="form-group has-feedback">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
+
+          <div class="actions">
+            <%= f.submit "Entrar", class: 'btn btn-primary btn-block btn-flat' %>
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Check me out
-            </label>
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        
+        <% end %>
+
       </div>
     </div>
   </body>

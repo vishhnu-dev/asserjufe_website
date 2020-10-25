@@ -14,7 +14,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
-//= require bootstrap
+//= require bootstrap/bootstrap
 //= require admin-lte/admin-lte.min
 //= require owl-carousel/owl.carousel.min
 //= require activestorage

@@ -1,7 +1,7 @@
 <header class="main-header">
-  <a href="<%# root_path %>" class="logo">
-    <div class="logo-mini"></div>
-    <div class="logo-lg"></div>
+  <a href="<%= backend_path %>" class="logo">
+    <div class="logo-lg">Asserjufe - ORG</div>
+    <div class="logo-mini">ASJF</div>
   </a>
 
   <nav class="navbar navbar-static-top">
@@ -13,36 +13,25 @@
     </a>
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
-        
-        <%# if current_usuario.mestre? %>
-          <li>
-            <a title="Cadastrar Usuário" data-placement="bottom" href="/usuarios/novo" data-toggle="tooltip" data-original-title="Cadastrar Usuário"><i class="fa fa-user"></i> <span class="label">+</span></a>
-          </li>
-          &nbsp;
-        <%# else %>
-          <li>
-            <a title="Cadastrar Solicitação" data-placement="bottom" href="<%# new_solicitacao_path %>" data-toggle="tooltip" data-original-title="Cadastrar Solicitacao"><i class="fa fa-bell"></i> <span class="label">+</span></a>
-          </li>
-          &nbsp;
-        <%# end %>
 
+        <li>
+          <a title="Cadastrar Usuário" href="/usuarios/novo" data-toggle="tooltip" data-placement="bottom" data-original-title="Cadastrar Usuário"><i class="fa fa-user"></i> <span class="label">+</span></a>
+        </li>
+        
         <li class="dropdown notifications-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="hidden-xs"></span>
-            <%# current_usuario.email %>
+            <%= current_user.email %>
           </a>
           <ul class="dropdown-menu" style="width: auto;">
             <li>
               <ul class="menu">
                 <li>
-                  <%# link_to edit_usuario_registration_path do %>
-                      <i class="fa fa-unlock-alt"></i>Alterar senha
-                    <% end %>
-                </li>
+                    <!-- <i class="fa fa-unlock-alt"></i>Alterar senha -->
                 <li>
-                  <%# link_to destroy_usuario_session_path, :method => 'delete'  do %>
+                  <%= link_to destroy_user_session_path, :method => 'delete'  do %>
                       <i class="fa fa-sign-out"></i>Sair
-                    <% end %>
+                  <% end %>
                 </li>
               </ul>
             </li>

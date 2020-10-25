@@ -7,8 +7,11 @@
 
         <link rel="icon" href="<%= image_path '' %>">
 
-        <title>ASSERJUFE - <%= @page_title %></title>
+        <title>ASSERJUFE - <%= @page_title ? @page_title : 'ORG' %></title>
+        
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        
         <%= csrf_meta_tags %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         
@@ -20,17 +23,29 @@
     </head>
 
   <body>
-    <!-- header -->
+    <!-- Header -->
     <section class="asserjufe-header">
         <%= render partial: 'shared/header' %>
     </section>
-    <!-- content -->
+
+    <!-- Content -->
     <section class="asserjufe-content">
         <%= yield %>    
     </section>
-    <!-- footer -->
+
+    <!-- Footer -->
     <section class="asserjufe-footer">
         <%= render partial: 'shared/footer' %>
     </section>
+
+    <!-- Whatsapp -->
+    <a href="https://api.whatsapp.com/send?phone=5551997659983" class="whats-pop-up" data-toggle="tooltip" data-placement="left" data-original-title="Fale conosco no WhatsApp!" target="_blank">
+      <i class="fa fa-whatsapp"></i>
+    </a>
+    <!-- Arrow up -->
+    <div class="ancor-up" data-toggle="tooltip" data-placement="left" data-original-title="Voltar ao topo do site.">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+    
   </body>
 </html>

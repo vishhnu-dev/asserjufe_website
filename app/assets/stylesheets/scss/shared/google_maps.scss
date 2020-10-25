@@ -1,0 +1,22 @@
+/* Google Maps */
+.map {
+	margin:15px auto;
+    iframe {
+        width: 100%;
+        height: 350px !important;
+    }
+    .maps-info {
+        h3 {
+            margin-top: 0px !important;
+        }
+		p {
+    		margin-bottom: 0px !important;
+    	}
+        .fa-whatsapp {
+            background-color:#25d366;
+            color:$white-color;
+            font-size:30px;
+            border-radius: 45%;
+        }
+    }
+}

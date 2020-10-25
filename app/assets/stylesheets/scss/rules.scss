@@ -31,7 +31,7 @@
 /* ------------------------------------------------ */
 /* CORES */
 $main-color: #0e5600;
-$secundary-color: #0000ff;
+$secundary-color: #007bff;
 $white-color: #ffffff;
 $black-color: #000000;
 
@@ -47,6 +47,7 @@ $font-small: 12px;
 }
 .secundary-color {
 	color: $secundary-color;
+	opacity: 0.8;
 }
 .font-base {
 	font-size: $font-base;
@@ -62,4 +63,52 @@ $font-small: 12px;
 }
 .black-color {
 	color: $black-color;
+}
+
+/* whatsapp pop-up */
+.whats-pop-up {
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:20px;
+	right:20px;
+	background-color:#25d366;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 1px 1px 2px #888;
+	z-index:1000;
+	.fa-whatsapp {
+		margin-top: 13px;
+    	font-size: 35px;
+    	color: $white-color;
+	}
+}
+
+/* arrow-up pop-up*/ 
+.ancor-up {
+	cursor: pointer;
+	position:fixed;
+	width:50px;
+	height:50px;
+    bottom: 86px;
+    right: 26px;
+	background-color:#25d366;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 1px 1px 2px #888;
+	.fa-arrow-up {
+		margin-top: 6px;
+    	font-size: 35px;
+    	color: $white-color;
+	}
+}
+
+/* overwritten */
+
+// admin-lte as 'breadcrumb'
+.callout {
+	margin-bottom: 0px !important;
+	h1 {
+		margin: 0px auto !important;
+	}
 }
