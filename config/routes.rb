@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 	get 'convenios' => 'asserjufe#convenios', as: :convenios
 	get 'contato' => 'asserjufe#contato', as: :contato
 
+	resources :contatos
+	
 	# backend
 	get 'administracao' => 'backend#dashboard', :as => 'backend'
 

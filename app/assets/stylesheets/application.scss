@@ -13,9 +13,12 @@
 @import "admin-lte/skins/skin-green.min";
 
 /* Regras globais da aplicação */
-@import "scss/rules";
+@import "rules";
 
 /* shared */
-@import "scss/shared/header";
-@import "scss/shared/footer";
-@import "scss/shared/google_maps"
+@import "shared/header";
+@import "shared/footer";
+@import "shared/google_maps";
+
+/* pages */
+@import "asserjufe/contatos"

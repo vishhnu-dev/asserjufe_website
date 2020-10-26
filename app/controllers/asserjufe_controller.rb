@@ -25,5 +25,7 @@ class AsserjufeController < ApplicationController
 
   def contato
   	@page_title = "Contato"
+
+    @contato = Contato.new
   end
 end

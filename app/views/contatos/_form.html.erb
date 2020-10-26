@@ -1,0 +1,45 @@
+<%= form_for @contato, :url => {:controller => "contatos", :action => "create" } do |f| %>
+	<div class="row">
+	    <div class="col-md-12">
+	      <%# render partial: 'layouts/form_success' %>
+	      <%# render partial: 'layouts/form_errors', locals: {model: @clientes_rentcar} %>
+	    </div>
+  	</div>                
+	<div class="row contatos-form">
+		<div class="col-md-6">
+		  <div class="form-group">
+		    <label class="main-color">NOME COMPLETO</label>
+		    <%= f.text_field :nome, class: 'form-control uppercase' %>
+		  </div>
+		</div>
+		<div class="col-xs-6 col-md-6">
+		  <div class="form-group">
+		    <label class="main-color">E-MAIL</label>
+		    <%= f.text_field :email, class: 'form-control' %>                                  
+		  </div>
+		</div>
+		<div class="col-xs-6 col-md-6">
+		  <div class="form-group">
+		    <label class="main-color">TELEFONE <small class="secundary-color">(Opcional)</small></label>
+		    <%= f.text_field :telefone, class: 'form-control' %>
+		  </div>
+		</div>
+		<div class="col-xs-12 col-md-6">
+		  <div class="form-group">
+		    <label class="main-color">ASSUNTO</label>
+		    <%= f.text_field :assunto, class: 'form-control' %>
+		  </div>
+		</div>
+		<div class="col-xs-12">
+		  <div class="form-group">
+		    <label class="main-color">MENSAGEM</label>
+		    <%= f.text_field :mensagem, class: 'form-control' %>
+		  </div>
+		</div>
+	    <div class="col-md-12">
+			<div class="form-group button">                 
+				<%= invisible_recaptcha_tags text: 'ENVIAR', class: 'btn btn-success btn-block' %>
+			</div>
+	    </div>
+	</div>
+<% end %>

@@ -37,6 +37,8 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
   gem 'devise-i18n'
   # jquery-rails
   gem 'jquery-rails'
+  # recaptcha
+  gem 'recaptcha'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,26 @@
+/* css to scss example */
+
+/* CSS */
+.someclass {
+	height: 100%;
+}
+.someclass .sub-someclass {
+	height: 100%;
+}
+.someclass .sub-someclass a {
+	font-size: 10px;
+}
+
+/* SCSS */
+.someclass {
+	height: 100%;
+	.sub-someclass {
+		height: 100%;
+		a {
+			font-size: 10px;
+			&:hover{
+				// do something on hover
+			}
+		}
+	}
+}
