@@ -1,34 +1,67 @@
-<div class="container-fuild">
-  <nav class="navbar navbar-inverse">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Bootstrap theme</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+
+<div class="container-fluid main-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 logins">
+
+				<a class="entrar" href="#" title="Entre em nosso sistema">Entrar</a>
+				<text style="border-left: solid 2px #fff;"></text>
+				<a class="associe-se" href="#" title="Associe-se com nossa empresa">Associe-se</a>
+
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right sociais">
+
+				<a href="#" title="Fale conosco no WhatsApp" data-toggle="tooltip" data-placement="bottom" data-original-title="Enviar mensagem no WhatsApp.">
+					<i class="fa fa-whatsapp"></i>
+				</a>
+				<a href="#" title="Visite-nos no Facebook" data-toggle="tooltip" data-placement="bottom" data-original-title="Conheça nosso facebook.">
+					<i class="fa fa-facebook-square"></i>
+				</a>
+				<a href="#" title="Conheça nosso Instagram" data-toggle="tooltip" data-placement="bottom" data-original-title="Visite nosso instagram.">
+					<i class="fa fa-instagram"></i>
+				</a>
+
+				<text class="barra" style="border-left: solid 2px #fff;"></text>
+				<a  class="fone" href="#" title="Ligue e tire suas dúvidas">
+					<i class="fa fa-phone"></i><strong class="numero">0800.605.1410</strong>
+				</a>
+			</div>	
+		</div>
+	</div>		
 </div>
+
+
+<div class="container-fluid sub-header">
+  	<nav class="navbar navbar-default">
+    	<div class="container">
+    		<div class="navbar-header">
+				<button type="button" class="navbar-toggle button-hide" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+  					<span class="sr-only">Toggle navigation</span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+				</button>
+        				
+				<a class="navbar-brand"href="#">
+					<img src="<%= image_path'/images/logo4.png' %>" class="img-fluid" alt="Bem vindo ao site da Asserjufe!" title="Bem vindo ao nosso site!">
+				</a>
+			</div>	
+     		<div id="navbar" class="navbar-collapse collapse menu">
+        		<ul class="nav navbar-nav">
+         	 		<li><a href="#">A Asserjufe</a></li>
+         	 		<li><a href="#about">Diretoria</a></li>
+         	 		<li><a href="#contact">Sede Campestre</a></li>
+         	 		<li class="dropdown">
+            			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Serviços <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+      						<li><a href="#">Associe-se</a></li>
+      						<li><a href="#">Convênios</a></li>
+            			</ul>
+			   		</li>
+			     	<li><a href="#">Contato</a></li>
+				</ul>
+			</div>	
+    	</div>
+	</nav>
+</div>
+
