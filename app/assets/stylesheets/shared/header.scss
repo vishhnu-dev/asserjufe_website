@@ -1,6 +1,115 @@
 /* css to scss example */
 
 /* CSS */
+
+.asserjufe-header {
+	background-color: $main-color;
+	.main-header {
+		.container {
+			.row {
+				padding: 5.5px 0px;
+				.logins {
+					margin-top: 7px;
+					.entrar {
+						color: #ffffff;
+						margin-right:0.3em;
+					}
+					.associe-se {
+						color:#ffffff;
+						margin-left:0.5em;
+					}
+				}
+				.sociais {
+					font-size: 24px;
+					i {
+					color: $white-color;
+					padding: 5px 1.5px;
+					}
+					.barra{
+						margin-top: 5px;
+						margin-left: 5px;
+						font-size: 16px;
+						position: relative;
+						bottom:3px;
+					}
+					.fone {
+						font-size: 18px;
+						margin-left: 6px;
+						margin-right: 0px; 
+						color: #ffffff;
+						position: relative;
+						bottom: 2px;
+						i {	
+							font-size: 18px;
+							margin-left: 5px;
+						}
+						.numero {
+							margin-left: 4px;
+						}
+					}
+				}
+			}	
+		}
+	}
+	.sub-header {
+		padding: 0em;
+		.navbar-default {
+			border-radius: 0px;
+			margin-bottom: 0px;
+			padding: 5px 0px; 
+			.container {
+				.navbar-header {
+					.button-hide {
+					}
+					.navbar-brand {
+						.img-fluid {
+							height: 53px;
+							position: relative;
+							bottom: 15px;
+							right: 0px;
+						}
+					}
+				}
+				.menu {
+					.navbar-nav {
+						margin-left: 15px;
+						li{
+							padding: 0px 0px;
+						}
+						a {
+							&:hover {
+							background-color: #eeeeee;
+							transition: 1000ms;
+							height: 100%;
+							}
+						}
+						.dropdown {
+							.dropdown-toggle {
+								.dropdown-menu {
+								}	
+							}
+						}
+					}
+				}	
+			}
+		}
+	}	
+}
+
+@media screen and (max-width: 768px) {
+ 	.navbar .navbar-nav {
+  		
+ 	}
+ 	.main-header .container .row .logins .sociais {
+ 	
+		
+ 	}
+ } 
+
+
+
+
+
 .something {
 	height: 100%;
 }
