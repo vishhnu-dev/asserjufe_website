@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col-lg-6">
+		<div class="box box-success">
+			<%= form_for @usuario, url: usuarios_path(@usuario).gsub(".","/") do |f| %>
+				<div class="box-body">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<%= f.label 'Email' %><span class="text-danger">*</span>
+								<%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control uppercase', disabled: (!@usuario.new_record?) %>
+							</div>
+						</div>
+						<% if action_name == "new" %>
+							<div class="col-lg-6">
+								<div class="form-group">
+									<%= f.label 'Senha' %><span class="text-danger">*</span>
+									<%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+								</div>
+							</div>
+						<% end %>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<%= f.label 'Nível de permissão' %><span class="text-danger">*</span>
+								<%= f.select :role, options_for_select(options_for_select_role), { include_blank: false}, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-footer">
+			        <%= f.submit action_name == 'edit' ? "Editar Usuário" : "Cadastrar Usuário", class: 'btn btn-success btn-flat', role: 'button' %>
+			        <%= link_to 'Voltar', :back, class: 'btn btn-danger btn-flat', role: 'button' %>
+		    	</div>
+    		<% end %>
+		</div>
+	</div>
+</div>

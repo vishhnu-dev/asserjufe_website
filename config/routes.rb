@@ -12,10 +12,25 @@ Rails.application.routes.draw do
 	
 	# backend
 	get 'administracao' => 'backend#dashboard', :as => 'backend'
+	get 'imagens-da-sede' => 'backend#cadastro_imagens_sede', as: :sede_image
+	get 'pre-reservas' => 'backend#pre_reserva', as: :pre_reserva
+	get 'email-contato' => 'backend#email_contato', as: :email_contato
 
+	# Usuarios # has to stand before devise_for routes
+	get    'usuarios'            => 'controle_usuarios#index'
+	get    'usuarios/novo'       => 'controle_usuarios#new',  as: :new_usuario
+	get	   'usuarios/:id/editar' => 'controle_usuarios#edit',  as: :edit_usuario
+	post   'usuarios'            => 'controle_usuarios#create'
+	patch  'usuarios/:id'        => 'controle_usuarios#update'
+
+	# Devise routes
   	devise_for :users , path_names: { sign_in: :entrar, sign_out: :sair }
-	as :usuario do
+	as :user do
 	  	get 'usuarios/alterar-senha' => 'usuarios/registrations#edit',   :as => 'edit_usuario_registration'
 		put 'usuarios/alterar-senha' => 'usuarios/registrations#update', :as => 'update_usuario_registration'            
 	end
+
+	# has to stand after devise_for routes
+	delete 'usuarios/:id'        => 'controle_usuarios#destroy', as: :destroy_usuario
+
 end

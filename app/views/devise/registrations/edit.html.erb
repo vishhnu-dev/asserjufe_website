@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-lg-6">
+    <div class="box box-success">
+      <div class="box-body">
+        <%= form_for(resource, as: resource_name, url: update_usuario_registration_path, method: :put ) do |f| %>
+
+          <div class="col-lg-12">
+            <div class="form-group has-feedback">
+              <%= f.label 'Nova senha' %><br />
+              <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+              <% if @minimum_password_length %>
+                <em>Entre com no mínimo <%= @minimum_password_length %> caracteres</em>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <div class="form-group has-feedback">
+              <%= f.label 'Confirmar nova senha' %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <div class="form-group has-feedback">
+              <%= f.label 'Senha atual' %>
+              <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <div class="box-footer">
+              <%= f.submit 'Alterar', class: 'btn btn-success btn-flat', role: 'button' %>
+              <%= link_to 'Voltar', :back, class: 'btn btn-danger btn-flat', role: 'button' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

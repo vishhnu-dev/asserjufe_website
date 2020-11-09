@@ -1,5 +1,6 @@
-$(document).ready(function(){
-    /* scroll up animation */
+$(document).on('turbolinks:load', function(){
+
+    // scroll up animation
     $(window).scroll(function () {
         if ($(this).scrollTop() > 70) {
             $(".ancor-up").fadeIn(1000);
@@ -7,7 +8,15 @@ $(document).ready(function(){
             $(".ancor-up").fadeOut(1000);
         }
     });
+
     $(".ancor-up").click(function () {
       $("html, body").animate({scrollTop: 0}, '1000', 'swing');
     });
+    // END
+
+    // TOLLTIP BOX
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+    // END
 });

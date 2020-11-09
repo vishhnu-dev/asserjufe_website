@@ -1,27 +1,56 @@
 <aside class="main-sidebar">
   <section class="sidebar">
     <ul class="sidebar-menu tree" data-widget="tree">
-      
-      <li class="header" style="color:white;">MENU</li>
-      <%# if not current_usuario.mestre? %>
-        <li>
-          <a href="<%# solicitacoes_path %>">
-            <i class="fa fa-circle-o text-blue"></i> <span>Minhas Solicitações</span>
-          </a>
-        </li>
-      <%# end %>
-      <li>
-        <a href="<%# solicitacoes_path(solicitacao:{f:{status:[0]}}) %>">
-          <i class="fa fa-circle-o text-yellow"></i> <span>Aguardando Boleto</span>
+      <li class="header">MENU</li>
+
+      <li class="treeview menu-open">
+
+        <a href="">
+          <i class="fa fa-globe"></i> <span>SITE</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
         </a>
-      </li>
-      <li>
-        <a href="<%# solicitacoes_path(solicitacao:{f:{status:[1]}}) %>">
-          <i class="fa fa-circle-o text-green"></i> <span>Boletos Gerados</span>
-        </a>
+
+        <ul class="treeview-menu">
+
+          <% if current_user.administrador? or current_user.funcionario_efetivo? %>
+            <li>
+              <a href="<%= pre_reserva_path %>">
+                <i class="fa fa-free-code-camp"></i>
+                <span>Pré-reservas</span>
+              </a>
+            </li>
+            <li>
+              <a href="<%= email_contato_path %>">
+                <i class="fa fa-envelope"></i>
+                <span>Emails/contato</span>
+              </a>
+              </li>
+          <% end %>
+          
+          <% if current_user.administrador? %>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-cloud-upload"></i> CADASTROS
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li>
+                  <a href="#">
+                    <i class="fa fa-image"></i> Fotos/Sede
+                  </a>
+                </li>
+              </ul>
+            </li>
+          <% end %>
+
+        </ul>
       </li>
 
-      <%# if current_usuario.mestre? %>
+      <% if current_user.administrador? %>
         <li class="treeview">
           <a href="">
             <i class="fa fa-cog"></i> <span>ADMINISTRAÇÃO</span>
@@ -31,20 +60,21 @@
           </a>
           <ul class="treeview-menu">
             <li>
-              <a href="<%# usuarios_path %>">
+              <a href="<%= usuarios_path %>">
                 <i class="fa fa-users"></i>
                 <span>Usuários</span>
               </a>
             </li>
             <li>
-              <a href="<%# new_usuario_path %>">
+              <a href="<%= new_usuario_path %>">
                 <i class="fa fa-user-plus"></i>
                 <span>Cadastrar Usuário</span>
               </a>
             </li>
           </ul>
         </li>
-      <%# end %>
+      <% end %>
+
     </ul>
   </section>
 </aside>

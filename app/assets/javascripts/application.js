@@ -13,15 +13,9 @@
 //= require jquery
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
 //= require bootstrap/bootstrap
-//= require admin-lte/admin-lte.min
+//= require bootstrap/datepicker
+//= require wice_grid
 //= require owl-carousel/owl.carousel.min
-//= require activestorage
-
-$(document).ready(function(){
-	// TOLLTIP BOX
-	$(function () {
-	  $('[data-toggle="tooltip"]').tooltip()
-	})
-});
+//= require admin-lte/adminlte
+//= require_tree .

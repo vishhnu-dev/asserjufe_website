@@ -1,30 +1,30 @@
-class ControleUsuarioController < ApplicationController
+class ControleUsuariosController < ApplicationController
 	before_action :set_usuario, only: [:edit, :update, :destroy]
 
 	# Get /usuarios
 	def index
-		#authorize Usuario
-    	session[:page_title] = ""
-		#@usuarios_grid = initialize_grid(Usuario.all, order: 'id')
+		authorize User
+    	session[:page_title] = "Lista de Usuários"
+		@usuarios_grid = initialize_grid(User.all, order: 'id')
 	end
 
 	# GET /usuarios/:id/editar
 	def edit
-		#authorize Usuario
-		session[:page_title] = ""
+		authorize User
+		session[:page_title] = "Editar Usuário"
 	end
 
 	# GET /usuarios/novo
 	def new
-		#authorize Usuario
-	    session[:page_title] = ""
-	    @usuario = Usuario.new
+		authorize User
+	    session[:page_title] = "Cadastrar Usuário"
+	    @usuario = User.new
 	end
 
 	# POST /usuarios
 	def create
-		#authorize Usuario
-	    @usuario = Usuario.new(usuario_params)
+		authorize User
+	    @usuario = User.new(usuario_params)
 	    if usuario_params[:email].present? and usuario_params[:password].present?
 	    	verifica_email_em_uso
 	    	if !@exist
@@ -48,7 +48,7 @@ class ControleUsuarioController < ApplicationController
 
 	# PATCH/PUT /usuarios
 	def update
-		#authorize @usuario
+		authorize @user
 		respond_to do |format|
 			if @usuario.update(usuario_params)
 				format.html { redirect_to edit_usuario_path(@usuario), notice: 'Usuário atualizado com sucesso!'}
@@ -58,7 +58,7 @@ class ControleUsuarioController < ApplicationController
 
 	# DELETE /usuarios/1
 	def destroy
-		#authorize @usuario
+		authorize @user
 		respond_to do |format|
 			if @usuario.destroy
 				format.html { redirect_to usuarios_path, notice: 'Usuário atualizado com sucesso!'}
@@ -71,16 +71,16 @@ class ControleUsuarioController < ApplicationController
 	private	
 		# Use callbacks to share common setup or constraints between actions.
 		def set_usuario
-			@usuario = Usuario.find(params[:id])
+			@usuario = User.find(params[:id])
 		end
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def usuario_params
-			params.require(:usuario).permit(:email, :password, :mestre, :creditos)
+			params.require(:user).permit(:email, :password, :role)
 		end
 
 		# Verifica email em uso
 		def verifica_email_em_uso
-			@exist = Usuario.find_by(' email = ? ', usuario_params[:email])
+			@exist = User.find_by(' email = ? ', usuario_params[:email])
 		end
 end

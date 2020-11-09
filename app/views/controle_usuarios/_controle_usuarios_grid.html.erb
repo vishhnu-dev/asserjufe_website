@@ -1,0 +1,34 @@
+<%= grid(@usuarios_grid) do |g|
+
+	g.column name: '#' do |usuario|
+		usuario.id
+	end
+
+	g.column name: 'Email', attribute: 'email' do |usuario|
+		usuario.email
+	end
+
+	g.column name: 'Permissão', attribute: 'role', custom_filter: options_for_role, auto_reload: true do |usuario|
+		usuario.role
+	end
+
+	g.column name: 'Criado em' do |usuario|
+		usuario.created_at.strftime("%d/%m/%Y")
+	end
+
+	if policy(User).edit?
+		g.column html: { style:'text-align:start;' } do |usuario|
+			link_to edit_usuario_path(usuario.id), title: "Editar usuário #{usuario.email}" do
+				fa_icon 'pencil', style: 'color:green;'
+			end
+		end
+	end
+
+	g.column do |usuario|
+		if policy(usuario).destroy?
+	      	link_to usuarios_path(usuario).gsub(".","/"), title: "Excluir usuário #{usuario.email}", method: :delete, data: { confirm: "Você tem certeza que deseja excluir o usuário #{usuario.email}?" } do
+	          	fa_icon 'trash', style: 'color:#dd4b39; font-size:20px;'
+	      	end
+	    end
+    end
+end %>

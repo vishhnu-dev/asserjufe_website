@@ -7,23 +7,20 @@
     <link rel="icon" href="">
 
     <title>Dashboard</title>
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Google Font -->
-    <!-- Google Font -->
   </head>
-
   <body class="hold-transition skin-green sidebar-mini" style="margin:0px;">
     <div class="wrapper">
       <%= render 'shared/nav' %>
@@ -31,24 +28,20 @@
 
       <div class="content-wrapper" style="min-height: 901px;">
         <section class="content-header container-fluid">
-
           <!-- Messages -->
           <%# render 'layouts/shared/messages' %>
           <%# if devise_controller? %>
             <%# render 'layouts/devise_messages' %>
           <%# end %>
 
-          <!-- Titulo -->
-          <h1>
-            <%= session[:page_title] ? session[:page_title] : 'Defina o título na variável de sessão :page_title' %>
-          </h1>
+          <h1><%= session[:page_title] ? session[:page_title] : 'Defina o título na variável de sessão :page_title' %></h1>
         </section>
 
         <section class="content" style="padding: 15px;">
           <%= yield %>
         </section>
-
       </div>
+
       <footer class="main-footer">
       </footer>
     </div>

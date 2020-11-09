@@ -1,7 +1,11 @@
 <header class="main-header">
   <a href="<%= backend_path %>" class="logo">
-    <div class="logo-lg">Asserjufe - ORG</div>
-    <div class="logo-mini">ASJF</div>
+    <div class="logo-lg">
+      <i class="fa fa-cogs" aria-hidden="true"></i> Asserjufe-rs
+    </div>
+    <div class="logo-mini">
+      <i class="fa fa-cogs" aria-hidden="true"></i>
+    </div>
   </a>
 
   <nav class="navbar navbar-static-top">
@@ -14,29 +18,39 @@
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
 
-        <li>
-          <a title="Cadastrar Usuário" href="/usuarios/novo" data-toggle="tooltip" data-placement="bottom" data-original-title="Cadastrar Usuário"><i class="fa fa-user"></i> <span class="label">+</span></a>
-        </li>
-        
+        <% if current_user.administrador? %>
+          <li>
+            <a href="<%= new_usuario_path %>" data-toggle="tooltip" data-placement="bottom" data-original-title="Cadastrar Usuário">
+              <i class="fa fa-user"></i> 
+              <span class="label">+</span></a>
+          </li>
+          &nbsp;
+        <% end %>
+
         <li class="dropdown notifications-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="hidden-xs"></span>
             <%= current_user.email %>
           </a>
-          <ul class="dropdown-menu" style="width: auto;">
+
+          <ul class="dropdown-menu">
             <li>
               <ul class="menu">
                 <li>
-                    <!-- <i class="fa fa-unlock-alt"></i>Alterar senha -->
+                  <%= link_to edit_usuario_registration_path do %>
+                      <i class="fa fa-unlock-alt"></i>Alterar senha
+                  <% end %>
+                </li>
                 <li>
                   <%= link_to destroy_user_session_path, :method => 'delete'  do %>
-                      <i class="fa fa-sign-out"></i>Sair
+                    <i class="fa fa-sign-out"></i>Sair
                   <% end %>
                 </li>
               </ul>
             </li>
           </ul>
         </li>
+        
       </ul>
     </div>
   </nav>

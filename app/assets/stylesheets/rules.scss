@@ -123,3 +123,8 @@ $font-small: 12px;
 		}
 	}	
 }
+
+/* takes out plus icon on select wice_grid */
+body .custom-dropdown-container .expand-multi-select-icon {
+	display: none !important;
+}
