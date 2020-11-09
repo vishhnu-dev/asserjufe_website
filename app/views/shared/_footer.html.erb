@@ -1,7 +1,53 @@
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12 text-center">
-			<p class="lead">Footer</p>
-		</div>
+	<div class="container">
+		<div class="row">
+			<!--atendimento footer-->
+			<div class="col-md-3 col-sm-6 col-xs-12 atendimento ">
+				<ul class="atendimento-footer">
+					<h4><strong>Atendimento</strong></h4>
+					<li>	
+						<i class="fa fa-phone fone"></i>
+						<text class="numero">0800.605.1410</text>
+					</li>
+					<li>
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+						<text class="email">asserjufe.poa@gmail.com</text>
+					</li>
+					<li><a href="<%= contato_path %>">Contato</a></li>
+				</ul>
+			</div>
+			<!--menu footer-->
+			<div class="col-md-3 col-sm-6 col-xs-12 menu">
+				<h4><strong>Menu</strong></h4>
+				<ul class="menu-footer">
+		          <li><a href="<%= a_asserjufe_path %>">A Asserjufe</a></li>
+		          <li><a href="<%= diretoria_path %>">Diretoria</a></li>
+		          <li><a href="<%= sede_campestre_path %>">Sede Campestre</a></li>
+		        </ul>    
+			</div>
+			<!--serviços footer-->
+			<div class="col-md-3 col-sm-6 col-xs-12 servicos">
+				<h4><strong>Serviços</strong></h4>
+				<ul class="servicos-footer">
+					<li><a href="<%= associe_se_path %>">Associe-se</a></li>
+					<li><a href="<%= convenios_path %>">Convênios</a></li>
+				</ul>	
+			</div>
+			<!--sociais footer-->
+			<div class="col-md-3 col-sm-6 col-xs-12 asserjufe">
+				<h4><strong><i class="fa fa-code-fork"></i>Conecte-se com a Asserjufe</strong></h4>
+				<a href="https://api.whatsapp.com/send?phone=5551997659983" target="blank" title="Fale conosco no WhatsApp">
+					<i class="fa fa-whatsapp" title="Fale conosco em nosso WhatsApp"></i>
+				</a>
+				<a href="https://www.facebook.com/asserjufers/" target="blank" title="Visite-nos no Facebook">
+					<i class="fa fa-facebook-square" title="Conheça nosso Facebook"></i>
+				</a>
+				<a href="https://www.instagram.com/asserjufers/" target="blank" title="Conheça nosso Instagram">
+					<i class="fa fa-instagram" title="Visite-nos no Instagram"></i>
+				</a>
+			</div>
+		</div>	
 	</div>
 </div>
+
+

@@ -3,108 +3,122 @@
 /* CSS */
 
 .asserjufe-header {
-	background-color: $main-color;
 	.main-header {
+		background-color: #0e5600;
 		.container {
 			.row {
-				padding: 5.5px 0px;
-				.logins {
-					margin-top: 7px;
-					.entrar {
-						color: #ffffff;
-						margin-right:0.3em;
-					}
-					.associe-se {
-						color:#ffffff;
-						margin-left:0.5em;
-					}
-				}
+				padding: 6.6px 0px;
 				.sociais {
-					font-size: 24px;
+					font-size: 26px;
 					i {
 					color: $white-color;
-					padding: 5px 1.5px;
+					padding: 5px 2.5px;
 					}
 					.barra{
 						margin-top: 5px;
-						margin-left: 5px;
+						margin-left: 7px;
 						font-size: 16px;
 						position: relative;
 						bottom:3px;
 					}
 					.fone {
-						font-size: 18px;
-						margin-left: 6px;
-						margin-right: 0px; 
+						font-size: 20px;
+						margin-left: 11px; 
 						color: #ffffff;
 						position: relative;
 						bottom: 2px;
-						i {	
-							font-size: 18px;
-							margin-left: 5px;
-						}
-						.numero {
-							margin-left: 4px;
-						}
+					}
+					.numero {
+						
+						font-size: 24px;
+						color: #ffffff;
+						position: relative;
+						bottom: 2px;	
 					}
 				}
 			}	
 		}
 	}
 	.sub-header {
+		background-color: #ffffff;
 		padding: 0em;
-		.navbar-default {
-			border-radius: 0px;
-			margin-bottom: 0px;
-			padding: 5px 0px; 
-			.container {
-				.navbar-header {
-					.button-hide {
-					}
-					.navbar-brand {
-						.img-fluid {
-							height: 53px;
-							position: relative;
-							bottom: 15px;
-							right: 0px;
-						}
+		border-radius: 0px;
+		margin-bottom: 0px;
+		margin-left: 0px;
+		.container {
+			.navbar-header {
+				.navbar-toggle {
+					color: #000000;
+					font-size: 32px;
+					padding-bottom: 0px;
+					position: relative;
+					bottom: 7px;
+				}
+				.logo {
+					.img-fluid {
+						height: 55px;
+						position: relative;
+						top: 6px;
 					}
 				}
-				.menu {
-					.navbar-nav {
-						margin-left: 15px;
-						li{
-							padding: 0px 0px;
-						}
-						a {
-							&:hover {
-							background-color: #eeeeee;
-							transition: 1000ms;
-							height: 100%;
-							}
-						}
-						.dropdown {
-							.dropdown-toggle {
-								.dropdown-menu {
-								}	
-							}
+			}
+			.menu {
+				.navbar-nav {
+					margin-left: 50px;
+					li{
+						padding: 0px 0px;
+					}
+					a {	
+						font-size: 16px;
+						color: #76817b;
+						line-height: 2.4;
+						transition: 1000ms;
+
+						&:hover {
+						background-color: #eeeeee;
+						transition: 1000ms;
+
 						}
 					}
+					.dropdown {
+						display: relative;
+
+						&:hover ul {
+							display: block;
+
+  						}
+					}	
 				}	
 			}
 		}
 	}	
 }
 
-@media screen and (max-width: 768px) {
- 	.navbar .navbar-nav {
+@media screen and (max-width: 767px) {
+ 	.main-header .container .row .sociais {
+ 		padding-right: 0px;
+  	}
+  	.sub-header .container .navbar-header .navbar-toggle {
+  		padding-right: 1.1em;
+  		  	}
+  	.sub-header .container .navbar-header .logo .img-fluid {
+  		padding-left: 1em;
+  	}	
+  	.sub-header .container .menu .navbar-nav {
+  		position: relative !important;
+  		right: 2em !important;
+  	}
+  	.sub-header .container .menu .navbar-nav .dropdown {
+  		overflow: hidden !important;
+  		text-decoration: none !important;
+  	} 
+  	.sub-header .container .menu .navbar-nav .dropdown .dropdown-menu {
   		
- 	}
- 	.main-header .container .row .logins .sociais {
- 	
-		
- 	}
- } 
+  	}
+  	.sub-header .container {
+  		padding-bottom: 6px;
+  	}	
+} 
 
 
 

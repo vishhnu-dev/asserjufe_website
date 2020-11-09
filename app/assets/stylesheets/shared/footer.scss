@@ -1,6 +1,149 @@
 /* css to scss example */
 
 /* CSS */
+
+.asserjufe-footer {
+	.container-fluid {
+		margin-top: 0px;
+		background-color:  #0e5600;
+		.row {
+			padding-top: 1.4em;
+			padding-bottom: 4em;
+			.atendimento {
+				position: relative;
+				right: 1em;
+				padding-left: 0px;
+				font-size: 18px;
+				color: #ffffff;
+				h4 {
+					font-size: 18px;
+				}
+				.atendimento-footer {
+					list-style: none;
+					i {
+						font-size: 20px;
+					}
+					.numero {
+						font-size: 19px;
+					}
+					.email {
+					padding-top: 10px;		
+					}
+					a {
+						color: #ffffff;
+						&:hover {
+							text-decoration: underline;
+						}
+					}	
+				}
+			}
+			.menu {
+				padding-left: 5.5em;
+				color: #ffffff;
+  				h4 {
+				font-size: 18px;
+				}
+				.menu-footer {
+					list-style: none;
+					font-size: 18px;
+					padding-left: 0px;
+					a {
+						color: #ffffff;
+						&:hover {
+							text-decoration: underline;
+						}
+					}	
+				}
+			}
+			.servicos {
+				padding-left: 4em;
+				color: #ffffff;
+	  			h4 {
+	  				font-size: 18px;
+	  			}
+	  			.servicos-footer{
+	  				list-style: none;
+					padding-left: 0px;
+	  				a {
+		  				font-size: 18px;
+						color: #ffffff;
+						&:hover {
+							text-decoration: underline;
+						}	
+					}
+	  			}
+			}
+			.asserjufe {
+				position: relative;
+				bottom: 3px;
+				color: #ffffff;
+				h4 {
+					font-size: 18px;
+					position: relative;
+					bottom: 4px;
+				}
+				h4 i{
+					font-size: 20px;
+				}
+				i {
+					color: #ffffff;
+					font-size: 29px;
+					padding: 0px 6px;
+				}
+			}
+		}
+	}	
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+	.container-fluid .row .atendimento {
+		position: relative !important;
+		right: 1.5em  !important;
+		padding-top: .9em !important;
+		padding-bottom: .3em !important;
+	}
+ 	.container-fluid .row .menu {
+ 		position: relative !important;
+ 		right: 1.1em !important;
+ 		padding-bottom: .2em !important;
+ 	}
+ 	.container-fluid .row .servicos {
+ 		position: relative !important;
+ 		bottom: 2.6em !important;
+ 		right: 1.1em !important;
+ 		padding-bottom: 5em !important;
+ 	}
+ 	.container-fluid .row .asserjufe {
+ 		position: relative !important;
+ 		right: .5em !important;
+ 		
+ 	}	
+} 
+@media screen and (max-width: 992px) {
+ 	.container-fluid .row .menu {
+ 		padding-left: 2em !important;
+ 	}	
+ 	.container-fluid .row .servicos {
+ 		padding-left: 2em!important;
+ 		padding-top: 3em !important;	
+ 	}
+ 	.container-fluid .row .asserjufe {
+ 		position: relative;
+ 		bottom: 6.7em !important;
+ 	}
+} 
+
+
+
+
+
+
+
+
+
 .someclass {
 	height: 100%;
 }
