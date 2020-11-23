@@ -5,7 +5,7 @@
 .asserjufe-footer {
 	.container-fluid {
 		margin-top: 0px;
-		background-color:  #0e5600;
+		background-color: #3A634A;
 		.row {
 			padding-top: 1.4em;
 			padding-bottom: 4em;
@@ -25,15 +25,25 @@
 					}
 					.numero {
 						font-size: 19px;
+						margin-left: 9px;
 					}
 					.email {
-					padding-top: 10px;		
+					margin-left: 5px;		
 					}
 					a {
 						color: #ffffff;
 						&:hover {
 							text-decoration: underline;
 						}
+					}
+					.contato {
+						position: relative;
+						top: 5px;
+						margin-left: 5px;
+					}
+					.mail {
+						position: relative;
+						top: .3em;
 					}	
 				}
 			}
@@ -127,7 +137,7 @@
  		padding-left: 2em !important;
  	}	
  	.container-fluid .row .servicos {
- 		padding-left: 2em!important;
+ 		padding-left: 2em !important;
  		padding-top: 3em !important;	
  	}
  	.container-fluid .row .asserjufe {
