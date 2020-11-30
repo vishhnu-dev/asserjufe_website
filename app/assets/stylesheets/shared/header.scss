@@ -1,7 +1,3 @@
-/* css to scss example */
-
-/* CSS */
-
 .asserjufe-header {
 	.main-header {
 		background-color: #3A634A;
@@ -19,9 +15,9 @@
 						border-left: solid 2px;
 						margin-top: 5px;
 						margin-left: 7px;
-						font-size: 17px;
+						font-size: 16px;
 						position: relative;
-						bottom: 3.5px;
+						bottom: 1.5px;
 					}
 					.fone {
 						font-size: 20px;
@@ -43,11 +39,8 @@
 		}
 	}
 	.sub-header {
-		background-color: #ffffff;
-		padding: 0em;
-		border-radius: 0px;
 		margin-bottom: 0px;
-		margin-left: 0px;
+		border: none;
 		.container {
 			.navbar-header {
 				.navbar-toggle {
@@ -72,11 +65,11 @@
 						padding: 0px 0px;
 					}
 					a {	
-						font-size: 16px;
+						font-size: 15px;
 						color: #76817b;
 						line-height: 2.4;
 						transition: 1000ms;
-
+						text-transform: uppercase;
 						&:hover {
 						background-color: #eeeeee;
 						transition: 1000ms;
@@ -101,7 +94,6 @@
 		}
 	}	
 }
-
 @media screen and (max-width: 767px) {
  	.main-header .container .row .sociais {
  		padding-right: 0em;
@@ -126,29 +118,4 @@
   	.sub-header .container {
   		padding-bottom: 6px;
   	}	
-} 
-
-
-
-
-
-.something {
-	height: 100%;
-}
-.something .sub-something {
-	height: 100%;
-}
-.something .sub-something a {
-	font-size: 10px;
-}
-
-/* SCSS */
-.something {
-	height: 100%;
-	.sub-something {
-		height: 100%;
-		a {
-			font-size: 10px;
-		}
-	}
 }

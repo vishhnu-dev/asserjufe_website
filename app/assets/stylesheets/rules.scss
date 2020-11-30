@@ -3,35 +3,14 @@
 /* 	 Autor : Leonardo de Moraes - 15/10/20			*/
 /* 	 Projeto website ASSERJUFE.org					*/
 /* ------------------------------------------------ */
-/* CLASSES DO SISTEMA */
-/*
-	Classes de alinhamento de texto
-	-----------------------------
-	text-left
-	text-center
-	text-right
-	text-justify
 
-	Classes de text-transform
-	-----------------------------
-	text-lowercase
-	text-uppercase
-	text-capitalize
-
-	Classes de background-color
-	-----------------------------
-	bg-primary
-	bg-success
-	bg-info
-	bg-warning
-	bg-danger
-*/
 /* ------------------------------------------------ */
 /* 				 VARIÁVEIS DO SISTEMA 				*/
 /* ------------------------------------------------ */
+
 /* CORES */
-$main-color: #0e5600;
-$secundary-color: #007bff;
+$main-color: #3A6347;
+$secundary-color: #007B84;
 $white-color: #ffffff;
 $black-color: #000000;
 $background-main: rgba(238, 238, 238, 0.8);;
@@ -79,7 +58,6 @@ $font-small: 12px;
 	background-color:#25d366;
 	border-radius:50px;
 	text-align:center;
-	box-shadow: 1px 1px 2px #888;
 	z-index:1000;
 	.fa-whatsapp {
 		margin-top: 13px;
@@ -99,7 +77,6 @@ $font-small: 12px;
 	background-color: $secundary-color;
 	border-radius:50px;
 	text-align:center;
-	box-shadow: 1px 1px 2px #888;
 	display: none;
 	.fa-arrow-up {
 		margin-top: 6px;
@@ -107,24 +84,40 @@ $font-small: 12px;
     	color: $white-color;
 	}
 }
-/* ------------------------------------------------ */
-/* 					overwritten 					*/
-/* ------------------------------------------------ */
-// callout admin-lte as website 'breadcrumb'
-.breadcrumb {
-    background-color: rgba(238, 238, 238, 0.8);
-	padding: 0px 0px !important;
-	margin-bottom: 0px !important;
-	.callout {
-	    border-left: 5px solid $main-color !important;
-	    margin: 10px 10px 10px 0px;
-		h1 {
-			margin: 0px auto !important;
+
+/* page titles */
+.page-start {
+	background-color: #007B84;
+	.page-title {
+		.title {
+			padding: 30px 15px;
+			h1 {
+				margin: 0px 0px;
+				color: $white-color;
+				small {
+					color: $white-color;
+				}
+			}
 		}
-	}	
+	}
 }
 
+/* ------------------------------------------------ */
+/* 					OverWritten 					*/
+/* ------------------------------------------------ */
 /* takes out plus icon on select wice_grid */
 body .custom-dropdown-container .expand-multi-select-icon {
+	display: none !important;
+}
+
+body a {
+	&:hover {
+		color: $main-color;
+		font-weight: 400;
+	}
+}
+
+// recaptcha icon
+.grecaptcha-badge {
 	display: none !important;
 }

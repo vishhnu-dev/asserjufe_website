@@ -1,7 +1,32 @@
 .contatos-form {
-	padding: 15px 15px;
 	.form-control {
 		border: 1px solid #ccc !important;
     	border-radius: 4px !important;
 	}
+}
+.contact-form {
+	background-color: $main-color;
+	form {
+		padding: 15px 15px;
+		label {
+			color: $white-color;
+		}
+	}
+}
+.contatos-helper {
+	p {
+		color: $main-color;
+		font-size: 20px;
+		a {
+			small {
+				font-size: 15px;
+			}
+		}
+	}
+}
+.contato {
+	h2 {
+		margin-bottom: 20px !important;
+	}
+	margin-bottom: 5px;
 }

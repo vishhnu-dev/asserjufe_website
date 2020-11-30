@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 	get 'pre-reservas' => 'backend#pre_reserva', as: :pre_reserva
 	get 'email-contato' => 'backend#email_contato', as: :email_contato
 
-	# Usuarios # has to stand before devise_for routes
+	# Usuarios # has to stand before devise routes
 	get    'usuarios'            => 'controle_usuarios#index'
 	get    'usuarios/novo'       => 'controle_usuarios#new',  as: :new_usuario
 	get	   'usuarios/:id/editar' => 'controle_usuarios#edit',  as: :edit_usuario

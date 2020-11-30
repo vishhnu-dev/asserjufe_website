@@ -1,44 +1,39 @@
-<div class="container-fluid breadcrumb">		
-	<div class="container">
+<div class="container-fluid page-start">
+	<div class="container page-title">
 		<div class="row">
-			<div class="col-md-12">
-				<div class="callout">
-	                <h1 class="main-color"><strong>FALE CONOSCO</strong></h1>
-	              </div>
+			<div class="col-md-12 title">
+	            <h1><strong>Fale conosco</strong></h1>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="container">
+<div class="container contato">
 	<div class="row">
 		<div class="col-xs-12">
 			<h2 class="main-color">Envie sua mensagem e, em breve, nossa equipe entrará em contato.</h2>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-6 background-main">
+		<div class="col-md-6 contact-form">
 			<%= render 'contatos/form' %>
 		</div>
-		<div class="col-md-6">
-			<p class="lead">Dúvidas sobre como associar-se ? 
-				<a href="<%= associe_se_path %>" class="secundary-color">
-					<small>Informações aqui.</small>
-				</a> 
-			</p>
-			<p class="lead">Ainda não é associado e deseja reservar a sede ? 
-				<a href="<%= sede_campestre_path %>" class="secundary-color">
-					<small>Faça uma pré-reserva.</small>
-				</a> 
-			</p>
-			<p class="lead">
-				Se ainda estiver com dúvidas enviar uma mensagem em nosso
-				<a href="https://api.whatsapp.com/send?phone=5551997659983" class="secundary-color" target="_blank">
-					<small>WhatsApp.</small>
+		<div class="col-md-6 contatos-helper">
+			<p>Dúvidas sobre como associar-se ?
+				<a href="<%= associe_se_path %>">
+					<small>mais informações.</small>
 				</a>
 			</p>
-			<p class="lead">Conte sempre conosco e saiba que é um prazer atendê-lo!</p>
+			<p>Ainda não é associado e deseja reservar a sede campestre ?
+				<a href="<%= sede_campestre_path %>">
+					<small>faça uma pré-reserva.</small>
+				</a>
+			</p>	
+			<p>Se ainda estiver com dúvidas envie uma mensagem em nosso
+				<a href="https://api.whatsapp.com/send?phone=5551997659983" target="_blank">
+					<small>WhatsApp.</small>
+				</a>
+			</p>	
+			<p>Conte sempre conosco e saiba que é um prazer atendê-lo!</p>
 		</div>
 	</div>
 </div>
-<!-- google maps -->
-<%= render 'shared/google_maps', src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.90768647313!2d-51.23905238481813!3d-30.03950613800758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9519791c02f8d6c3%3A0x67a9c27f6d99e242!2sASSERJUFE!5e0!3m2!1spt-BR!2sbr!4v1603592591117!5m2!1spt-BR!2sbr" %>

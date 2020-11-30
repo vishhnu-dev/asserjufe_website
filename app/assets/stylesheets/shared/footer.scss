@@ -1,24 +1,17 @@
-/* css to scss example */
-
-/* CSS */
-
 .asserjufe-footer {
 	.container-fluid {
 		margin-top: 0px;
 		background-color: #3A634A;
 		.row {
 			padding-top: 1.4em;
-			padding-bottom: 4em;
 			.atendimento {
-				position: relative;
-				right: 1em;
-				padding-left: 0px;
 				font-size: 18px;
 				color: #ffffff;
 				h4 {
 					font-size: 18px;
 				}
 				.atendimento-footer {
+					padding-left: 0px;
 					list-style: none;
 					i {
 						font-size: 20px;
@@ -28,7 +21,7 @@
 						margin-left: 9px;
 					}
 					.email {
-					margin-left: 5px;		
+						margin-left: 5px;		
 					}
 					a {
 						color: #ffffff;
@@ -48,10 +41,9 @@
 				}
 			}
 			.menu {
-				padding-left: 5.5em;
 				color: #ffffff;
   				h4 {
-				font-size: 18px;
+					font-size: 18px;
 				}
 				.menu-footer {
 					list-style: none;
@@ -66,7 +58,6 @@
 				}
 			}
 			.servicos {
-				padding-left: 4em;
 				color: #ffffff;
 	  			h4 {
 	  				font-size: 18px;
@@ -84,8 +75,6 @@
 	  			}
 			}
 			.asserjufe {
-				position: relative;
-				bottom: 3px;
 				color: #ffffff;
 				h4 {
 					font-size: 18px;
@@ -104,76 +93,11 @@
 		}
 	}	
 }
-
-
-
-
-@media screen and (max-width: 767px) {
-	.container-fluid .row .atendimento {
-		position: relative !important;
-		right: 1.5em  !important;
-		padding-top: .9em !important;
-		padding-bottom: .3em !important;
-	}
- 	.container-fluid .row .menu {
- 		position: relative !important;
- 		right: 1.1em !important;
- 		padding-bottom: .2em !important;
- 	}
- 	.container-fluid .row .servicos {
- 		position: relative !important;
- 		bottom: 2.6em !important;
- 		right: 1.1em !important;
- 		padding-bottom: 5em !important;
- 	}
- 	.container-fluid .row .asserjufe {
- 		position: relative !important;
- 		right: .5em !important;
- 		
- 	}	
-} 
-@media screen and (max-width: 992px) {
- 	.container-fluid .row .menu {
- 		padding-left: 2em !important;
- 	}	
- 	.container-fluid .row .servicos {
- 		padding-left: 2em !important;
- 		padding-top: 3em !important;	
- 	}
- 	.container-fluid .row .asserjufe {
- 		position: relative;
- 		bottom: 6.7em !important;
- 	}
-} 
-
-
-
-
-
-
-
-
-
-.someclass {
-	height: 100%;
-}
-.someclass .sub-someclass {
-	height: 100%;
-}
-.someclass .sub-someclass a {
-	font-size: 10px;
-}
-
-/* SCSS */
-.someclass {
-	height: 100%;
-	.sub-someclass {
-		height: 100%;
-		a {
-			font-size: 10px;
-			&:hover{
-				// do something on hover
-			}
+.copyright {
+	margin-top: -1px !important;
+	.text-right {
+		p {
+			color: $white-color;
 		}
 	}
 }
