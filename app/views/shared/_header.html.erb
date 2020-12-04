@@ -31,31 +31,43 @@
 	        <!-- logo -->
 	        <div class="logo">
 	          	<a href="<%= root_path %>">
-					<img src="<%= image_path'/images/asserjufe-logo2.png' %>" class="img-fluid" loading="lazy" alt="Carregando imagem..." title="Asserjufe">
+					<img src="<%= image_path 'asserjufe.png' %>" class="img-fluid" title="Ir para home" data-toggle="tooltip" data-placement="bottom">
 				</a>
 			</div>	
         </div>
         <!-- menu -->
         <div id="navbar" class="navbar-collapse collapse menu">
         	<ul class="nav navbar-nav">
-	            <li><a href="<%= a_asserjufe_path %>">A Asserjufe</a></li>
-	            <li><a href="<%= diretoria_path %>">Diretoria</a></li>
-	            <li><a href="<%= sede_campestre_path %>">Sede Campestre</a></li>
+	            <li>
+	            	<a class="<%= @page_title == 'A Asserjufe' ? 'active' : '' %>" href="<%= a_asserjufe_path %>">A Asserjufe</a>
+	            </li>
+	            <li>
+	            	<a class="<%= @page_title == 'Diretoria' ? 'active' : '' %>" href="<%= diretoria_path %>">Diretoria</a>
+	            </li>
+	            <li>
+	            	<a class="<%= @page_title == 'Sede campestre' ? 'active' : '' %>" href="<%= sede_campestre_path %>">Sede Campestre</a>
+	            </li>
 	            <li class="dropdown">
               		<a href="#" class="dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               		Serviços
               			<span class="caret"></span>
               		</a>
-              		<a class="hidden-xs" style="cursor: pointer;">
+              		<a class="hidden-xs">
               		Serviços
                        	<span class="caret"></span>
                    	</a>
           			<ul class="dropdown-menu">
-           				<li><a href="<%= associe_se_path %>">Associe-se</a></li>
-           				<li><a href="<%= convenios_path %>">Convênios</a></li>
+           				<li>
+           					<a class="<%= @page_title == 'Associe-se' ? 'active' : '' %>" href="<%= associe_se_path %>">Associe-se</a>
+           				</li>
+           				<li>
+           					<a class="<%= @page_title == 'Convênios' ? 'active' : '' %>" href="<%= convenios_path %>">Convênios</a>
+           				</li>
          			</ul>
             	</li>
-            	<li><a href="<%= contato_path %>">Contato</a></li>
+            	<li>
+            		<a class="<%= @page_title == 'Contato' ? 'active' : '' %>" href="<%= contato_path %>">Contato</a>
+            	</li>
           	</ul>
         </div>
     </div>

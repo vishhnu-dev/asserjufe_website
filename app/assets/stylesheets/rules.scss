@@ -27,7 +27,6 @@ $font-small: 12px;
 }
 .secundary-color {
 	color: $secundary-color;
-	opacity: 0.5;
 }
 .background-main {
 	background-color: $background-main;
@@ -90,7 +89,7 @@ $font-small: 12px;
 	background-color: #007B84;
 	.page-title {
 		.title {
-			padding: 30px 15px;
+			padding: 40px 15px;
 			h1 {
 				margin: 0px 0px;
 				color: $white-color;
@@ -100,6 +99,12 @@ $font-small: 12px;
 			}
 		}
 	}
+}
+
+/* Menu active */
+.active {
+	background-color: #007B84;
+	color: $white-color !important;
 }
 
 /* ------------------------------------------------ */

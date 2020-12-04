@@ -5,11 +5,14 @@
 	}
 }
 .contact-form {
-	background-color: $main-color;
+	background-color: #007B84;
 	form {
 		padding: 15px 15px;
 		label {
 			color: $white-color;
+		}
+		button {
+			color: $main-color;
 		}
 	}
 }

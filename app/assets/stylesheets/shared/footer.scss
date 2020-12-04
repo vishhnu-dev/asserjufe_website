@@ -1,12 +1,12 @@
 .asserjufe-footer {
-	.container-fluid {
+	.footer-menu {
 		margin-top: 0px;
-		background-color: #3A634A;
+		background-color: $main-color;
+		padding: 35px 0px;
 		.row {
-			padding-top: 1.4em;
 			.atendimento {
 				font-size: 18px;
-				color: #ffffff;
+				color: $white-color;
 				h4 {
 					font-size: 18px;
 				}
@@ -24,7 +24,7 @@
 						margin-left: 5px;		
 					}
 					a {
-						color: #ffffff;
+						color: $white-color;
 						&:hover {
 							text-decoration: underline;
 						}
@@ -41,7 +41,7 @@
 				}
 			}
 			.menu {
-				color: #ffffff;
+				color: $white-color;
   				h4 {
 					font-size: 18px;
 				}
@@ -50,7 +50,7 @@
 					font-size: 18px;
 					padding-left: 0px;
 					a {
-						color: #ffffff;
+						color: $white-color;
 						&:hover {
 							text-decoration: underline;
 						}
@@ -58,7 +58,7 @@
 				}
 			}
 			.servicos {
-				color: #ffffff;
+				color: $white-color;
 	  			h4 {
 	  				font-size: 18px;
 	  			}
@@ -67,7 +67,7 @@
 					padding-left: 0px;
 	  				a {
 		  				font-size: 18px;
-						color: #ffffff;
+						color: $white-color;
 						&:hover {
 							text-decoration: underline;
 						}	
@@ -75,7 +75,7 @@
 	  			}
 			}
 			.asserjufe {
-				color: #ffffff;
+				color: $white-color;
 				h4 {
 					font-size: 18px;
 					position: relative;
@@ -85,7 +85,7 @@
 					font-size: 20px;
 				}
 				i {
-					color: #ffffff;
+					color: $white-color;
 					font-size: 29px;
 					padding: 0px 6px;
 				}
@@ -95,9 +95,13 @@
 }
 .copyright {
 	margin-top: -1px !important;
-	.text-right {
+	background-color: #245236 !important;
+	padding: 15px 0px;
+	.text-left {
 		p {
 			color: $white-color;
+			margin-bottom: 0px;
+			font-size: 19px;
 		}
 	}
 }
