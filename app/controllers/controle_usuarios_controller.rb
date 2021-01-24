@@ -8,9 +8,13 @@ class ControleUsuariosController < ApplicationController
 		@usuarios_grid = initialize_grid(User.all, order: 'id')
 	end
 
+	def show
+		redirect_to users_path
+	end
+
 	# GET /usuarios/:id/editar
 	def edit
-		authorize User
+		authorize @usuario
 		session[:page_title] = "Editar Usuário"
 	end
 
@@ -48,20 +52,22 @@ class ControleUsuariosController < ApplicationController
 
 	# PATCH/PUT /usuarios
 	def update
-		authorize @user
+		authorize @usuario
 		respond_to do |format|
 			if @usuario.update(usuario_params)
-				format.html { redirect_to edit_usuario_path(@usuario), notice: 'Usuário atualizado com sucesso!'}
+				format.html { redirect_to usuarios_path, notice: 'Usuário atualizado com sucesso!'}
+			else
+				format.html { render :edit}
 			end
 		end
 	end
 
 	# DELETE /usuarios/1
 	def destroy
-		authorize @user
+		authorize @usuario
 		respond_to do |format|
 			if @usuario.destroy
-				format.html { redirect_to usuarios_path, notice: 'Usuário atualizado com sucesso!'}
+				format.html { redirect_to usuarios_path, notice: 'Usuário exclído com sucesso!'}
 			else
 				format.html { redirect_to usuarios_path, notice: 'Usuário não pôde ser atualizado!'}
 			end

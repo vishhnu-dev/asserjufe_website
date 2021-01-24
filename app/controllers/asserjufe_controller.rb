@@ -1,6 +1,10 @@
 class AsserjufeController < ApplicationController
+  before_action :set_noticia, only: [:noticia]
+
   def home
   	@page_title = "Página Inicial"
+    @noticias = Noticia.all
+    @palavras = PalavraPresidente.all
   end
   
   def a_asserjufe
@@ -25,7 +29,16 @@ class AsserjufeController < ApplicationController
 
   def contato
   	@page_title = "Contato"
-
     @contato = Contato.new
   end
+
+  def noticia
+    @page_title = @noticia.title
+    @noticias = Noticia.where.not(id: @noticia.id)
+  end
+
+  private
+    def set_noticia
+      @noticia = Noticia.find_by(title: params[:title])
+    end
 end

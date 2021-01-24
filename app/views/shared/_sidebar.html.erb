@@ -1,59 +1,101 @@
 <aside class="main-sidebar">
   <section class="sidebar">
     <ul class="sidebar-menu tree" data-widget="tree">
+      
       <li class="header">MENU</li>
 
-      <li class="treeview menu-open">
+      <!-- Pré reservas -->
+      <% if policy(User).index? %>
+        <li>
+          <a href="">
+            <i class="fa fa-book"></i> 
+            <span>Pré-reservas</span>
+          </a>
+        </li>
+      <% end %>
 
-        <a href="">
-          <i class="fa fa-globe"></i> <span>SITE</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-
-        <ul class="treeview-menu">
-
-          <% if current_user.administrador? or current_user.funcionario_efetivo? %>
-            <li>
-              <a href="<%= pre_reserva_path %>">
-                <i class="fa fa-free-code-camp"></i>
-                <span>Pré-reservas</span>
-              </a>
-            </li>
-            <li>
-              <a href="<%= email_contato_path %>">
-                <i class="fa fa-envelope"></i>
-                <span>Emails/contato</span>
-              </a>
-              </li>
-          <% end %>
-          
-          <% if current_user.administrador? %>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-cloud-upload"></i> CADASTROS
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li>
-                  <a href="#">
-                    <i class="fa fa-image"></i> Fotos/Sede
-                  </a>
-                </li>
-              </ul>
-            </li>
-          <% end %>
-
-        </ul>
-      </li>
-
-      <% if current_user.administrador? %>
+      <% if policy(User).index? %>
         <li class="treeview">
           <a href="">
-            <i class="fa fa-cog"></i> <span>ADMINISTRAÇÃO</span>
+            <i class="fa fa-folder"></i> <span>Notícias</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <a href="<%= noticias_path %>">
+                <i class="fa fa-eye"></i>
+                <span>Ver todas</span>
+              </a>
+            </li>
+            <li>
+              <a href="<%= new_noticia_path %>">
+                <i class="fa fa-plus-circle"></i>
+                <span>Cadastrar</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      <% end %>
+
+      <!-- Palavra do Presidente -->
+      <% if policy(User).index? %>
+        <li class="">
+          <a href="<%= palavras_presidente_path %>">
+            <i class="fa fa-commenting-o"></i>
+            <span>Palavra do Presidente</span>
+          </a>
+        </li>
+      <% end %>
+
+      <% if policy(User).index? %>
+        <li class="treeview">
+          <a href="">
+            <i class="fa fa-folder"></i> <span>Biblioteca</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <a href="<%=  %>">
+                <i class="fa fa-file-pdf-o "></i>
+                <span>Estatuto</span>
+              </a>
+            </li>
+            <li>
+              <a href="<%=  %>">
+                <i class="fa fa-file-pdf-o"></i>
+                <span>Tabela de valores</span>
+              </a>
+            </li>
+            <li>
+              <a href="<%=  %>">
+                <i class="fa fa-file-pdf-o"></i>
+                <span>Regimento Interno</span>
+              </a>
+            </li>
+            <li>
+              <a href="<%=  %>">
+                <i class="fa fa-file-pdf-o"></i>
+                <span>Regulamentos</span>
+              </a>
+            </li>
+            <li>
+              <a href="<%=  %>">
+                <i class="fa fa-tag"></i>
+                <span>Convênios</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      <% end %>
+
+      <% if policy(User).index? %>
+        <li class="treeview">
+          <a href="">
+            <i class="fa fa-cog"></i> <span>Usuários</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -61,14 +103,14 @@
           <ul class="treeview-menu">
             <li>
               <a href="<%= usuarios_path %>">
-                <i class="fa fa-users"></i>
-                <span>Usuários</span>
+                <i class="fa fa-eye"></i>
+                <span>Ver Todos</span>
               </a>
             </li>
             <li>
               <a href="<%= new_usuario_path %>">
-                <i class="fa fa-user-plus"></i>
-                <span>Cadastrar Usuário</span>
+                <i class="fa fa-plus-circle"></i>
+                <span>Cadastrar</span>
               </a>
             </li>
           </ul>

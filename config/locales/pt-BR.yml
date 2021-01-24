@@ -1,10 +1,13 @@
 pt-BR:
   activerecord:
     attributes:
-      agenciador:
-        como_conheceu_outro: "Outro"
-      candidato:
-        area_de_atuacao_ids: "Área de atuação"
+      noticia:
+        doc: 'Documento'
+        video: 'Video'
+        title: 'Título'
+        description: 'Descrição'
+      palavra_presidente:
+        description: 'Descrição'
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

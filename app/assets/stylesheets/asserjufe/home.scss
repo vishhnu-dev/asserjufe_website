@@ -1,0 +1,112 @@
+.asserjufe-apresentacao {
+    background-image: url(asset_path('banner/conheca.jpg'));
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    height:  150px !important;
+    img {
+    	height: 142px;
+    }
+}
+.noticias, .multiple-noticias {
+	padding: 35px auto;
+	h2, p {
+		font-style: oblique;
+	}
+	h2 {
+		margin-left: 15px;
+	}
+	.btn-news {
+		border:1px solid #269abc;
+		font-size: 24px;
+		border-radius: 30px;
+		color: $white-color;
+		background-color: #269abc;
+		&:hover {
+			color: $white-color;
+			background-color: #269abc;
+			border:1px solid #269abc;
+			font-weight: bold;
+		}
+	}
+
+	.owl-prev, .owl-next {
+        width: 50px !important;
+        height: 100px !important;
+        position: absolute;
+        top: 50% !important;
+        transform: translateY(-50%);
+        display: block !important;
+        border:0px solid black;
+        background-color: unset !important;
+	    outline: none;
+	    @media screen and ( max-width: 992px ) {
+	    	display: none !important;
+	    }
+    }
+    .owl-prev { left: -32px; }
+    .owl-next { right: -32px; }
+    .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
+}
+.msg-presidente {
+	background-color: #0D1C21;
+	.row {
+		padding: 55px 0px;
+	}
+}
+.banners {
+	background-color: #effdfd;
+	.sede-campestre {
+		padding: 15px 15px;
+		.title {
+	    	font-size: 45px;
+		}
+		img {
+			-webkit-clip-path: polygon(0 8%, 100% 0, 100% 100%, 0% 100%);
+		}
+		a {
+			&:hover {
+				text-decoration: none;
+			}
+			button {
+				border:2px solid $main-color;
+				font-size: 30px;
+    			border-radius: 30px;
+				&:hover {
+					background-color: $main-color;
+					color: $white-color;
+				}
+			}
+		}
+	}
+	.background {
+		background-image: url(asset_path('carousel/sede13.jpg'));
+	    background-size: cover !important;
+	    background-attachment: fixed !important;
+	    height:  300px !important;
+	    background-position: bottom;
+	    -webkit-clip-path: polygon(0 8%, 100% 0, 100% 100%, 0% 100%);
+	}
+	.convenios {
+		padding: 15px 15px;
+		.title {
+	    	font-size: 45px;
+		}
+		img {
+			-webkit-clip-path: polygon(0 8%, 100% 0, 100% 100%, 0% 100%);
+		}
+		a {
+			&:hover {
+				text-decoration: none;
+			}
+			button {
+				border:2px solid $main-color;
+				font-size: 30px;
+    			border-radius: 30px;
+				&:hover {
+					background-color: $main-color;
+					color: $white-color;
+				}
+			}
+		}
+	}
+}

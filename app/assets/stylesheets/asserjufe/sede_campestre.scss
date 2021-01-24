@@ -1,0 +1,32 @@
+.sede-content {
+	padding: 15px 15px;
+}
+
+.carousel {
+	padding: 35px 15px;
+	.owl-asserjufe {
+		.owl-next, .owl-prev {
+			position: absolute;
+			top: 40%;
+		    background: none !important;
+	    	border: none !important;
+	    	&:focus { outline: none; }
+			i {
+				font-size: 45px;
+				color: $secundary-color;
+			}
+		}
+		.owl-prev {
+			left: -50px;
+			@media screen and (max-width: 768px) {
+				left: 0px;
+			} 
+		}
+		.owl-next {
+			right: -50px;
+			@media screen and ( max-width: 768px ) {
+				right: 0px;
+			}
+		}
+	}
+}

@@ -3,13 +3,32 @@
 		background-color: $main-color;
 		.container {
 			.row {
-				padding: 6.6px 0px;
-				.sociais {
-					font-size: 26px;
-					i {
-					color: $white-color;
-					padding: 5px 2.5px;
+				padding: 6px 0px;
+				.login {
+					a {
+						color: $white-color;
+						font-size: 18px;
+						&:hover {
+							text-decoration: underline;
+						}
+						i {
+							color: $white-color;
+							padding: 9px 2.5px;
+						}
 					}
+					@media (min-width: 	768px) and (max-width: 	1199px) {
+							text-align: center;	
+					}
+				}
+				.sociais {
+					a{
+						font-size: 26px;
+						i {
+							color: $white-color;
+							padding: 5px 2.5px;
+						}
+					}
+					
 					.barra{
 						color: $white-color;
 						border-left: solid 2px;
@@ -54,6 +73,10 @@
 						height: 55px;
 						position: relative;
 						top: 6px;
+						@media screen and (max-width: 767px) {
+							margin-bottom: 8px !important;
+							margin-left: 15px;
+						}
 					}
 				}
 			}
@@ -67,19 +90,14 @@
 						font-size: 16px;
 						line-height: 2.4;
 						transition: 1000ms;
-						text-transform: uppercase;
 						color: $main-color;
 						&:hover {
-							background-color: #007B84;
 							transition: 1000ms;
-							color: $white-color;
+							color: $secundary-color;
 						}
 					}
 					.dropdown {
-						a {
-						}
 						display: relative;
-
 						&:hover ul {
 							display: block;
   						}
@@ -93,29 +111,4 @@
 			}
 		}
 	}	
-}
-@media screen and (max-width: 767px) {
- 	.main-header .container .row .sociais {
- 		padding-right: 0em;
-  	}
-  	.sub-header .container .navbar-header .navbar-toggle {
-  		padding-right: 1.1em;
-  		  	}
-  	.sub-header .container .navbar-header .logo .img-fluid {
-  		padding-left: 1em;
-  	}	
-  	.sub-header .container .menu .navbar-nav {
-  		position: relative !important;
-  		right: 2em !important;
-  	}
-  	.sub-header .container .menu .navbar-nav .dropdown {
-  		overflow: hidden !important;
-  	} 
-  	.sub-header .container .menu .navbar-nav .dropdown .dropdown-menu a {
-  		transition: 0ms;
-
-  	}
-  	.sub-header .container {
-  		padding-bottom: 6px;
-  	}	
 }

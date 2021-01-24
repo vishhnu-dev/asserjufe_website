@@ -9,6 +9,8 @@ Bundler.require(*Rails.groups)
 module AsserjufeWebsite
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 5.2
+
     config.generators do |g|
       g.orm             :active_record
       g.template_engine :erb
@@ -25,7 +27,6 @@ module AsserjufeWebsite
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     # Locale pt-BR
-    config.load_defaults 5.2
     config.i18n.default_locale            = :"pt-BR"
     I18n.enforce_available_locales        = false
     config.time_zone                      = "Brasilia"

@@ -11,8 +11,12 @@ class UserPolicy < ApplicationPolicy
 		user.administrador?
 	end
 
-	def create?
+	def show?
 		user.administrador?
+	end
+
+	def create?
+		new?
 	end
 
 	def update?

@@ -1,35 +1,54 @@
-.contatos-form {
-	.form-control {
-		border: 1px solid #ccc !important;
-    	border-radius: 4px !important;
-	}
-}
-.contact-form {
-	background-color: #007B84;
-	form {
-		padding: 15px 15px;
-		label {
-			color: $white-color;
-		}
-		button {
-			color: $main-color;
-		}
-	}
-}
-.contatos-helper {
-	p {
-		color: $main-color;
-		font-size: 20px;
-		a {
-			small {
-				font-size: 15px;
-			}
-		}
-	}
-}
-.contato {
+ .banner {
+ 	background-image: url(asset_path('banner/playground.jpg'));
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    height:  300px !important;
+    background-position: center;
+ }
+
+ .contato-page {
+ 	padding: 55px 0px;
+ 	background-color: #245236;
 	h2 {
 		margin-bottom: 20px !important;
 	}
-	margin-bottom: 5px;
+	.contact-form {
+		form {
+			padding: 15px 15px;
+			label {
+				font-size: 16px;
+				color: $white-color;
+			}
+			button {
+				color: $white-color;
+				font-size: 18px;
+			}
+		}
+		.contatos-form {
+			.form-control {
+				border: 1px solid #ccc !important;
+		    	border-radius: 4px !important;
+			}
+			.area {
+				resize: none;
+
+			}
+		}
+	}
+	.contatos-helper {
+		margin-top: 30px;
+		p {
+			color: $white-color;
+			font-size: 20px;
+			a {
+				color: $secundary-color;
+				&:hover {
+					color: $white-color;
+				}
+				small {
+					font-size: 15px;
+				}
+			}
+		}
+	}
 }

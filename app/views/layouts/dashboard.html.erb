@@ -28,13 +28,15 @@
 
       <div class="content-wrapper" style="min-height: 901px;">
         <section class="content-header container-fluid">
-          <!-- Messages -->
-          <%# render 'layouts/shared/messages' %>
-          <%# if devise_controller? %>
-            <%# render 'layouts/devise_messages' %>
-          <%# end %>
 
-          <h1><%= session[:page_title] ? session[:page_title] : 'Defina o título na variável de sessão :page_title' %></h1>
+          <!-- Messages -->
+          <%= render partial: 'layouts/messages' %>
+          <% if devise_controller? %>
+            <%= render partial: 'layouts/devise_messages' %>
+          <% end %>
+          <% if action_name != 'dashboard' %>
+            <h1 class="secundary-color"><%= session[:page_title] ? session[:page_title] : 'Defina o título na variável de sessão :page_title' %></h1>
+          <% end %>
         </section>
 
         <section class="content" style="padding: 15px;">

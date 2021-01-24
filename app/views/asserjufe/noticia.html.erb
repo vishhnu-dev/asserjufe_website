@@ -1,0 +1,76 @@
+<div class="container-fluid page-start">
+	<div class="container page-title">
+		<div class="row">
+			<div class="col-md-12 title">
+	            <h1>Fique por dentro das novidades</h1>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container main-noticia-page" style="<%= @noticia.doc.present? or @noticia.video.present? ? '' : 'margin-bottom: 5px;'  %>">
+	<div class="row">
+		<% if @noticia.imagem.present? %>
+			<div class="col-md-5" style="margin-top: 5px;">
+				<%= image_tag(@noticia.imagem.url, class: 'img-responsive') %>
+			</div>
+		<% end %>
+
+		<div class="<%= @noticia.imagem.present? ? 'col-md-7 ' : 'col-md-12' %> ">
+			<h2 class="main-color"><i class="fa fa-comments-o"></i>
+				<%= @noticia.title %>
+			</h2>
+			<blockquote>
+				<p class="lead main-color text-justify">
+					<%= @noticia.description %>
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="row">
+		<% if @noticia.video.present? %>
+			<div class="<%= @noticia.doc.present? ? 'col-md-6 ' : 'col-md-12'  %>" style="margin-top: 5px;">
+				<%= video_tag(@noticia.video, :controls => true, style: 'object-fit: cover;
+    width: 100%; height: 500px;')  %>
+			</div>
+		<% end %>
+
+		<% if @noticia.doc.present? %>
+			<div class="col-md-6" style="margin-top: 5px;">
+				<object data="<%= @noticia.doc.url %>" style="width:100%; height: 500px"></object>	
+			</div>	
+			
+		<% end %>
+	</div>
+	<% if Noticia.count != 1 and Noticia.count != 0 %>
+		<div class="row multiple-noticias">
+			<div class="container">
+			  	<div class="noticias">					
+					<h1 class="main-color">
+						<i class="fa fa-newspaper-o"> </i> 
+						<b>Mais novidades</b>
+					</h1>
+					<div style="width:175px; height:5px; background-color: #007C61;"></div>
+					<div class="owl-carousel owl-theme owl-news">
+						<% @noticias.each do |news| %>
+							<a href="<%= noticia_visualizar_path(news.title)  %>">
+								<h2 class="secundary-color text-justify "><%= news.title %></h2>
+								<% if news.imagem.present? %>
+									<div class="col-md-4">
+										<img class="img-responsive" src="<%= news.imagem %>">
+									</div>
+									<div class="col-md-6">
+								<% else %>
+									<div class="col-md-12 item">
+								<% end %>
+									<p class="lead main-color text-justify" style="margin-bottom: 0px;"><b><%= news.description %></b></p>
+									</p>
+									<p class="main-color">Ler mais...</p>
+								</div>
+							</a>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
