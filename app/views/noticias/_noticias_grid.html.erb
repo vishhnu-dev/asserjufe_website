@@ -6,7 +6,7 @@
 		noticia.title
 	end
 
-	g.column name: 'Descricão', attribute: 'description', class: 'text-justify', html: { style: 'width: 500px !important;' } do |noticia|
+	g.column name: 'Descricão', attribute: 'description', class: 'text-justify', html: { style: 'width: 800px !important;' } do |noticia|
 		content_tag(:p, noticia.description, class: 'main-color')
 	end
 
@@ -40,4 +40,9 @@
 		end
 	end
  end %>
-<%= render partial: 'modal' %>
+ <% if action_name == "dashboard" %>
+	<%= render partial: 'noticias/modal' %> 	
+ <% else %>
+ 	<%= render partial: 'modal' %> 
+ <% end %>
+

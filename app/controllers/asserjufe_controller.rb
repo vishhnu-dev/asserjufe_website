@@ -3,7 +3,7 @@ class AsserjufeController < ApplicationController
 
   def home
   	@page_title = "Página Inicial"
-    @noticias = Noticia.all
+    @noticias = Noticia.all.order(created_at: :desc).limit(4)
     @palavras = PalavraPresidente.all
   end
   

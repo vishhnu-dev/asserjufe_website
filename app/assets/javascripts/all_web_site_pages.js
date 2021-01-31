@@ -1,4 +1,16 @@
 $(document).on('turbolinks:load', function(){
+    
+    //data-fancybox gallery
+    $().fancybox({
+        selector : '.owl-item:not(.cloned) a',
+            hash   : false,
+            thumbs : {
+                autoStart : false
+            },
+        buttons : [
+            'close'
+        ]
+    });
 
     // scroll up animation
     $(window).scroll(function () {
@@ -27,8 +39,8 @@ $(document).on('turbolinks:load', function(){
         loop: true,
         nav: true,
         navText:["<i class='fa fa-chevron-left' aria-hidden='true'></i>","<i class='fa fa-chevron-right' aria-hidden='true'></i>"],
-        autoplay: false,
-        autoplayTimeout: 8000,
+        autoplay: true,
+        autoplayTimeout: 4000,
         responsive: {
              // breakpoint from 0 up
             0 : {
@@ -43,6 +55,41 @@ $(document).on('turbolinks:load', function(){
                 items: 1
             }
         }
+    });
+
+    $('.owl-conv').owlCarousel({
+        dots: false,
+        autoHeight: false,
+        loop: true,
+        nav: false,
+        margin: 5,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        responsive: {
+             // breakpoint from 0 up
+            0 : {
+                items: 3
+            },
+            // breakpoint from 480 up
+            480 : {
+                items: 3
+            },
+            // breakpoint from 768 up
+            1200 : {
+                items: 3
+            }
+        }
+    });
+
+    $('.owl-banners').owlCarousel({
+        dots: false,
+        autoHeight: true,
+        items: 1,
+        loop: false,
+        nav: true,
+        navText:["<i class='fa fa-chevron-left' aria-hidden='true'></i>","<i class='fa fa-chevron-right' aria-hidden='true'></i>"],
+        autoplay: true,
+        autoplayTimeout: 4000
     });
 
     // MASCARA DE TELEFONE //

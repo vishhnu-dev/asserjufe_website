@@ -1,32 +1,27 @@
-.sede-content {
-	padding: 15px 15px;
-}
-
-.carousel {
-	padding: 35px 15px;
-	.owl-asserjufe {
-		.owl-next, .owl-prev {
-			position: absolute;
-			top: 40%;
-		    background: none !important;
-	    	border: none !important;
-	    	&:focus { outline: none; }
-			i {
-				font-size: 45px;
-				color: $secundary-color;
-			}
-		}
-		.owl-prev {
-			left: -50px;
-			@media screen and (max-width: 768px) {
-				left: 0px;
-			} 
-		}
-		.owl-next {
-			right: -50px;
-			@media screen and ( max-width: 768px ) {
-				right: 0px;
-			}
+.gallery {
+	.owl-gallery {
+		.owl-prev, .owl-next {
+	        width: 50px !important;
+	        height: 100px !important;
+	        position: absolute;
+	        top: 50% !important;
+	        transform: translateY(-50%);
+	        display: block !important;
+	        border:0px solid black;
+	        background-color: unset !important;
+		    outline: none;
+		    @media screen and ( max-width: 992px ) {
+		    	display: none !important;
+		    }
+	    }
+	    .owl-prev { left: -50px; }
+	    .owl-next { right: -50px; }
+	    .owl-prev i, .owl-next i {transform : scale(3,5); color: $secundary-color;}
+	}
+	.reservas {
+		h2	{
+			padding: 0px 0px;
+			margin-top: 0px;
 		}
 	}
 }

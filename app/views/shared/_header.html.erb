@@ -48,7 +48,7 @@
         <div id="navbar" class="navbar-collapse collapse menu">
         	<ul class="nav navbar-nav">
         		<li>
-	            	<a href="<%= root_path %>">Página Inicial</a>
+	            	<a href="<%= root_path %>">Início</a>
 	            </li>
 	            <li>
 	            	<a href="<%= a_asserjufe_path %>">Sobre a Asserjufe</a>
@@ -62,8 +62,16 @@
    				<li>
    					<a href="<%= convenios_path %>">Convênios</a>
    				</li>
-   				<li>
-   					<a href="<%= convenios_path %>">Biblioteca</a>
+   				<li class="dropdown">
+   					<a class="dropdown-toggle" href="javacript:void(0)">Biblioteca
+   						<span class="caret"></span>
+   					</a>
+   					<ul class="dropdown-menu">
+                        <li><a href="">Estatuto</a></li>
+                        <li><a href="">Tabela de valores</a></li>
+                        <li><a href="">Regimento interno</a></li>
+                        <li><a href="">Regulamentos</a></li>                 
+                    </ul>
    				</li>
             	<li>
             		<a class="<%= @page_title == 'Contato' ? 'active' : '' %>" href="<%= contato_path %>">Contato</a>

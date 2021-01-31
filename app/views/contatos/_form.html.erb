@@ -1,15 +1,15 @@
 <%= form_for @contato, :url => {:controller => "contatos", :action => "create" } do |f| %>
 
 	<div class="row">
-	    <div class="col-md-6">
-	      <%= render partial: 'layouts/form_errors', locals: {model: @contato} %>
+	    <div class="col-md-12">
+	      <%= render partial: 'layouts/messages' %>
 	    </div>
   	</div>
 	<div class="row contatos-form">
 		<div class="col-md-6">
 		  <div class="form-group">
 		    <label>Nome completo</label>
-		    <%= f.text_field :nome, class: 'form-control uppercase' %>
+		    <%= f.text_field :nome, class: 'form-control captalize' %>
 		  </div>
 		</div>
 		<div class="col-xs-6 col-md-6">
@@ -21,7 +21,7 @@
 		<div class="col-xs-6 col-md-6">
 		  <div class="form-group">
 		    <label>Telefone</label>
-		    <%= f.text_field  :telefone, class: 'form-control phone_with_ddd' %>
+		    <%= f.text_field :telefone, class: 'form-control phone_with_ddd' %>
 		  </div>
 		</div>
 		<div class="col-xs-12 col-md-6">

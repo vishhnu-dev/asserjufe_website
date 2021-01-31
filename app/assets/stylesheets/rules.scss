@@ -116,10 +116,12 @@ body .custom-dropdown-container .expand-multi-select-icon {
 	display: none !important;
 }
 
-body a {
-	&:hover {
-		color: $main-color;
-		font-weight: 400;
+body {
+	a {
+		&:hover {
+			color: $main-color;
+			font-weight: 400;
+		}
 	}
 }
 
@@ -138,6 +140,9 @@ body a {
 
 .uppercase {
 	text-transform: uppercase;
+}
+.captalize {
+	text-transform: capitalize;
 }
 
 .btn {

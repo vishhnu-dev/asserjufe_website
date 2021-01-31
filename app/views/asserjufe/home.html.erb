@@ -1,41 +1,46 @@
-<!-- Apresentação -->
-<div class="asserjufe-apresentacao">
-	<div class="overlay">
-		<div class="container">
-			<img src="<%= image_path 'asserjufe-22-anos.jpg' %>" class="img-responsive">
+<!-- Banners Asserjufe -->
+<div class="asserjufe-banners">
+	<div class="owl-carousel owl-theme owl-banners">
+		<div class="item">
+			<img class="img-responsive" src="<%= image_path 'banners/banner.png' %>"></img>
+		</div>
+		<div class="item">
+			<img class="img-responsive" src="<%= image_path 'banners/banner.png' %>"></img>
 		</div>
 	</div>
 </div>
 <% if @noticias.present? %>
 	<div class="container">
-		<div class="row multiple-noticias">
+		<div class="news-home" style="margin-bottom: 20px;">
 			<div class="container">
-			  	<div class="noticias">					
-					<h1 class="main-color">
-						<i class="fa fa-newspaper-o"> </i> 
-						Notícias
-					</h1>
-					<div style="width:175px; height:5px; background-color: #007C61;"></div>
-					<div class="owl-carousel owl-theme owl-news">
-						<% @noticias.each do |news| %>
-							<a href="<%= noticia_visualizar_path(news.title) %>">
-								<h2 class="main-color text-justify"> <b><%= news.title %></b></h2>
-								<% if news.imagem.present? %>
-									<div class="col-md-4">
-										<img class="img-responsive" src="<%= news.imagem %>">
-									</div>
-									<div class="col-md-8 item">
-								<% else %>
-									<div class="col-md-12 item">
-								<% end %>
-									<p class="lead main-color text-justify" style="margin-bottom: 0px;"><%= news.description %></p>
-									</p>
-									<p class="main-color">Ler mais...</p>
-								</div>
-							</a>
-						<% end %>
-					</div>
-				</div>
+				<!-- Título -->
+				<h2 class="secundary-color text-center">
+					<!-- #Asserjufe título em cores principais -->
+					<p style="font-size:60px;" class="main-color">#Destaques <b style="font-size:60px;"><text class="secundary-color">As</text><text style="color: turquoise;">ser</text><text class="secundary-color"></text><text class="secundary-color">ju</text><text style="color: turquoise;">fe</b>
+					</p>
+				</h2>
+
+			</div>
+			<!-- corpo -->
+			<div class="row">
+				<% @noticias.each do |news| %>
+					<div class="col-md-6">
+						<a href="<%= noticia_visualizar_path(news.title) %>">
+							<h2 class="white-color text-center" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %> padding: 15px auto;"> 
+								<b style="vertical-align: -webkit-baseline-middle; line-height: 2;"><%= truncate(news.title, :lenght =>16, :omission => '...') %></b>
+							</h2>
+							<blockquote>
+								<p class="lead main-color text-center" style="margin-bottom: 0px;">
+									” <%= truncate(news.description, :length => 144, :omission => '[Ler mais...]' )%> ”
+								</p>
+							</blockquote>
+							<p class="main-color">
+								<small style="font-size: 14px;">Publicado em:</small>
+								<b> <%= news.created_at.strftime("%d/%m/%Y às %Hh%M") %></b>
+							</p>
+						</a>
+					</div>		
+				<% end %>	
 			</div>
 		</div>
 	</div>
@@ -45,7 +50,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h2 class="white-color"><i class="fa fa-comments-o"></i><b> Mensagem do Presidente</b></h2>
+					<h2 class="white-color" style="font-size: 40px;"><i class="fa fa-comments-o"></i><b> Mensagem do Presidente</b></h2>
 					<% @palavras.each do |p| %>
 						<blockquote>
 							<p class="lead white-color text-justify"><%= p.description %></p>
@@ -66,7 +71,7 @@
 				<h2 class="secundary-color title"><b>Sede Campestre</b></h2>
 				<p class="lead main-color">Venha com a <b>família</b> ou com seus <b>amigos</b> para aproveitar o <b>melhor da vida</b> com a gente <b>!</b></p>
 				<a href="<%= sede_campestre_path %>">
-					<button class="main-color btn btn-link btn-lg">Saiba mais</button>
+					<button style="text-decoration: none;" class="main-color btn btn-link btn-lg">Saiba mais</button>
 				</a>
 			</div>
 		</div>
@@ -80,12 +85,16 @@
 			<div class="col-md-6">
 				<h2 class="secundary-color title"><b>Convênios Asserjufe</b></h2>
 				<p class="lead main-color text-justify"><b> Oferecemos</b> muitos <b>benefícios</b> e <b>facilidades</b> para nossos <b> associados !</b> <b>Convênios</b> com preços lá em <b>baixo</b> em relação ao <b>mercado.</b></p>
-				<a href="<%= sede_campestre_path %>">
-					<button class="main-color btn btn-link btn-lg">Saiba mais</button>
+				<a href="<%= convenios_path %>">
+					<button style="text-decoration: none;" class="main-color btn btn-link btn-lg">Saiba mais</button>
 				</a>
 			</div>
 			<div class="col-md-6">
-				<img src="<%= image_path 'banner/entrada_sede.jpg' %>" class="img-responsive">
+				<div class="owl-carousel owl-theme owl-conv">
+					<img class="img-responsive" src="<%= image_path 'logosParceiros/Tim.png' %>" style="background-color: #004691; padding: 6px 6px; display: inline; margin-top: 13px;">
+					<img src="<%= image_path 'logosParceiros/Unimed.png' %>">
+					<img src="<%= image_path 'logosParceiros/tecbiz.png' %>">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -95,20 +104,19 @@
 
 	<div class="container">
 		<div class="row sede-campestre">
-			<div class="col-md-6">
-				<img src="<%= image_path 'banner/entrada_sede.jpg' %>" class="img-responsive">
+			<div class="col-md-6 text-center">
+				<img src="<%= image_path 'asserjufe-22-anos.jpg' %>" style="margin-top: 50px;">
 			</div>
 			<div class="col-md-6">
 				<h2 class="secundary-color title"><b>Seja um associado</b></h2>
-				<p class="lead main-color text-justify">São muitas <b>vantagens</b> para você e sua <b>família.</b> Nossos <b>associados</b> possuem uma gama de convênios como planos telefônicos, Unimed Odonto e muito mais. <b>Confira !.</b></p>
-				<a href="<%= sede_campestre_path %>">
-					<button class="main-color btn btn-link btn-lg">Saiba mais</button>
+				<p class="lead main-color text-justify">São muitas <b>vantagens</b> para você e sua <b>família.</b> Nossos <b>associados</b> possuem uma gama de convênios como planos telefônicos, Unimed Odonto e muito mais. <b>Confira !</b></p>
+				<a href="<%= associe_se_path %>">
+					<button style="text-decoration: none;" class="main-color btn btn-link btn-lg">Saiba mais</button>
 				</a>
 			</div>
 		</div>
 	</div>
 </div>
-
 
 <!-- google maps -->
 <%= render 'shared/google_maps', src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.90768647313!2d-51.23905238481813!3d-30.03950613800758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9519791c02f8d6c3%3A0x67a9c27f6d99e242!2sASSERJUFE!5e0!3m2!1spt-BR!2sbr!4v1603592591117!5m2!1spt-BR!2sbr" %>

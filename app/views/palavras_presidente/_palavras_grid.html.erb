@@ -9,7 +9,7 @@
 	g.column do |palavra|
 		if policy(PalavraPresidente).edit?
 			link_to edit_palavra_presidente_path(palavra), data: { toggle: "tooltip", placement: "left", title: "Editar" } do
-	          	fa_icon 'pencil', style: 'font-size:20px;', class: 'main-color'
+	          	fa_icon 'pencil', style: 'font-size:20px; line-height: 3.7;', class: 'main-color'
 	      	end
 	    end
 	end
