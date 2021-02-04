@@ -106,15 +106,24 @@
 			}
 		}
 	}
-	.background {
-		background-image: url(asset_path('carousel/sede13.jpg'));
+	.background1 {
+		background-image: url(asset_path('gallery/larg/05.PNG'));
 	    background-size: cover !important;
 	    background-attachment: fixed !important;
-	    height:  400px !important;
+	    height:  450px !important;
+	    background-position: bottom;
+	    -webkit-clip-path: polygon(0 8%, 100% 0, 100% 100%, 0% 100%);
+	}
+	.background2 {
+		background-image: url(asset_path('gallery/larg/15.PNG'));
+	    background-size: cover !important;
+	    background-attachment: fixed !important;
+	    height:  450px !important;
 	    background-position: bottom;
 	    -webkit-clip-path: polygon(0 8%, 100% 0, 100% 100%, 0% 100%);
 	}
 	.convenios {
+		margin: 100px 0px;
 		padding: 15px 15px;
 		.title {
 	    	font-size: 45px;

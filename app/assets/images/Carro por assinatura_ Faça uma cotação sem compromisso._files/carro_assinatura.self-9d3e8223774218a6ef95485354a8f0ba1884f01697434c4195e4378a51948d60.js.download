@@ -1,0 +1,48 @@
+$(document).on('turbolinks:load', function() {
+	/* back to form */
+	$(window).scroll(function() {
+		if ($(this).scrollTop()) {
+		    $('#toTop').fadeIn();
+		} else {
+		    $('#toTop').fadeOut();
+		}
+	});
+
+	$("#toTop").click(function() {
+		$("html, body").animate({scrollTop: 475}, 1000);
+	});
+
+	// Detalhes dos carros em modal
+	$('.modal-item, .modal-carros-busca').click(function(){
+		let titulo = this.dataset.title;
+		let id = this.dataset.id;
+
+		$.ajax({
+			url: '/carro-por-assinatura/descricao/'+id,
+			method: 'GET',
+			success: function(data){
+				$('#modal_carro_assinatura').modal('hide');
+				$('#modal_carro_assinatura .modal-title').html(`Detalhes do carro <strong>${titulo}</strong>`);
+				$('#modal_carro_assinatura .modal-body').html(data);				
+				$('#modal_carro_assinatura .modal-footer .go-to-checkbox').prop('data-target',id);
+				$('#modal_carro_assinatura .modal-footer .go-to-checkbox').attr('data-target',id);
+				$('#modal_carro_assinatura').modal('show');
+			}
+		}).done(function(){
+			/* checkbox => checked, on img click */
+			$(".go-to-checkbox").on("click", function (){
+
+				$('#modal_carro_assinatura').modal('hide');
+				$('#modal-backdrop').remove();
+				$('.select_carros').prop("selected", false);				
+				$('.select_carros').val(id)
+				$('.select_carros').selectpicker('refresh');
+				$("html, body").animate({scrollTop: 475});
+				$('#clientes_rentcar_nome_completo').focus();
+			});
+		});
+	});
+});
+
+
+

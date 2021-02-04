@@ -15,9 +15,10 @@
 //= require jquery/jquery.mask
 //= require turbolinks
 //= require bootstrap/bootstrap
-//= require bootstrap/datepicker
 //= require wice_grid
 //= require owl-carousel/owl.carousel.min
 //= require admin-lte/adminlte
 //= require fancy-box
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .

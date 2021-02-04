@@ -1,0 +1,12 @@
+<% if params[:file] == "estatuto" %>
+	<object data="<%= @documentos.estatuto %>" style="width:100%; height: 750px"></object>	
+
+<% elsif params[:file] == "tabela_valores" %>
+	<object data="<%= @documentos.tabela_valores %>" style="width:100%; height: 750px"></object>
+
+<% elsif params[:file] == "regimento_interno" %>
+	<object data="<%= @documentos.regimento_interno %>" style="width:100%; height: 750px"></object>	
+
+<% else %>
+	<object data="<%= @documentos.regulamento %>" style="width:100%; height: 750px"></object>	
+<% end %>

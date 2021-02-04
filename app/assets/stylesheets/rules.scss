@@ -150,3 +150,14 @@ body {
 		outline: none;
 	}
 }
+.pad {
+	padding: 25px 0px;
+	.system-author {
+		&:hover {
+			color: $white-color;
+		}
+		&:focus, &:active {
+			color: #eee !important;
+		}
+	}	
+}

@@ -25,7 +25,7 @@
 				<text class="barra"></text>
 				<!-- phone -->
 				<i class="fa fa-phone fone"></i>
-				<text><strong class="numero">(51) 3225.0356</strong></text>
+				<text><strong class="numero">51 3225.0356</strong></text>
 			</div>	
 		</div>
 	</div>		
@@ -62,17 +62,32 @@
    				<li>
    					<a href="<%= convenios_path %>">Convênios</a>
    				</li>
-   				<li class="dropdown">
-   					<a class="dropdown-toggle" href="javacript:void(0)">Biblioteca
-   						<span class="caret"></span>
-   					</a>
-   					<ul class="dropdown-menu">
-                        <li><a href="">Estatuto</a></li>
-                        <li><a href="">Tabela de valores</a></li>
-                        <li><a href="">Regimento interno</a></li>
-                        <li><a href="">Regulamentos</a></li>                 
-                    </ul>
-   				</li>
+   				<% if @documentos.present? %>
+	   				<li class="dropdown">
+	   					<a class="dropdown-toggle" href="javacript:void(0)">Biblioteca
+	   						<span class="caret"></span>
+	   					</a>
+	   					<ul class="dropdown-menu">
+	   						<% @documentos.each do |doc| %>
+		                      	<% if doc.estatuto.present? %>
+		                        	<li><%= link_to 'Estatuto', 'javascript:;', data: { title: "Estatuto", count: doc.id, file: "estatuto"}, class: 'btn-doc-header'  %></li> 	
+		                        <% end %>
+
+		                        <% if doc.tabela_valores.present? %>
+		                        	<li><%= link_to 'Tabela de Valores', 'javascript:;', data: { title: "Tabela de Valores", count: doc.id, file: "tabela_valores"}, class: 'btn-doc-header'  %></li> 	
+		                        <% end %>
+
+		                        <% if doc.regimento_interno.present? %>
+		                        	<li><%= link_to 'Regimento Interno', 'javascript:;', data: { title: "Regimento Interno", count: doc.id, file: "regimento_interno"}, class: 'btn-doc-header'  %></li> 	
+		                        <% end %>
+
+		                        <% if doc.regulamento.present? %>
+		                        	<li><%= link_to 'Regulamento', 'javascript:;', data: { title: "Regulamento", count: doc.id, file: "regulamento"}, class: 'btn-doc-header'  %></li> 	
+		                        <% end %>
+	                        <% end %>              
+	                    </ul>
+	   				</li>
+   				<% end %>
             	<li>
             		<a class="<%= @page_title == 'Contato' ? 'active' : '' %>" href="<%= contato_path %>">Contato</a>
             	</li>
@@ -80,3 +95,4 @@
         </div>
     </div>
 </nav>
+<%= render 'modal' %>

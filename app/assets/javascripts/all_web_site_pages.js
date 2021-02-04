@@ -1,15 +1,21 @@
 $(document).on('turbolinks:load', function(){
-    
+    // refresh carousel 
+    $('.owl-banners').trigger('refresh.owl.carousel');
+    $('.owl-gallery').trigger('refresh.owl.carousel');
+
     //data-fancybox gallery
-    $().fancybox({
-        selector : '.owl-item:not(.cloned) a',
-            hash   : false,
-            thumbs : {
-                autoStart : false
-            },
-        buttons : [
-            'close'
-        ]
+    $('[data-fancybox="gallery"]').fancybox({
+        buttons : ['close', 'thumbs', 'slideShow'],
+        hash : false,
+        share : {
+            url : function( instance, item ) {
+                if (item.type === 'inline' && item.contentType === 'video') {
+                    return item.$content.find('source:first').attr('src');
+                }
+
+                return item.src;
+            }
+        }
     });
 
     // scroll up animation
@@ -80,7 +86,7 @@ $(document).on('turbolinks:load', function(){
             }
         }
     });
-
+    
     $('.owl-banners').owlCarousel({
         dots: false,
         autoHeight: true,
@@ -103,15 +109,45 @@ $(document).on('turbolinks:load', function(){
       }
     };
     $('.phone_with_ddd').mask(pwdbehavior, pwdptions);
+    // datetime
+    $('.date_time').mask('00/00/0000 00:00:00',{placeholder:"__/__/____ __:__:__"});
 
+    $('body').on('focus', '.date_time', function() {
+        $('.date_time').datetimepicker({
+            sideBySide: true,
+            format: 'DD/MM/YYYY HH:mm',
+            icons: {
+              time: "fa fa-clock-o",
+              date: "fa fa-calendar",
+              up: "fa fa-arrow-up",
+              down: "fa fa-arrow-down",
+              next: "fa fa-arrow-right",
+              previous: "fa fa-arrow-left"
+            }
+        });
+    });
+    
     /* Menu scroll */
     $('a[href^="#"]').on('click',function (e) {
         e.preventDefault();
         var target = this.hash;
         $target = $(target);
         $('html, body').stop().animate({
-            'scrollTop':  $target.offset().top - 68
+            'scrollTop':  $target.offset().top
         }, 900, 'swing', function () {
         });
     });
+
+    $('.phone_with_ddd').mask(pwdbehavior, pwdptions);
+
+    // MASCARA DE TELEFONE //
+    var pwdbehavior = function (val) {
+        return val.replace(/\D/g, '').length == 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+    },
+    pwdptions = {
+    placeholder: "(__) _____-____",
+    onKeyPress: function(val, e, field, options) {
+        field.mask(pwdbehavior.apply({}, arguments), options);
+      }
+    };
 });

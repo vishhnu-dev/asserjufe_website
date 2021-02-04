@@ -1,5 +1,6 @@
 class AsserjufeController < ApplicationController
   before_action :set_noticia, only: [:noticia]
+  before_action :docs
 
   def home
   	@page_title = "Página Inicial"
@@ -17,6 +18,7 @@ class AsserjufeController < ApplicationController
 
   def sede_campestre
   	@page_title = "Sede campestre"
+    @pre_reserva = PreReserva.new
   end
 
   def associe_se
@@ -40,5 +42,13 @@ class AsserjufeController < ApplicationController
   private
     def set_noticia
       @noticia = Noticia.find_by(title: params[:title])
+    end
+
+    def docs
+      @documentos = Documento.all
+    end
+
+    def visualizar_doc
+      render 'arquivo'
     end
 end

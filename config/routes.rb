@@ -8,14 +8,21 @@ Rails.application.routes.draw do
 	get 'contato' => 'asserjufe#contato', as: :contato
 	get 'noticia/:title' => 'asserjufe#noticia', as: :noticia_visualizar
 
-	# backend
+	# /administracao
 	get 'administracao' => 'backend#dashboard', :as => 'backend'
 
 	resources :noticias, path: 'noticias', path_names: { new: 'cadastrar', edit: 'atualizar'}
 	resources :palavras_presidente, path: 'palavra-do-presidente', path_names: { new: 'cadastrar', edit: 'atualizar'}
-	resources :contatos
+	resources :contatos, path: 'fale-conosco'
+	resources :documentos, path: 'biblioteca', path_names: { new: 'cadastrar', edit: 'atualizar'}
+	resources :pre_reservas, path: 'pre-reserva', path_names: { new: 'reservar', edit: 'atualizar reserva'}
 
-	get 'noticias/uploads/:id/:filetype' => 'noticias#file', :as => 'noticia_file'
+	#visualizador de arquivos/noticias
+	get 'noticias/uploads/:id/:filetype' => 'noticias#file'
+	#visualizador de arquivos/documentos
+	get 'documentos/uploads/:id/:file' => 'documentos#file'
+	# header biblioteca
+	get 'biblioteca/docs/:id/:file' => 'asserjufe#visualizar_doc'
 
 	# Usuarios # has to stand before devise routes
 	get    'usuarios'            => 'controle_usuarios#index'

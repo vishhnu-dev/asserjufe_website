@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){
+	
 	$('.btn-file').click(function(){
-
 		let id = this.dataset.id;
 		let filetype = this.dataset.filetype;
 

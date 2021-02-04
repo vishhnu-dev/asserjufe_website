@@ -1,0 +1,25 @@
+<%= grid(@documentos_grid) do |g|
+	g.blank_slate  do content_tag :div, "Nenhum registro encontrado", class: 'well' end
+
+	g.column name: 'Estatuto', attribute: 'estatuto' do |doc|
+		doc.estatuto.present? ? button_tag(fa_icon('search', text: 'Visualizar Estatuto'), type: 'button', class: 'btn btn-doc text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar", id: doc.id, file: 'estatuto' }) : label_status('N/A', 'red')
+	end
+	g.column name: 'Tabela Valores', attribute: 'tabela_valores' do |doc|
+		doc.tabela_valores.present? ? button_tag(fa_icon('search', text: 'Visualizar Tabela Valores'), type: 'button', class: 'btn btn-doc text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar", id: doc.id, file: 'tabela_valores' }) : label_status('N/A', 'red')
+	end
+	g.column name: 'Regimento Interno', attribute: 'regimento_interno' do |doc|
+		doc.regimento_interno.present? ? button_tag(fa_icon('search', text: 'Visualizar Regimento Interno'), type: 'button', class: 'btn btn-doc text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar", id: doc.id, file: 'regimento_interno' }) : label_status('N/A', 'red')
+	end
+	g.column name: 'Regulamento', attribute: 'regulamento' do |doc|
+		doc.regulamento.present? ? button_tag(fa_icon('search', text: 'Visualizar Regulamento'), type: 'button', class: 'btn btn-doc text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar", id: doc.id, file: 'regulamento' }) : label_status('N/A', 'red')
+	end
+	g.column do |doc|
+		if policy(Documento).edit?
+			link_to edit_documento_path(doc), data: { toggle: "tooltip", placement: "left", title: "Editar documentos" } do
+	          	fa_icon 'pencil', style: 'font-size:20px;', class: 'main-color'
+	      	end
+	    end
+	end
+end %>
+
+<%= render 'modal' %>
