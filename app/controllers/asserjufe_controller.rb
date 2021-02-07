@@ -4,7 +4,7 @@ class AsserjufeController < ApplicationController
 
   def home
   	@page_title = "Página Inicial"
-    @noticias = Noticia.all.order(created_at: :desc).limit(4)
+    @noticias = Noticia.all.order(created_at: :asc).limit(4)
     @palavras = PalavraPresidente.all
   end
   
@@ -36,12 +36,12 @@ class AsserjufeController < ApplicationController
 
   def noticia
     @page_title = @noticia.title
-    @noticias = Noticia.where.not(id: @noticia.id)
+    @noticias = Noticia.where.not(slug: @noticia.slug)
   end
 
   private
     def set_noticia
-      @noticia = Noticia.find_by(title: params[:title])
+      @noticia = Noticia.find_by(slug: params[:slug])
     end
 
     def docs

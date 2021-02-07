@@ -46,3 +46,38 @@
 
 	}
 }
+.background1 {
+	background-image: url(asset_path('gallery/larg/10.PNG'));
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    height:  400px !important;
+    background-position: bottom;
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 30%, 100% 0, 100% 70%, 0 100%);
+}
+.background2 {
+	background-image: url(asset_path('gallery/larg/20.PNG'));
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    height:  400px !important;
+    background-position: bottom;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
+}
+.small-house {
+	margin-top: 15px;
+}
+.feedback {
+	margin:15px auto;
+	img {
+		height: 40px !important;
+		width: auto !important;
+		display: inline !important;
+	}
+	h3 {
+		display: inline;
+	}
+	.fa-star {
+		color:#e6bc53;
+	}
+}

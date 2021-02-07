@@ -27,7 +27,7 @@
 		}
 	}
 }
-.noticias, .multiple-noticias {
+.noticias, .owl-multiple-noticias {
 	padding: 35px auto;
 	h2, p {
 		font-style: oblique;
@@ -38,6 +38,13 @@
 			b {
 				color: $main-color;
 			}
+		}
+	}
+	.news-link {
+		padding: 10px 10px;
+		p, h2 {
+			margin-left: 20px;
+			margin-right: 20px;
 		}
 	}
 	.btn-news {
@@ -112,7 +119,8 @@
 	    background-attachment: fixed !important;
 	    height:  450px !important;
 	    background-position: bottom;
-	    -webkit-clip-path: polygon(0 8%, 100% 0, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    	clip-path: polygon(0 30%, 100% 0, 100% 70%, 0 100%);
 	}
 	.background2 {
 		background-image: url(asset_path('gallery/larg/15.PNG'));
@@ -120,7 +128,8 @@
 	    background-attachment: fixed !important;
 	    height:  450px !important;
 	    background-position: bottom;
-	    -webkit-clip-path: polygon(0 8%, 100% 0, 100% 100%, 0% 100%);
+	    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
+    	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
 	}
 	.convenios {
 		margin: 100px 0px;

@@ -16,7 +16,7 @@
 				<!-- Título -->
 				<h2 class="secundary-color text-center">
 					<!-- #Asserjufe título em cores principais -->
-					<p style="font-size:60px;" class="main-color">#Destaques <b style="font-size:60px;"><text style="color:#007b84;">As</text><text style="color: #006600;">ser</text><text style="color:#007b84;"></text><text style="color:#007b84;">ju</text><text style="color: #006600;">fe</b>
+					<p style="font-size:60px;" class="main-color"># Notícias <b style="font-size:60px;"><text style="color:#007b84;">As</text><text style="color: #006600;">ser</text><text style="color:#007b84;"></text><text style="color:#007b84;">ju</text><text style="color: #006600;">fe</b>
 					</p>
 				</h2>
 
@@ -25,7 +25,7 @@
 			<div class="row">
 				<% @noticias.each do |news| %>
 					<div class="col-md-6">
-						<a href="<%= noticia_visualizar_path(news.title) %>">
+						<a href="<%= noticia_visualizar_path(news.slug) %>">
 							<h2 class="white-color text-center" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %> padding: 15px auto;"> 
 								<b style="vertical-align: -webkit-baseline-middle; line-height: 2;"><%= truncate(news.title, :lenght =>16, :omission => '...') %></b>
 							</h2>
@@ -34,9 +34,9 @@
 									” <%= truncate(news.description, :length => 144, :omission => '[Ler mais...]' )%> ”
 								</p>
 							</blockquote>
-							<p class="main-color">
+							<p class="main-color sriracha">
 								<small style="font-size: 14px;">Publicado em:</small>
-								<b> <%= news.created_at.strftime("%d/%m/%Y às %Hh%M") %></b>
+								<b class="sriracha"> <%= news.created_at.strftime("%d/%m/%Y às %Hh%M") %></b>
 							</p>
 						</a>
 					</div>		
@@ -104,7 +104,7 @@
 	</div>
 
 	<!-- creditos fotógrafa -->
-	<p class="main-color" style="font-size: 16px; margin-left: 20px;">
+	<p class="main-color text-right" style="font-size: 16px; margin-left: 20px;">
 		Fotos de <b>Evelyn Duarte</b>, 
 		<a href="https://www.instagram.com/clicknotempofotografia"  target="_blank" data-toggle="tooltip" data-placement="bottom" data-original-title="Clique e confira meu trabalho!">Click no Tempo.</a>
 	</p>

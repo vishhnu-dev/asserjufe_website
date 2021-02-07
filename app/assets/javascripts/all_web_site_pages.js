@@ -1,7 +1,4 @@
 $(document).on('turbolinks:load', function(){
-    // refresh carousel 
-    $('.owl-banners').trigger('refresh.owl.carousel');
-    $('.owl-gallery').trigger('refresh.owl.carousel');
 
     //data-fancybox gallery
     $('[data-fancybox="gallery"]').fancybox({
@@ -37,6 +34,29 @@ $(document).on('turbolinks:load', function(){
       $('[data-toggle="tooltip"]').tooltip()
     })
     // END
+    $('.owl-multiple-news').owlCarousel({
+        dots: false,
+        loop: true,
+        nav: true,
+        navText:["<i class='fa fa-chevron-left' aria-hidden='true'></i>","<i class='fa fa-chevron-right' aria-hidden='true'></i>"],
+        autoplay: true,
+        margin: 35,
+        autoplayTimeout: 4000,
+        responsive: {
+             // breakpoint from 0 up
+            0 : {
+                items: 1
+            },
+            // breakpoint from 480 up
+            480 : {
+                items: 1
+            },
+            // breakpoint from 768 up
+            1200 : {
+                items: 2
+            }
+        }
+    });
 
     $('.owl-news').owlCarousel({
         dots: false,
@@ -75,6 +95,30 @@ $(document).on('turbolinks:load', function(){
              // breakpoint from 0 up
             0 : {
                 items: 3
+            },
+            // breakpoint from 480 up
+            480 : {
+                items: 3
+            },
+            // breakpoint from 768 up
+            1200 : {
+                items: 3
+            }
+        }
+    });
+
+    $('.owl-feedback').owlCarousel({
+        dots: false,
+        autoHeight: true,
+        loop: true,
+        nav: false,
+        margin: 5,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        responsive: {
+             // breakpoint from 0 up
+            0 : {
+                items: 1
             },
             // breakpoint from 480 up
             480 : {

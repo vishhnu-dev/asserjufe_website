@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 	get 'associe-se' => 'asserjufe#associe_se', as: :associe_se
 	get 'convenios' => 'asserjufe#convenios', as: :convenios
 	get 'contato' => 'asserjufe#contato', as: :contato
-	get 'noticia/:title' => 'asserjufe#noticia', as: :noticia_visualizar
+	get 'noticia/:slug' => 'asserjufe#noticia', as: :noticia_visualizar
 
 	# /administracao
 	get 'administracao' => 'backend#dashboard', :as => 'backend'

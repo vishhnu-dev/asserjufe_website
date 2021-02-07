@@ -48,48 +48,48 @@
         <div id="navbar" class="navbar-collapse collapse menu">
         	<ul class="nav navbar-nav">
         		<li>
-	            	<a href="<%= root_path %>">Início</a>
+	            	<a class="sriracha" href="<%= root_path %>">Início</a>
 	            </li>
 	            <li>
-	            	<a href="<%= a_asserjufe_path %>">Sobre a Asserjufe</a>
+	            	<a class="sriracha" href="<%= a_asserjufe_path %>">Sobre a Asserjufe</a>
 	            </li>
 	            <li>
-	            	<a href="<%= sede_campestre_path %>">Sede Campestre</a>
+	            	<a class="sriracha" href="<%= sede_campestre_path %>">Sede Campestre</a>
 	            </li>
 	            <li>
-   					<a href="<%= associe_se_path %>">Associe-se</a>
+   					<a class="sriracha" href="<%= associe_se_path %>">Associe-se</a>
    				</li>
    				<li>
-   					<a href="<%= convenios_path %>">Convênios</a>
+   					<a class="sriracha" href="<%= convenios_path %>">Convênios</a>
    				</li>
    				<% if @documentos.present? %>
 	   				<li class="dropdown">
-	   					<a class="dropdown-toggle" href="javacript:void(0)">Biblioteca
+	   					<a class="sriracha dropdown-toggle" href="javacript:void(0)">Biblioteca
 	   						<span class="caret"></span>
 	   					</a>
 	   					<ul class="dropdown-menu">
 	   						<% @documentos.each do |doc| %>
 		                      	<% if doc.estatuto.present? %>
-		                        	<li><%= link_to 'Estatuto', 'javascript:;', data: { title: "Estatuto", count: doc.id, file: "estatuto"}, class: 'btn-doc-header'  %></li> 	
+		                        	<li><%= link_to 'Estatuto', 'javascript:;', data: { title: "Estatuto", count: doc.id, file: "estatuto"}, class: 'btn-doc-header sriracha'  %></li> 	
 		                        <% end %>
 
 		                        <% if doc.tabela_valores.present? %>
-		                        	<li><%= link_to 'Tabela de Valores', 'javascript:;', data: { title: "Tabela de Valores", count: doc.id, file: "tabela_valores"}, class: 'btn-doc-header'  %></li> 	
+		                        	<li><%= link_to 'Tabela de Valores', 'javascript:;', data: { title: "Tabela de Valores", count: doc.id, file: "tabela_valores"}, class: 'btn-doc-header sriracha'  %></li> 	
 		                        <% end %>
 
 		                        <% if doc.regimento_interno.present? %>
-		                        	<li><%= link_to 'Regimento Interno', 'javascript:;', data: { title: "Regimento Interno", count: doc.id, file: "regimento_interno"}, class: 'btn-doc-header'  %></li> 	
+		                        	<li><%= link_to 'Regimento Interno', 'javascript:;', data: { title: "Regimento Interno", count: doc.id, file: "regimento_interno"}, class: 'btn-doc-header sriracha'  %></li> 	
 		                        <% end %>
 
 		                        <% if doc.regulamento.present? %>
-		                        	<li><%= link_to 'Regulamento', 'javascript:;', data: { title: "Regulamento", count: doc.id, file: "regulamento"}, class: 'btn-doc-header'  %></li> 	
+		                        	<li><%= link_to 'Regulamento', 'javascript:;', data: { title: "Regulamento", count: doc.id, file: "regulamento"}, class: 'btn-doc-header sriracha'  %></li> 	
 		                        <% end %>
 	                        <% end %>              
 	                    </ul>
 	   				</li>
    				<% end %>
             	<li>
-            		<a class="<%= @page_title == 'Contato' ? 'active' : '' %>" href="<%= contato_path %>">Contato</a>
+            		<a class="sriracha" href="<%= contato_path %>">Contato</a>
             	</li>
           	</ul>
         </div>

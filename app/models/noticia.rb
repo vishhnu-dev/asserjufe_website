@@ -5,4 +5,11 @@ class Noticia < ApplicationRecord
 
 	validates :title, presence: { message: 'não pode ficar em branco.' }
 	validates :description, presence: { message: 'não pode ficar em branco.' }
+
+	before_save :set_slug
+
+	private
+	def	set_slug
+		self.slug = self.title.gsub('.','-').gsub(':','-').gsub(';','-')
+	end
 end

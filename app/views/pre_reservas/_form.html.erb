@@ -23,62 +23,12 @@
 		    <%= f.text_field :celular, class: 'form-control phone_with_ddd' %>
 		  </div>
 		</div>
-		<div class="col-xs-12 col-xs-6 col-md-6">
+		<div class="col-xs-12 col-md-6">
 		  <div class="form-group">
 		    <%= f.label 'Onde deseja ficar ?', class: 'main-color captalize' %>
 		    <%= f.select :casa, options_for_casa, { include_blank: 'Selecione...' }, class: 'form-control'%>
 		  </div>
 		</div>
-
-		<div class="col-md-12">
-        	<div class="row">
-	        	<div class="col-xs-12 col-md-6">
-					<div class="form-group">      
-						<%= f.label 'Possui dependentes?', class: 'main-color captalize' %>      
-						<%= f.select :possui_dependentes, options_for_select(options_for_sim_nao, selected: @pre_reserva.possui_dependentes), {include_blank: 'Selecione...'}, class: 'form-control have1' %>
-					</div>
-		        </div>
-		        <div class="col-xs-12 col-md-6">
-					<div class="form-group">
-						<%= f.label 'Quantas?', class: 'main-color captalize has1'%>
-						<%= f.number_field :dependentes, class: 'form-control uppercase has1'%>
-					</div>
-		      	</div>
-        	</div>
-        </div>
-        <div class="col-md-12">
-      		<div class="row">
-	      		<div class="col-xs-12 col-md-6">
-					<div class="form-group">      
-						<%= f.label 'Possui não dependentes?', class: 'main-color captalize' %>      
-						<%= f.select :possui_nao_dependentes, options_for_select(options_for_sim_nao, selected: @pre_reserva.possui_dependentes), {include_blank: 'Selecione...'}, class: 'form-control have2' %>
-					</div>
-		        </div>
-		        <div class="col-xs-12 col-md-6">
-					<div class="form-group">
-						<%= f.label 'Quantas?', class: 'main-color captalize has2' %>
-						<%= f.number_field :nao_dependentes, class: 'form-control uppercase has2' %>
-					</div>
-		      	</div>
-	      	</div>
-      	</div>
-      	<div class="col-md-12">
-      		<div class="row">
-		      	<div class="col-xs-12 col-md-6">
-					<div class="form-group"> 
-						<%= f.label 'Possui crianças?', class: 'main-color captalize' %>      
-						<%= f.select :possui_criancas, options_for_select(options_for_sim_nao, selected: @pre_reserva.possui_criancas), {include_blank: 'Selecione...'}, class: 'form-control have3' %>
-					</div>
-		        </div>
-		        <div class="col-xs-12 col-md-6">
-					<div class="form-group">
-						<%= f.label 'Quantas?', class: 'main-color has3 captalize' %>
-						<%= f.text_field :criancas, class: 'form-control has3 uppercase' %>
-					</div>
-		      	</div>
-		    </div>
-	    </div>
-
 		<div class="col-xs-12 col-md-6">
 		  <div class="form-group">
 		    <%= f.label 'Data de entrada', class: 'main-color captalize' %>
@@ -105,6 +55,54 @@
 	         </div>
 		  </div>
 		</div>
+		<div class="col-xs-6 col-md-12">
+        	<div class="row">
+	        	<div class="col-xs-12 col-md-6">
+					<div class="form-group">      
+						<%= f.label 'Possui dependentes?', class: 'main-color captalize' %>      
+						<%= f.select :possui_dependentes, options_for_select(options_for_sim_nao, selected: @pre_reserva.possui_dependentes), {include_blank: 'Selecione...'}, class: 'form-control have1' %>
+					</div>
+		        </div>
+		        <div class="col-xs-12 col-md-6">
+					<div class="form-group">
+						<%= f.label 'Quantas?', class: 'main-color captalize has1'%>
+						<%= f.number_field :dependentes, class: 'form-control uppercase has1'%>
+					</div>
+		      	</div>
+        	</div>
+        </div>
+        <div class="col-xs-6 col-md-12">
+      		<div class="row">
+	      		<div class="col-xs-12 col-md-6">
+					<div class="form-group">      
+						<%= f.label 'Possui não dependentes?', class: 'main-color captalize' %>      
+						<%= f.select :possui_nao_dependentes, options_for_select(options_for_sim_nao, selected: @pre_reserva.possui_dependentes), {include_blank: 'Selecione...'}, class: 'form-control have2' %>
+					</div>
+		        </div>
+		        <div class="col-xs-12 col-md-6">
+					<div class="form-group">
+						<%= f.label 'Quantas?', class: 'main-color captalize has2' %>
+						<%= f.number_field :nao_dependentes, class: 'form-control uppercase has2' %>
+					</div>
+		      	</div>
+	      	</div>
+      	</div>
+      	<div class="col-xs-12 col-md-12">
+      		<div class="row">
+		      	<div class="col-xs-12 col-md-6">
+					<div class="form-group"> 
+						<%= f.label 'Possui crianças?', class: 'main-color captalize' %>      
+						<%= f.select :possui_criancas, options_for_select(options_for_sim_nao, selected: @pre_reserva.possui_criancas), {include_blank: 'Selecione...'}, class: 'form-control have3' %>
+					</div>
+		        </div>
+		        <div class="col-xs-12 col-md-6">
+					<div class="form-group">
+						<%= f.label 'Quantas?', class: 'main-color has3 captalize' %>
+						<%= f.text_field :criancas, class: 'form-control has3 uppercase' %>
+					</div>
+		      	</div>
+		    </div>
+	    </div>
 		<div class="col-xs-4 col-md-6">
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#lembretes">
 			  <b>Lembretes</b>

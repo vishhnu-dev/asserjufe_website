@@ -9,7 +9,7 @@
 /* ------------------------------------------------ */
 
 /* CORES */
-$main-color: #3A6347;
+$main-color: #244235;
 $secundary-color: #007C61;
 $white-color: #ffffff;
 $black-color: #000000;
@@ -117,6 +117,13 @@ body .custom-dropdown-container .expand-multi-select-icon {
 }
 
 body {
+	.sriracha {
+		font-family: 'Sriracha', cursive;
+	}
+	font-family: 'Roboto', sans-serif;
+	h1,h2,h3,h4,h5, .btn {
+		font-family: 'Sriracha', cursive;
+	}
 	a {
 		&:hover {
 			color: $main-color;
