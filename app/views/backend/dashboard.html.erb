@@ -1,0 +1,55 @@
+<div class="row">
+	<div class="col-md-12 text-center">
+		<img src="<%=  image_path 'asserjufe-logo-backend.png' %>" style="margin-bottom: 20px;" >
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="box box-success collapsed-box">
+			<div class="box-header with-border">
+	          <h2 class="main-color box-title"><b>Notícias</b></h2>
+	          <div class="box-tools pull-right">
+	            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+	            </button>
+	            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+	          </div>
+	        </div>
+			<div class="box-body">
+				<%= render 'noticias/noticias_grid' %>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="box box-success collapsed-box">
+			<div class="box-header with-border">
+	          <h3 class="main-color box-title"><b>Palvra do Presidente</b></h3>
+	          <div class="box-tools pull-right">
+	            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+	            </button>
+	            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+	          </div>
+	        </div>
+			<div class="box-body">
+				<%= render 'palavras_presidente/palavras_grid' %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="box box-success collapsed-box">
+			<div class="box-header with-border">
+	          <h3 class="main-color box-title"><b>Lista de usuários</b></h3>e
+	          <div class="box-tools pull-right">
+	            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+	            </button>
+	            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+	          </div>
+	        </div>
+			<div class="box-body">
+				<%= render 'controle_usuarios/controle_usuarios_grid' %>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>

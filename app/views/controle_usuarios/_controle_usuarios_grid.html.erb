@@ -18,7 +18,7 @@
 
 	if policy(User).edit?
 		g.column html: { style:'text-align:start;' } do |usuario|
-			link_to edit_usuario_path(usuario.id), title: "Editar usuário #{usuario.email}" do
+			link_to edit_usuario_path(usuario.id), title: "Editar usuário #{usuario.email}", data: { toggle: "tooltip", placement: "left", title: "Editar usuário #{usuario.email}" } do
 				fa_icon 'pencil', style: 'color:green;'
 			end
 		end
@@ -26,7 +26,7 @@
 
 	g.column do |usuario|
 		if policy(usuario).destroy?
-	      	link_to usuarios_path(usuario).gsub(".","/"), title: "Excluir usuário #{usuario.email}", method: :delete, data: { confirm: "Você tem certeza que deseja excluir o usuário #{usuario.email}?" } do
+	      	link_to usuarios_path(usuario).gsub(".","/"), method: :delete,  data: { toggle: "tooltip", placement: "left", title: "Excluir usuário #{usuario.email}" } do
 	          	fa_icon 'trash', style: 'color:#dd4b39; font-size:20px;'
 	      	end
 	    end

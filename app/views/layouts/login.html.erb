@@ -22,14 +22,15 @@
   </head>
   <body class="hold-transition login-page">
     <div class="login-box">
-      <div class="login-logo">        
+      <div class="login-logo">   
+        <img src="<%= image_path 'asserjufe.png' %>">
       </div>
       <div class="login-box-body">
         <p class="login-box-msg" style="font-size: 13px;">Utilize seu e-mail e senha para realizar o login</p>
 
         <!-- login form -->
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <%# render "layouts/shared/messages"%>  
+          <%= render "layouts/messages"%>  
 
           <div class="form-group has-feedback">
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>

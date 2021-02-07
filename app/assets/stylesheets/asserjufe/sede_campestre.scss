@@ -1,0 +1,83 @@
+.gallery {
+	.owl-gallery {
+		.owl-prev, .owl-next {
+	        width: 50px !important;
+	        height: 100px !important;
+	        position: absolute;
+	        top: 50% !important;
+	        transform: translateY(-50%);
+	        display: block !important;
+	        border:0px solid black;
+	        background-color: unset !important;
+		    outline: none;
+		    @media screen and ( max-width: 992px ) {
+		    	display: none !important;
+		    }
+	    }
+	    .owl-prev { left: -50px; }
+	    .owl-next { right: -50px; }
+	    .owl-prev i, .owl-next i {transform : scale(3,5); color: $secundary-color;}
+	}
+	.reservas {
+		h2	{
+			padding: 0px 0px;
+			margin-top: 0px;
+		}
+	}
+}
+.form {
+	padding: 15px 15px;
+	label {
+		font-size: 16px;
+		color: $white-color;
+	}
+	button {
+		color: $white-color;
+		font-size: 18px;
+	}
+}
+.contatos-form {
+	.form-control {
+		border: 1px solid #ccc !important;
+    	border-radius: 4px !important;
+	}
+	.area {
+		resize: none;
+
+	}
+}
+.background1 {
+	background-image: url(asset_path('gallery/larg/10.PNG'));
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    height:  400px !important;
+    background-position: bottom;
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 30%, 100% 0, 100% 70%, 0 100%);
+}
+.background2 {
+	background-image: url(asset_path('gallery/larg/20.PNG'));
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    height:  400px !important;
+    background-position: bottom;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
+}
+.small-house {
+	margin-top: 15px;
+}
+.feedback {
+	margin:15px auto;
+	img {
+		height: 40px !important;
+		width: auto !important;
+		display: inline !important;
+	}
+	h3 {
+		display: inline;
+	}
+	.fa-star {
+		color:#e6bc53;
+	}
+}

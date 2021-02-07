@@ -6,7 +6,7 @@
 
 /* bootstrap 3 */
 @import "bootstrap/bootstrap";
-
+@import 'bootstrap-datetimepicker';
 /* owl-carousel */
 @import "owl-carousel/owl.carousel.min";
 @import "owl-carousel/owl.theme.default.min";
@@ -35,3 +35,8 @@
 /* pages */
 @import "asserjufe/contatos";
 @import "asserjufe/a_asserjufe";
+@import "asserjufe/home";
+@import "asserjufe/diretoria";
+@import "asserjufe/sede_campestre";
+@import "asserjufe/noticia";
+@import "asserjufe/convenio"

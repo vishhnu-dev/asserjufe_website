@@ -1,0 +1,2 @@
+class PreReserva < ApplicationRecord
+end

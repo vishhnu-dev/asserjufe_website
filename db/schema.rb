@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_26_184710) do
+ActiveRecord::Schema.define(version: 2021_02_01_055526) do
 
   create_table "contatos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -22,8 +22,51 @@ ActiveRecord::Schema.define(version: 2020_10_26_184710) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "documentos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "estatuto"
+    t.string "tabela_valores"
+    t.string "regimento_interno"
+    t.string "regulamento"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "noticias", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "imagem"
+    t.string "video"
+    t.string "doc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+  end
+
+  create_table "palavras_presidente", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "description"
+  end
+
+  create_table "pre_reservas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nome_completo"
+    t.string "casa"
+    t.datetime "data_chegada"
+    t.datetime "data_saida"
+    t.string "email"
+    t.string "celular"
+    t.string "possui_dependentes"
+    t.integer "dependentes"
+    t.string "possui_nao_dependentes"
+    t.integer "nao_dependentes"
+    t.string "possui_criancas"
+    t.integer "criancas"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
+    t.string "nome_completo"
+    t.date "data_nascimento"
     t.string "encrypted_password", default: "", null: false
     t.integer "role", default: 0, null: false
     t.string "reset_password_token"

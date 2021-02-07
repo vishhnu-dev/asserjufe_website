@@ -63,4 +63,9 @@ ActiveSupport::Inflector.inflections do |inflect|
 
   # Irregulares
   inflect.irregular "user","users"
+  inflect.irregular "comunicado", "comunicados"
+  inflect.irregular "noticia", "noticias"
+  inflect.irregular "palavra_presidente", "palavras_presidente"
+  inflect.irregular "documento", "documentos"
+  inflect.irregular "pre_reserva", "pre_reservas"
 end

@@ -1,0 +1,70 @@
+<div class="container-fluid page-start">
+	<div class="container page-title">
+		<div class="row">
+			<div class="col-md-12 title">
+	            <h1><i class="fa fa-comments-o"></i> <%= @noticia.title %></h1>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container main-noticia-page" style="<%= @noticia.doc.present? or @noticia.video.present? ? '' : 'margin-bottom: 5px;'  %>">
+	<div class="row">
+		<% if @noticia.imagem.present? %>
+			<div class="col-md-5" style="margin-top: 5px;">
+				<%= image_tag(@noticia.imagem.url, class: 'img-responsive') %>
+			</div>
+		<% end %>
+
+		<div class="<%= @noticia.imagem.present? ? 'col-md-7 ' : 'col-md-12' %> ">
+			<blockquote style="margin-top: 20px;">
+				<p class="lead main-color text-justify">
+					<%= @noticia.description %>
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="row">
+		<% if @noticia.video.present? %>
+			<div class="<%= @noticia.doc.present? ? 'col-md-6 ' : 'col-md-12'  %>" style="margin-top: 5px;">
+				<%= video_tag(@noticia.video, :controls => true, style: 'object-fit: cover;
+    width: 100%; height: 500px;')  %>
+			</div>
+		<% end %>
+
+		<% if @noticia.doc.present? %>
+			<div class="col-md-6" style="margin-top: 5px;">
+				<object data="<%= @noticia.doc.url %>" style="width:100%; height: 500px"></object>	
+			</div>	
+			
+		<% end %>
+	</div>
+	<% if @noticias.count != 1 and @noticias.count != 0 %>
+		<div class="row multiple-noticias">
+			<div class="container">
+			  	<div class="noticias">					
+					<h1 class="main-color">
+						<i class="fa fa-newspaper-o"> </i> 
+						<b>Mais novidades</b>
+					</h1>
+					<div style="width:175px; height:5px; background-color: #007C61;"></div>
+					<div class="owl-carousel owl-theme owl-multiple-news">
+						<% @noticias.each do |news| %>
+							<a class="news-link" href="<%= noticia_visualizar_path(news.slug)  %>">
+								<h2 class="white-color text-center" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %> padding: 15px auto;"> 
+								<b style="vertical-align: -webkit-baseline-middle; line-height: 2;"><%= truncate(news.title, :lenght =>16, :omission => '...') %></b>
+							</h2>
+								<p class="lead main-color text-justify" style="margin-bottom: 0px;">
+									<b><%= truncate(news.description, :length => 144, :omission => '[Ler mais...]' ) %></b>
+								</p>
+								<p class="main-color sriracha">
+									<small style="font-size: 14px;">Publicado em:</small>
+									<b class="sriracha"> <%= news.created_at.strftime("%d/%m/%Y às %Hh%M") %></b>
+								</p>
+							</a>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

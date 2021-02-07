@@ -1,0 +1,63 @@
+ .tim {
+    border-bottom: 2px solid #eee !important;
+    padding: 19px 15px;
+    .pad {
+    	.col-md-4 {
+            padding: 20px 0px;
+            border: 2px solid #eee;
+            border-radius: 40px;
+            p {
+                margin-bottom: 0px;
+            }
+    		.first {
+    			p {
+    				color: $main-color;
+                    margin-bottom: 0px;
+    			}
+    		}
+    		.second {
+    			background-color: #02C6C1;
+    			p {
+				    text-align: center;
+				    padding: 55px 5px;
+				    margin-bottom: 0px;
+				    color: white;
+				    font-weight: bold;
+				    font-size: 25px;
+    			}
+    		}
+    		.price {
+    			p {
+    				font-size: 50px;
+    				color: $main-color;
+                    margin-bottom: 0px;
+    			}
+    		}
+    	}
+    }
+ }
+.unimed {
+    border-bottom: 2px solid #eee !important;
+    padding: 19px 15px;
+    i {
+        font-size: 100px;
+    }
+    .b0 {
+        margin-bottom: 0px;
+        font-size: 30px;
+        line-height: 0.4;
+    }
+    .b0b {
+        font-size: 30px;
+    }
+    .fa-users {
+        margin-bottom: 12px;
+    }
+}
+.tecbiz {
+    border-bottom: 2px solid #eee !important;
+    padding: 19px 15px;
+}
+.upcard {
+    padding: 19px 15px;
+}

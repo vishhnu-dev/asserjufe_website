@@ -2,8 +2,411 @@
 	<div class="container page-title">
 		<div class="row">
 			<div class="col-md-12 title">
-	            <h1><strong>Sede campestre</strong></h1>
+	            <h1><strong>A Sede Campestre</strong></h1>
 			</div>
 		</div>
 	</div>
 </div>
+<div class="container-fluid">
+	<div class="container gallery">
+		<div class="row">
+			<div class="col-md-6 text-left">
+				<h2 class="secundary-color">O que é ?</h2>
+				<blockquote>
+					<p class="main-color lead text-justify">A sede campestre é um belíssimo espaço de 6 hectares que destina-se ao lazer, esportes, diversão, eventos e encontro entre amigos. Além de estarmos conectados diretamente com a natureza oferecemos todo o conforto que sua família merece.</p>
+				</blockquote>
+				<h2 class="secundary-color">Como faço para reservar ?</h2>
+				<blockquote>
+					<p class="lead main-color no-break text-justify">Associados podem fazer o <a href="<%= backend_path %>">login <i class="fa fa-mail-forward mail" aria-hidden="true"></i></a> e requisitar no menu correspondente.</p>
+					<p class="lead main-color no breack text-justify">Não associados podem fazer uma pré-reserva no formulário ao lado.</p>
+				</blockquote>
+			</div>
+			<div class="col-md-6">
+				<h2 class="main-color"><b>Pré-reserva Sede Campestre</b></h2>
+				<%= render 'pre_reservas/form' %>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row sede-content">
+				<h2 class="secundary-color text-center">O que oferecemos ?</h2>
+				<div class="col-md-6 text-left services">
+					<blockquote>
+						<p class="text-left lead main-color no-break">
+							<i class="fa fa-check main-color" aria-hidden="true"></i> Área para camping
+						</p>
+						<p class="text-left lead main-color no-break">
+							<i class="fa fa-check main-color" aria-hidden="true"></i> Galpão grande de festas com churrasqueira
+						</p>
+						<p class="text-left lead main-color no-break">
+							<i class="fa fa-check main-color" aria-hidden="true"></i> Mesa de Sinuca / Mesa de pebolim
+						</p>
+						<p class="text-left lead main-color no-break">
+							<i class="fa fa-check main-color" aria-hidden="true"></i> Campo de futebol
+						</p>
+						<p class="text-left lead main-color no-break">
+							<i class="fa fa-check main-color" aria-hidden="true"></i> Poço de água mineral com 100% de pureza
+						</p>
+					</blockquote>
+				</div>
+				<div class="col-md-6 text-left services">
+					<blockquote>
+						<p class="text-left lead main-color no-break">
+							<i class="fa fa-check main-color" aria-hidden="true"></i> Piscinas (Adulto e Infantil)
+						</p>
+						<p class="text-left lead main-color no-break">
+							<i class="fa fa-check main-color" aria-hidden="true"></i> Galpão grande de festas com churrasqueira
+						</p>
+						<p class="text-left lead main-color no-break">
+							<i class="fa fa-check main-color" aria-hidden="true"></i> Wifi
+						</p>
+						<p class="text-left lead main-color no-break">
+							<i class="fa fa-check main-color" aria-hidden="true"></i> Churrasqueiras
+						</p>
+						<p class="text-left lead main-color no-break">
+							<i class="fa fa-check main-color" aria-hidden="true"></i> Playground
+						</p>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid gallery">
+	<div class="container">
+		<div class="col-md-12 text-center">
+			<h2 class="main-color text-center" style="font-size: 45px;"><b>#Galeria</b> de fotos  <b style="font-size:60px;"><text style="color:#007b84;">As</text><text style="color: #006600;">ser</text><text style="color:#007b84;"></text><text style="color:#007b84;">ju</text><text style="color: #006600;">fe</b>
+			</h2>
+			<small class="main-color text-center" style="font-family: 'Sriracha', cursive; text-decoration:underline; font-size:16px;">dica: clique na imagem para ampliá-la.</small><br>
+			<small class="main-color text-center" style="font-family: 'Sriracha', cursive; text-decoration:underline; font-size:16px;">Carrosel arrastável.</small>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="owl-carousel owl-theme owl-gallery">
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/01.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/01.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/02.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/02.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/03.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/03.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/04.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/04.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/05.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/05.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/07.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/07.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/08.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/08.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/10.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/10.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/11.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/11.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/12.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/12.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/13.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/13.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/14.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/14.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/15.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/15.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/16.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/16.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/17.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/17.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/18.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/18.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/19.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/19.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/20.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/20.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/21.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/21.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/22.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/22.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/23.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/23.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/25.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/25.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/26.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/26.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/27.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/27.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/28.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/28.PNG' %>">
+			</a>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/29.PNG' %>">
+				<img class="img-rounded" src="<%= image_path 'gallery/general/29.PNG' %>">
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- creditos fotógrafa -->
+<p class="main-color text-left" style="font-size: 16px; margin-left: 30px;">
+	Fotos de <b>Evelyn Duarte</b>, 
+	<a href="https://www.instagram.com/clicknotempofotografia"  target="_blank" data-toggle="tooltip" data-placement="bottom" data-original-title="Clique e confira meu trabalho!">Click no Tempo.</a>
+</p>
+
+<div class="container big-house">
+	<div class="row">
+		<div class="col-md-6">
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/16.PNG' %>">
+				<img class="img-responsive img-rounded" src="<%= image_path 'gallery/general/16.PNG' %>">
+			</a>
+			<small class="main-color">clique para ampliar</small>
+		</div>
+		<div class="col-md-6">
+			<h2 class="main-color text-center text-capitalize"><b>Casa grande</b></h2>
+			<blockquote>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Três quartos: Um casal e dois solteiros c/duas camas, além de colchões que podem ser usados na sala.
+				</p>
+				<p class="main-color text-left">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Lareira.
+				</p>
+				<p class="main-color text-left">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Cozinha americana com utensílios.
+				</p>
+				<p class="main-color text-left">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Sala de jantar c/ lareira e televisão.
+				</p>
+				<p class="main-color text-left">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Dois banheiros completos.
+				</p>
+				<p class="main-color text-left">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Ambiente aconchegante, espaçoso, bem arejado e iluminado.
+				</p>
+			</blockquote>
+		</div>
+	</div>
+</div>
+<!-- banner background-->
+<div class="background1">
+</div>
+<div class="container small-house">
+	<div class="row">
+		<div class="col-md-6">
+			<h2 class="main-color text-center text-capitalize"><b>Casa pequena</b></h2>
+			<blockquote>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Três quartos: Um casal e dois solteiros c/duas camas, além de colchões que podem ser usados na sala.
+				</p>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Lareira.
+				</p>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Cozinha com utensílios.
+				</p>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Dois banheiros completos.
+				</p>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Sala de reuniões familiar c/ lareira, churrasqueira e televisão.
+				</p>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Ambiente aconchegante, espaçoso bem arejado e iluminado.
+				</p>
+			</blockquote>
+		</div>
+		<div class="col-md-6">
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/18.PNG' %>">
+				<img class="img-responsive img-rounded" src="<%= image_path 'gallery/general/18.PNG' %>">
+			</a>
+			<small class="main-color">clique para ampliar</small>
+		</div>
+	</div>
+</div>
+<!-- banner background-->
+<div class="background2">
+</div>
+<div class="container small-house">
+	<div class="row">
+		<div class="col-md-6">
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/19.PNG' %>">
+				<img class="img-responsive img-rounded" src="<%= image_path 'gallery/general/19.PNG' %>">
+			</a>
+			<small class="main-color">clique para ampliar</small>
+		</div>
+		<div class="col-md-6 text-center">
+			<h2 class="main-color text-center text-capitalize"><b>Galpão criolo</b></h2>
+			<small class="main-color text-center">Eventos, reuniões de negócio, datas comemorativas, shows e muito mais.</small>
+			<blockquote>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Churrasqueira para eventos.
+				</p>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Palco para show's e eventos.
+				</p>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Balcão estilo cozinha americana em volta da churrasqueira.
+				</p>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Dois banheiros
+				</p>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Pia de cozinha.
+				</p>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Mesas e cadeiras para eventos.
+				</p>
+				<p class="main-color text-justify">
+					<i class="fa fa-check main-color" aria-hidden="true"></i>
+					Ambiente aconchegante, espaçoso bem arejado e iluminado.
+				</p>
+			</blockquote>
+		</div>
+	</div>
+</div>
+<div class="container feedback">
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="main-color text-center" style="margin-bottom: 40px;">
+				<i class="fa fa-comments" aria-hidden="true"></i> 
+				Feedback
+			</h2>
+			<div class="owl-feedback owl-carousel owl-theme">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<img clss="img-circle" src="<%= image_path 'feedback/01.png' %>">	
+						<h3 class="main-color">Leonardo de Moraes</h3>
+						<br>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</div>
+					<div class="col-md-12">
+						<p class="main-color text-center lead">
+							Espaço maravilhoso!.
+						</p>	
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<img clss="img-circle" src="<%= image_path 'feedback/02.png' %>">	
+						<h3 class="main-color">Andrea Duarte</h3>
+						<br>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</div>
+					<div class="col-md-12">
+						<p class="main-color text-center lead">
+							Simplesmente um paraíso!.
+						</p>	
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<img clss="img-circle" src="<%= image_path 'feedback/03.png' %>">	
+						<h3 class="main-color">Renato Santos</h3>
+						<br>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</div>
+					<div class="col-md-12">
+						<p class="main-color text-center lead">
+							Lindo lugar.
+						</p>	
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<img clss="img-circle" src="<%= image_path 'feedback/04.png' %>">	
+						<h3 class="main-color">Beatriz Santos</h3>
+						<br>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</div>
+					<div class="col-md-12">
+						<p class="main-color text-center lead">
+							EU AMO ESSE LUGAR.
+						</p>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Google Maps -->
+<div class="map container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-md-8">
+			<div class="maps">
+				<div class="container-fluid">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.4474785741118!2d-50.85263338488192!3d-30.167208981837895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x547d6560504cc632!2sASSERJUFE-RS%20Sede%20Campestre!5e0!3m2!1spt-BR!2sbr!4v1611087103169!5m2!1spt-BR!2sbr" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-4 maps-info">
+			<h3 class="main-color text-capitalize">Sede Campestre</h3>
+			<h3 class="main-color">R. Henrique de Oliveira Fraga, Águas Claras, Viamão, n°5900.</h3>
+			<p class="main-color lead">Entre em contato 
+				<a href="<%= contato_path %>" data-toggle="tooltip" data-placement="bottom" data-original-title="Clique para abrir a página de contato.">
+					<small>através deste link.</small>
+				</a>
+			</p>
+			<p class="main-color lead">asserjufe.poa@gmail.com</p>
+			<br>
+			<a href="https://api.whatsapp.com/send?phone=5551997659983" data-toggle="tooltip" data-placement="right" data-original-title="Enviar mensagem no WhatsApp." target="_blank">
+				<i class="fa fa-whatsapp" aria-hidden="true"></i>
+			</a>
+		</div>
+	</div>
+</div>
+<%= render 'modal_lembretes' %>

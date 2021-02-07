@@ -1,0 +1,53 @@
+<div class="row">
+	<div class="col-lg-6">
+      <%= render partial: 'layouts/form_errors', locals: {model: @noticia} %>
+		<div class="box box-success">
+			<%= form_for @noticia do |f| %>
+			<%= f.text_field :slug, class: 'hidden form-control', value: @noticia.title.gsub(' ','-') %>
+				<div class="box-body">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<%= f.label 'Título', class: 'main-color uppercase' %>
+								<%= f.text_field :title, autofocus: true, class: 'form-control', value: (@noticia.title if @noticia.title.present?) %>
+							</div>
+						</div>
+
+						<div class="col-lg-12">
+							<div class="form-group">
+								<%= f.label 'Descrição', class: 'main-color uppercase' %>
+								<%= f.text_area :description, class: 'form-control', style: 'resize: none;', rows: '4', value: (@noticia.description if @noticia.description.present?) %>			
+							</div>
+						</div>
+
+						<div class="col-lg-6">
+							<div class="form-group">
+								<%= f.label 'Imagem (opcional)', class: 'main-color uppercase' %>
+								<%= f.file_field :imagem, class: 'form-control' %>
+							</div>
+						</div>
+
+						<div class="col-lg-6">
+							<div class="form-group">
+								<%= f.label 'Vídeo (opcional)', class: 'main-color uppercase' %>
+								<%= f.file_field :video, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<%= f.label 'Documento (opcional)', class: 'main-color uppercase' %>
+								<small class="main-color" style="font-size: 16px;">formato aceito: PDF</small>
+								<%= f.file_field :doc, class: 'form-control' %>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="box-footer">
+			        <%= f.submit action_name == 'edit' ? 'Atualizar' : 'Cadastrar', class: 'btn btn-success btn-flat', role: 'button' %>
+			        <%= link_to 'Voltar', noticias_path, class: 'btn btn-danger btn-flat', role: 'button' %>
+		    	</div>
+    		<% end %>
+		</div>
+	</div>
+</div>

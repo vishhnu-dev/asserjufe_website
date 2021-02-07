@@ -1,0 +1,48 @@
+<%=  grid(@noticia) do |g|
+
+	g.blank_slate  do content_tag :div, "Nenhum registro encontrado", class: 'well' end
+
+	g.column name: 'Título', attribute: 'title', html: { style: 'width: 200px !important;' } do |noticia|
+		noticia.title
+	end
+
+	g.column name: 'Descricão', attribute: 'description', class: 'text-justify', html: { style: 'width: 800px !important;' } do |noticia|
+		content_tag(:p, noticia.description, class: 'main-color')
+	end
+
+	g.column name: 'Imagem', attribute: 'imagem' do |noticia|
+		noticia.imagem.present? ? button_tag(fa_icon('search', text: 'Visualizar imagem'), type: 'button', class: 'btn btn-file text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar Imagem", id: noticia.id, filetype: 'imagem' }) : label_status('N/A', 'red')
+	end
+
+	g.column name: 'Video', attribute: 'video' do |noticia|
+		noticia.video.present? ? button_tag(fa_icon('search', text: 'Visualizar vídeo'), type: 'button', class: 'btn btn-file text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar Vídeo", id: noticia.id, filetype: 'vídeo' }) : label_status('N/A', 'red')
+	end
+
+	g.column name: 'Doc', attribute: 'doc' do |noticia|
+		noticia.doc.present? ? button_tag(fa_icon('search', text: 'Visualizar pdf'), type: 'button', class: 'btn btn-file text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar Documento", id: noticia.id, filetype: 'documento' }) : label_status('N/A', 'red')
+	end
+
+	g.column name: 'Atualizado em', html: { style: 'width: 100px;' } do |noticia|
+		noticia.created_at.strftime('%d/%m/%Y')
+	end
+	g.column do |noticia|
+		if policy(Noticia).edit?
+			link_to edit_noticia_path(noticia), data: { toggle: "tooltip", placement: "left", title: "Editar notícia: #{noticia.title}" } do
+	          	fa_icon 'pencil', style: 'font-size:20px;', class: 'main-color'
+	      	end
+	    end
+	end
+	g.column do |noticia|
+		if policy(Noticia).destroy?
+			link_to noticia_path(noticia), method: :delete, data: { toggle: "tooltip", placement: "left", title: "Excluir notícia #{noticia.title}" } do
+	          	fa_icon 'trash', style: 'color:#dd4b39; font-size:20px;'
+	      	end 
+		end
+	end
+ end %>
+ <% if action_name == "dashboard" %>
+	<%= render partial: 'noticias/modal' %> 	
+ <% else %>
+ 	<%= render partial: 'modal' %> 
+ <% end %>
+

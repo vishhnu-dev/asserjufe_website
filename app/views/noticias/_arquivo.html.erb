@@ -1,0 +1,8 @@
+<%  if params[:filetype] == "documento" %>
+	<object data="<%= @noticia.doc %>" style="width:100%; height: 500px"></object>
+<% elsif params[:filetype] == "imagem" %>
+	<%= image_tag(@noticia.imagem.url, class: 'img-responsive') %>
+<% elsif params[:filetype] == "vídeo"  %>
+	<%= video_tag(@noticia.video, :controls => true, style: 'object-fit: cover;
+    width: 100%; height: 500px')  %>
+ <% end %>

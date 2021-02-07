@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.3.8'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
@@ -39,6 +38,11 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
   gem 'jquery-rails'
   # recaptcha
   gem 'recaptcha'
+  # uploads
+  gem 'carrierwave', '~> 2.0'
+  # datetime
+  gem 'momentjs-rails', '>= 2.9.0'
+  gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
