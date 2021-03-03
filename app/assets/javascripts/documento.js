@@ -16,6 +16,21 @@ $(document).on('turbolinks:load', function(){
 		});
 	});
 
+	$('.btn-banner').click(function(){
+		let id = this.dataset.id;
+
+		$.ajax({
+			url: 'banners/uploads/'+id,
+			method: 'GET',
+			success: function(data){
+				$('#banners .modal-title').html('Pré-visualização do banner');
+				$('#banners').modal('hide');
+				$('#banners .modal-body').html(data);
+				$('#banners').modal('show');
+			}
+		});
+	});
+
 	$('.btn-doc-header').click(function(){
 		let id = this.dataset.count;
 		let file = this.dataset.file;

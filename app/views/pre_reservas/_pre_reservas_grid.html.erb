@@ -1,0 +1,52 @@
+<%=  grid(@pre_reserva_grid) do |g|
+
+	g.blank_slate  do content_tag :div, "Nenhum registro encontrado", class: 'well' end
+
+	g.column name: 'Nome completo', attribute: 'nome_completo' do |pre_reserva|
+		pre_reserva.nome_completo
+	end
+
+	g.column name: 'Casa', attribute: 'casa' do |pre_reserva|
+		pre_reserva.casa
+	end
+
+	g.column name: 'Data de chegada' do |pre_reserva|
+		pre_reserva.data_chegada.strftime('%d-%m-%Y %H:%M:%S')
+	end
+
+	g.column name: 'Data de Saída' do |pre_reserva|
+		pre_reserva.data_saida.strftime('%d-%m-%Y %H:%M:%S')
+	end
+
+	g.column name: 'Email', attribute: 'email' do |pre_reserva|
+		pre_reserva.email
+	end
+
+	g.column name: 'Telefone', attribute: 'celular' do |pre_reserva|
+		pre_reserva.celular
+	end
+
+	g.column name: 'Número de dependentes' do |pre_reserva|
+		pre_reserva.dependentes
+	end
+	
+	g.column name: 'Número de não dependentes' do |pre_reserva|
+		pre_reserva.nao_dependentes
+	end
+	
+	g.column name: 'Número de crianças' do |pre_reserva|
+		pre_reserva.criancas
+	end
+
+	g.column name: 'Solicitado em:' do |pre_reserva|
+		pre_reserva.created_at.strftime('%d-%m-%Y')
+	end
+
+	g.column do |pre_reserva|
+		if policy(PreReserva).edit?
+			link_to edit_pre_reserva_path(pre_reserva), data: { toggle: "tooltip", placement: "left", title: "Editar" } do
+	          	fa_icon 'pencil', style: 'font-size:20px; line-height: 3.7;', class: 'main-color'
+	      	end
+	    end
+	end
+ end %>

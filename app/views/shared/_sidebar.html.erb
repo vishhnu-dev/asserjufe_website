@@ -5,15 +5,34 @@
       <li class="header">MENU</li>
       <li>
         <a href="<%= backend_path %>">
-          <i class="fa fa-home"></i> <span>Início</span>
+          <i class="fa fa-home"></i> <span>INÍCIO</span>
         </a>
       </li>
       <!-- Pré reservas -->
       <% if policy(User).index? %>
         <li>
-          <a href="">
+          <a href="<%= pre_reservas_path %>">
             <i class="fa fa-book"></i> 
-            <span>Pré-reservas</span>
+            <span>PRÉ-RESERVAS</span>
+          </a>
+        </li>
+      <% end %>
+      <!-- Banners -->
+      <% if policy(Banner).index? %>
+        <li>
+          <a href="<%= banners_path %>">
+            <i class="fa fa-image"></i> 
+            <span>Banners</span>
+          </a>
+        </li>
+      <% end %>
+
+      <!-- Palavra do Presidente -->
+      <% if policy(User).index? %>
+        <li class="">
+          <a href="<%= palavras_presidente_path %>">
+            <i class="fa fa-commenting-o"></i>
+            <span>PALAVRA DO PRESIDENTE</span>
           </a>
         </li>
       <% end %>
@@ -21,7 +40,7 @@
       <% if policy(User).index? %>
         <li class="treeview">
           <a href="">
-            <i class="fa fa-folder"></i> <span>Notícias</span>
+            <i class="fa fa-newspaper-o"></i> <span>NOTÍCIAS</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -43,20 +62,10 @@
         </li>
       <% end %>
 
-      <!-- Palavra do Presidente -->
-      <% if policy(User).index? %>
-        <li class="">
-          <a href="<%= palavras_presidente_path %>">
-            <i class="fa fa-commenting-o"></i>
-            <span>Palavra do Presidente</span>
-          </a>
-        </li>
-      <% end %>
-
       <% if policy(User).index? %>
         <li class="treeview">
           <a href="">
-            <i class="fa fa-folder"></i> <span>Biblioteca</span>
+            <i class="fa fa-folder"></i> <span>BIBLIOTECA</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -65,7 +74,7 @@
             <li>
               <a href="<%= documentos_path %>">
                 <i class="fa fa-eye"></i>
-                <span>Ver todas</span>
+                <span>Ver todos</span>
               </a>
             </li>
             <li>
@@ -81,7 +90,7 @@
       <% if policy(User).index? %>
         <li class="treeview">
           <a href="">
-            <i class="fa fa-cog"></i> <span>Usuários</span>
+            <i class="fa fa-users"></i> <span>USUÁRIOS</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

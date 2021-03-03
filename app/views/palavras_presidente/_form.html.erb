@@ -7,8 +7,9 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="form-group">
-								<%= f.label 'Descrição', class: 'main-color uppercase' %>
-								<%= f.text_area :description, class: 'form-control', style: 'resize: none;', rows: '4', value: (@palavra.description if @palavra.description.present?) %>
+								<%= f.label 'Vídeo do presidente', class: 'main-color uppercase' %>
+								<%= f.file_field :video, class: 'form-control' %>
+								<small class="text-danger">Atenção! Formatos aceitos: mp4 mov avi wmv mpg</small>
 							</div>
 						</div>
 					</div>

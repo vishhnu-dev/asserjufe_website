@@ -1,16 +1,16 @@
 <%= grid(@documentos_grid) do |g|
 	g.blank_slate  do content_tag :div, "Nenhum registro encontrado", class: 'well' end
 
-	g.column name: 'Estatuto', attribute: 'estatuto' do |doc|
+	g.column name: 'Estatuto' do |doc|
 		doc.estatuto.present? ? button_tag(fa_icon('search', text: 'Visualizar Estatuto'), type: 'button', class: 'btn btn-doc text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar", id: doc.id, file: 'estatuto' }) : label_status('N/A', 'red')
 	end
-	g.column name: 'Tabela Valores', attribute: 'tabela_valores' do |doc|
+	g.column name: 'Tabela Valores' do |doc|
 		doc.tabela_valores.present? ? button_tag(fa_icon('search', text: 'Visualizar Tabela Valores'), type: 'button', class: 'btn btn-doc text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar", id: doc.id, file: 'tabela_valores' }) : label_status('N/A', 'red')
 	end
-	g.column name: 'Regimento Interno', attribute: 'regimento_interno' do |doc|
+	g.column name: 'Regimento Interno' do |doc|
 		doc.regimento_interno.present? ? button_tag(fa_icon('search', text: 'Visualizar Regimento Interno'), type: 'button', class: 'btn btn-doc text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar", id: doc.id, file: 'regimento_interno' }) : label_status('N/A', 'red')
 	end
-	g.column name: 'Regulamento', attribute: 'regulamento' do |doc|
+	g.column name: 'Regulamento' do |doc|
 		doc.regulamento.present? ? button_tag(fa_icon('search', text: 'Visualizar Regulamento'), type: 'button', class: 'btn btn-doc text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar", id: doc.id, file: 'regulamento' }) : label_status('N/A', 'red')
 	end
 	g.column do |doc|

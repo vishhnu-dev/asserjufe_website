@@ -74,6 +74,10 @@ class ControleUsuariosController < ApplicationController
 		end
 	end
 
+	def atualizacao_cadastral
+				
+	end
+
 	private	
 		# Use callbacks to share common setup or constraints between actions.
 		def set_usuario

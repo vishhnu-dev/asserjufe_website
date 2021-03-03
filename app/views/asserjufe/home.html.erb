@@ -1,14 +1,18 @@
-<!-- Banners Asserjufe -->
-<div class="asserjufe-banners">
-	<div class="owl-carousel owl-theme owl-banners">
-		<div class="item">
-			<img class="img-responsive" src="<%= image_path 'banners/banner.png' %>"></img>
-		</div>
-		<div class="item">
-			<img class="img-responsive" src="<%= image_path 'banners/banner.png' %>"></img>
+<% if @banners.present? %>
+	<!-- Banners Asserjufe -->
+	<div class="asserjufe-banners">
+		<div class="owl-carousel owl-theme owl-banners">
+			<% @banners.each do |banner| %>
+				<div class="item">
+					<a href="<%= banner.url %>">
+						<img class="img-responsive" src="<%= image_path banner.imagem %>"></img>	
+					</a>
+				</div>
+			<% end %>
 		</div>
 	</div>
-</div>
+<% end %>
+
 <% if @noticias.present? %>
 	<div class="container">
 		<div class="news-home" style="margin-bottom: 20px;">
@@ -22,11 +26,12 @@
 
 			</div>
 			<!-- corpo -->
-			<div class="row">
+			<div class="row news">
 				<% @noticias.each do |news| %>
 					<div class="col-md-6">
 						<a href="<%= noticia_visualizar_path(news.slug) %>">
-							<h2 class="white-color text-center" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %> padding: 15px auto;"> 
+							<div class="news-slide" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %>"></div>
+							<h2 class="white-color text-center" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %> padding: 15px auto; margin-top: 0px;"> 
 								<b style="vertical-align: -webkit-baseline-middle; line-height: 2;"><%= truncate(news.title, :lenght =>16, :omission => '...') %></b>
 							</h2>
 							<blockquote>
@@ -50,11 +55,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h2 class="white-color" style="font-size: 40px;"><i class="fa fa-comments-o"></i><b> Mensagem do Presidente</b></h2>
-					<% @palavras.each do |p| %>
-						<blockquote>
-							<p class="lead white-color text-justify"><%= p.description %></p>
-						</blockquote>
+					<h2 class="white-color text-center" style="font-size: 40px; margin-bottom: 15px;">
+						<i class="fa fa-comments-o"></i><b> Mensagem do Presidente</b>
+					</h2>
+					<% @palavras.each do |palavra| %>
+						<%= video_tag(palavra.video, :controls => true, style: 'object-fit: cover; width: 100%; height: 500px; outline:none;') %>
 					<% end %>
 				</div>
 			</div>
@@ -65,10 +70,11 @@
 	<div class="container">
 		<div class="row sede-campestre">
 			<div class="col-md-6">
+				<h2 class="visible-xs secundary-color title title-mob"><b>Sede Campestre</b></h2>
 				<img src="<%= image_path 'gallery/general/01.PNG' %>" class="img-responsive">
 			</div>
-			<div class="col-md-6">
-				<h2 class="secundary-color title"><b>Sede Campestre</b></h2>
+			<div class="col-md-6 mobile-center">
+				<h2 class="hidden-xs secundary-color title title-mob"><b>Sede Campestre</b></h2>
 				<p class="lead main-color">Venha com a <b>família</b> ou com seus <b>amigos</b> para aproveitar o <b>melhor da vida</b> com a gente <b>!</b></p>
 				<a href="<%= sede_campestre_path %>">
 					<button style="text-decoration: none;" class="main-color btn btn-link btn-lg">Saiba mais</button>
@@ -78,12 +84,12 @@
 	</div>
 
 	<!-- banner background-->
-	<div class="background1"></div>
+	<div class="background1 hidden-xs"></div>
 
 	<div class="container">
 		<div class="row convenios">
-			<div class="col-md-6">
-				<h2 class="secundary-color title"><b>Convênios Asserjufe</b></h2>
+			<div class="col-md-6 mobile-center">
+				<h2 class="secundary-color title title-mob"><b>Convênios Asserjufe</b></h2>
 				<p class="lead main-color text-justify"><b> Oferecemos</b> muitos <b>benefícios</b> e <b>facilidades</b> para nossos <b> associados !</b> <b>Convênios</b> com preços lá em <b>baixo</b> em relação ao <b>mercado.</b></p>
 				<a href="<%= convenios_path %>">
 					<button style="text-decoration: none;" class="main-color btn btn-link btn-lg">Saiba mais</button>
@@ -100,11 +106,10 @@
 	</div>
 
 	<!-- banner background-->
-	<div class="background2">
-	</div>
+	<div class="background2 hidden-xs"></div>
 
 	<!-- creditos fotógrafa -->
-	<p class="main-color text-right" style="font-size: 16px; margin-left: 20px;">
+	<p class="main-color text-right hidden-xs" style="font-size: 16px; margin-left: 20px;">
 		Fotos de <b>Evelyn Duarte</b>, 
 		<a href="https://www.instagram.com/clicknotempofotografia"  target="_blank" data-toggle="tooltip" data-placement="bottom" data-original-title="Clique e confira meu trabalho!">Click no Tempo.</a>
 	</p>
@@ -112,10 +117,11 @@
 	<div class="container">
 		<div class="row sede-campestre">
 			<div class="col-md-6 text-center">
+				<h2 class="visible-xs secundary-color title title-mob"><b>Seja um associado</b></h2>
 				<img src="<%= image_path 'asserjufe-22-anos.jpg' %>" style="margin-top: 50px;">
 			</div>
-			<div class="col-md-6">
-				<h2 class="secundary-color title"><b>Seja um associado</b></h2>
+			<div class="col-md-6 mobile-center">
+				<h2 class="hidden-xs secundary-color title title-mob"><b>Seja um associado</b></h2>
 				<p class="lead main-color text-justify">São muitas <b>vantagens</b> para você e sua <b>família.</b> Nossos <b>associados</b> possuem uma gama de convênios como planos telefônicos, UnimedOdonto e muito mais. <b>Confira !</b></p>
 				<a href="<%= associe_se_path %>">
 					<button style="text-decoration: none;" class="main-color btn btn-link btn-lg">Saiba mais</button>
@@ -127,3 +133,19 @@
 
 <!-- google maps -->
 <%= render 'shared/google_maps', src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.90768647313!2d-51.23905238481813!3d-30.03950613800758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9519791c02f8d6c3%3A0x67a9c27f6d99e242!2sASSERJUFE!5e0!3m2!1spt-BR!2sbr!4v1603592591117!5m2!1spt-BR!2sbr" %>
+
+<!-- social sdk -->
+<div class="container social-sdk">
+	<div class="row">
+		<div class="col-sm-5 col-sm-offset-3 text-center sdk-fb">
+			<i class="fa fa-facebook-square"></i>
+			<span class="white-color sriracha">Facebook</span>	
+			<div data-turbolinks="true" class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/asserjufers" data-tabs="timeline" data-width="300" data-height="350" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=763869207799905&amp;container_width=488&amp;height=350&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fasserjufers&amp;locale=pt_BR&amp;sdk=joey&amp;show_facepile=true&amp;small_header=true&amp;tabs=timeline&amp;width=300">
+				<span style="vertical-align: bottom; width: 300px; height: 350px;">
+					<iframe name="f2a3184b7bea48" width="300px" height="350px" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v10.0/plugins/page.php?adapt_container_width=true&amp;app_id=763869207799905&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2043172545ff24%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%253A3000%252Ff75de9cc1ce7b8%26relation%3Dparent.parent&amp;container_width=488&amp;height=350&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fasserjufers&amp;locale=pt_BR&amp;sdk=joey&amp;show_facepile=true&amp;small_header=true&amp;tabs=timeline&amp;width=300" style="border: none; visibility: visible; width: 300px; height: 350px;" class="">
+					</iframe>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>

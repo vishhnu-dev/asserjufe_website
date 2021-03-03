@@ -1,0 +1,23 @@
+<%= grid(@banners_grid) do |g|
+	g.blank_slate  do content_tag :div, "Nenhum registro encontrado", class: 'well' end
+
+	g.column name: 'Status', attribute: 'status', custom_filter: [['Ativo',0],['Inativo',1]], auto_reload: true do |banner|
+		link_to edit_banner_path(banner), data: { toggle: "tooltip", placement: "bottom", title: "Editar Banner" } do
+			banner.ativo? ? label_status('Ativo', 'green') : label_status('Inativo', 'red')
+		end
+	end
+
+	g.column name: 'Banner' do |banner|
+		banner.imagem.present? ? button_tag(fa_icon('search', text: 'Visualizar Banner'), type: 'button', class: 'btn btn-banner text-success', data: { id: banner.id }) : 'nenhum banner encontrado'
+	end
+	
+	g.column do |banner|
+		if policy(Banner).edit?
+			link_to edit_banner_path(banner), data: { toggle: "tooltip", placement: "left", title: "Editar Banner" } do
+	          	fa_icon 'pencil', style: 'font-size:20px;', class: 'main-color'
+	      	end
+	    end
+	end
+end %>
+
+<%= render 'modal' %>

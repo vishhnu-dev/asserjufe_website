@@ -8,6 +8,7 @@
 					a {
 						color: $white-color;
 						font-size: 18px;
+						font-family: 'Sriracha', cursive;
 						&:hover {
 							text-decoration: underline;
 						}
@@ -28,7 +29,7 @@
 						font-size: 26px;
 						i {
 							color: $white-color;
-							padding: 5px 2.5px;
+							padding: 5px 0px;
 						}
 					}
 					
@@ -104,20 +105,20 @@
 							transition: 1000ms;
 							color: $secundary-color;
 						}
-					}
-					.dropdown {
-						display: relative;
-						&:hover ul {
-							display: block;
-  						}
-  						.dropdown-menu {
-							&:hover a {
-								transition: 1000ms;
-  							}
-  						}
 					}	
 				}	
 			}
 		}
 	}	
+}
+
+// alterações website
+.linktel {
+	color: $white-color !important;
+	font-family: 'Sriracha', cursive;
+	font-size: 22px !important;
+	&:hover {
+		font-weight: bold;
+		text-decoration: underline;
+	}
 }

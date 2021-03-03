@@ -3,7 +3,6 @@
       <%= render partial: 'layouts/form_errors', locals: {model: @noticia} %>
 		<div class="box box-success">
 			<%= form_for @noticia do |f| %>
-			<%= f.text_field :slug, class: 'hidden form-control', value: @noticia.title.gsub(' ','-') %>
 				<div class="box-body">
 					<div class="row">
 						<div class="col-lg-12">

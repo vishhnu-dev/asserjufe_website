@@ -27,37 +27,31 @@
 		}
 	}
 }
+.news-home {
+	.news {
+		.news-slide {
+			height: 4px; 
+			width: 0;
+			-webkit-transition: all .4s linear;
+		    -moz-transition: all .4s linear;
+		    -o-transition: all .4s linear;
+		    transition: all .4s linear;
+		}
+		a {
+			&:hover > div.news-slide {
+				background-color: $main-color;
+				width: 100%;
+			}
+		}
+	}
+}
 .noticias, .owl-multiple-noticias {
 	padding: 35px auto;
-	h2, p {
-		font-style: oblique;
-	}
 	h2 {
-		margin-left: 15px;
 		&:hover {
 			b {
 				color: $main-color;
 			}
-		}
-	}
-	.news-link {
-		padding: 10px 10px;
-		p, h2 {
-			margin-left: 20px;
-			margin-right: 20px;
-		}
-	}
-	.btn-news {
-		border:1px solid #269abc;
-		font-size: 24px;
-		border-radius: 30px;
-		color: $white-color;
-		background-color: #269abc;
-		&:hover {
-			color: $white-color;
-			background-color: #269abc;
-			border:1px solid #269abc;
-			font-weight: bold;
 		}
 	}
 
@@ -75,14 +69,24 @@
 	    	display: none !important;
 	    }
     }
-    .owl-prev { left: -32px; }
-    .owl-next { right: -32px; }
+    .owl-prev { left: -80px; }
+    .owl-next { right: -80px; }
     .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
 }
 .msg-presidente {
 	background-color: #0D1C21;
 	.row {
 		padding: 55px 0px;
+	}
+}
+.mobile-center {
+	@media (max-width: 480px) {
+		text-align: center !important;
+	}
+}
+.title-mob {
+	@media (max-width: 480px) {
+		font-size: 30px !important;
 	}
 }
 .banners {
@@ -121,6 +125,11 @@
 	    background-position: bottom;
         -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
     	clip-path: polygon(0 30%, 100% 0, 100% 70%, 0 100%);
+    	@media (max-width: 480px) {
+    		-webkit-clip-path: polygon(0 100%, 100% 0, 100% 90%, 0 100%);
+    		clip-path: polygon(0 35%, 100% 0, 100% 61%, 0 100%);
+    		height: 250px !important;
+    	}
 	}
 	.background2 {
 		background-image: url(asset_path('gallery/larg/15.PNG'));
@@ -130,10 +139,18 @@
 	    background-position: bottom;
 	    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
     	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
+    	@media (max-width: 480px) {
+    		-webkit-clip-path: polygon(0 100%, 100% 0, 100% 90%, 0 100%);
+			clip-path: polygon(0 35%, 100% 0, 100% 61%, 0 100%);
+    		height: 250px !important;
+    	}
 	}
 	.convenios {
 		margin: 100px 0px;
 		padding: 15px 15px;
+		@media (max-width: 480px) {
+			margin: 0px 0px;
+		}
 		.title {
 	    	font-size: 45px;
 		}

@@ -1,2 +1,0 @@
-class ComunicadosController < ApplicationController
-end

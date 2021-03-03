@@ -2,7 +2,7 @@
 
 	g.blank_slate  do content_tag :div, "Nenhum registro encontrado", class: 'well' end
 
-	g.column name: 'Título', attribute: 'title', html: { style: 'width: 200px !important;' } do |noticia|
+	g.column name: 'Título', attribute: 'title', html: { style: 'width: 300px !important;' } do |noticia|
 		noticia.title
 	end
 
@@ -10,19 +10,19 @@
 		content_tag(:p, noticia.description, class: 'main-color')
 	end
 
-	g.column name: 'Imagem', attribute: 'imagem' do |noticia|
+	g.column name: 'Imagem' do |noticia|
 		noticia.imagem.present? ? button_tag(fa_icon('search', text: 'Visualizar imagem'), type: 'button', class: 'btn btn-file text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar Imagem", id: noticia.id, filetype: 'imagem' }) : label_status('N/A', 'red')
 	end
 
-	g.column name: 'Video', attribute: 'video' do |noticia|
+	g.column name: 'Video' do |noticia|
 		noticia.video.present? ? button_tag(fa_icon('search', text: 'Visualizar vídeo'), type: 'button', class: 'btn btn-file text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar Vídeo", id: noticia.id, filetype: 'vídeo' }) : label_status('N/A', 'red')
 	end
 
-	g.column name: 'Doc', attribute: 'doc' do |noticia|
+	g.column name: 'Documento' do |noticia|
 		noticia.doc.present? ? button_tag(fa_icon('search', text: 'Visualizar pdf'), type: 'button', class: 'btn btn-file text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar Documento", id: noticia.id, filetype: 'documento' }) : label_status('N/A', 'red')
 	end
 
-	g.column name: 'Atualizado em', html: { style: 'width: 100px;' } do |noticia|
+	g.column name: 'Atualizado em:', html: { style: 'width: 150px;' } do |noticia|
 		noticia.created_at.strftime('%d/%m/%Y')
 	end
 	g.column do |noticia|

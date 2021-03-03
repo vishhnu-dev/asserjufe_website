@@ -26,39 +26,40 @@
 	<div class="row">
 		<% if @noticia.video.present? %>
 			<div class="<%= @noticia.doc.present? ? 'col-md-6 ' : 'col-md-12'  %>" style="margin-top: 5px;">
-				<%= video_tag(@noticia.video, :controls => true, style: 'object-fit: cover;
-    width: 100%; height: 500px;')  %>
+				<%= video_tag(@noticia.video, :controls => true, style: 'object-fit: cover; width: 100%; height: 500px;  oouutlliine:none;')  %>
 			</div>
 		<% end %>
 
 		<% if @noticia.doc.present? %>
-			<div class="col-md-6" style="margin-top: 5px;">
+			<div class="col-md-6 hidden-xs" style="margin-top: 5px;">
 				<object data="<%= @noticia.doc.url %>" style="width:100%; height: 500px"></object>	
 			</div>	
 			
 		<% end %>
 	</div>
-	<% if @noticias.count != 1 and @noticias.count != 0 %>
-		<div class="row multiple-noticias">
+	<% if @noticias.count != 1 and @noticias.present? and @noticias.count != 0  %>
+		<div class="row multiple-noticias" style="margin-top: 15px;">
 			<div class="container">
 			  	<div class="noticias">					
 					<h1 class="main-color">
 						<i class="fa fa-newspaper-o"> </i> 
-						<b>Mais novidades</b>
+						<b>Outras notícias...</b>
 					</h1>
 					<div style="width:175px; height:5px; background-color: #007C61;"></div>
 					<div class="owl-carousel owl-theme owl-multiple-news">
-						<% @noticias.each do |news| %>
-							<a class="news-link" href="<%= noticia_visualizar_path(news.slug)  %>">
+						<% @noticias.each do |allnews| %>
+							<a href="<%= noticia_visualizar_path(allnews.slug) %>">
 								<h2 class="white-color text-center" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %> padding: 15px auto;"> 
-								<b style="vertical-align: -webkit-baseline-middle; line-height: 2;"><%= truncate(news.title, :lenght =>16, :omission => '...') %></b>
-							</h2>
-								<p class="lead main-color text-justify" style="margin-bottom: 0px;">
-									<b><%= truncate(news.description, :length => 144, :omission => '[Ler mais...]' ) %></b>
-								</p>
+									<b style="vertical-align: -webkit-baseline-middle; line-height: 2;"><%= truncate(allnews.title, :lenght =>16, :omission => '...') %></b>
+								</h2>
+								<blockquote>
+									<p class="lead main-color text-center" style="margin-bottom: 0px;">
+										” <%= truncate(allnews.description, :length => 144, :omission => '[Ler mais...]' )%> ”
+									</p>
+								</blockquote>
 								<p class="main-color sriracha">
 									<small style="font-size: 14px;">Publicado em:</small>
-									<b class="sriracha"> <%= news.created_at.strftime("%d/%m/%Y às %Hh%M") %></b>
+									<b class="sriracha"> <%= allnews.created_at.strftime("%d/%m/%Y às %Hh%M") %></b>
 								</p>
 							</a>
 						<% end %>

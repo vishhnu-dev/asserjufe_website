@@ -10,6 +10,6 @@ class Noticia < ApplicationRecord
 
 	private
 	def	set_slug
-		self.slug = self.title.gsub('.','-').gsub(':','-').gsub(';','-')
+		self.slug = self.title.gsub(/[.' ']/, '.' => ' ', ' ' => '-')
 	end
 end

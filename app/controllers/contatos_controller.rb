@@ -5,8 +5,9 @@ class ContatosController < ApplicationController
 		respond_to do |format|
 			if  verify_recaptcha(model: @contato) and @contato.save
 				format.html { redirect_to contato_path , notice: "Mensagem enviada com sucesso !"}
-			else				
-				format.html { redirect_to contato_path, notice: "O campo telefone é opcional." }
+			else
+				flash[:error] = @contato.errors.full_messages.map { |v| v}.join('<br>').html_safe 
+				format.html { redirect_to contato_path }
 			end
 		end
 	end

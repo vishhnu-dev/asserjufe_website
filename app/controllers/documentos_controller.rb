@@ -9,14 +9,14 @@ class DocumentosController < ApplicationController
 
 	def new
 		authorize Documento
-		session[:page_title] = "Cadastrar Documentos"
+		session[:page_title] = "Cadastrar Documento"
 		@documentos = Documento.new
 
 	end
 
 	def edit
 		authorize @documentos
-		session[:page_title] = "Editar Documentos"
+		session[:page_title] = "Editar Documento"
 	end
 
 	def create

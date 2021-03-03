@@ -10,180 +10,238 @@
 <div class="container-fluid">
 	<div class="container gallery">
 		<div class="row">
-			<div class="col-md-6 text-left">
-				<h2 class="secundary-color">O que é ?</h2>
-				<blockquote>
-					<p class="main-color lead text-justify">A sede campestre é um belíssimo espaço de 6 hectares que destina-se ao lazer, esportes, diversão, eventos e encontro entre amigos. Além de estarmos conectados diretamente com a natureza oferecemos todo o conforto que sua família merece.</p>
-				</blockquote>
-				<h2 class="secundary-color">Como faço para reservar ?</h2>
-				<blockquote>
-					<p class="lead main-color no-break text-justify">Associados podem fazer o <a href="<%= backend_path %>">login <i class="fa fa-mail-forward mail" aria-hidden="true"></i></a> e requisitar no menu correspondente.</p>
-					<p class="lead main-color no breack text-justify">Não associados podem fazer uma pré-reserva no formulário ao lado.</p>
-				</blockquote>
-			</div>
 			<div class="col-md-6">
-				<h2 class="main-color"><b>Pré-reserva Sede Campestre</b></h2>
-				<%= render 'pre_reservas/form' %>
+				<h2 class="secundary-color text-center">O que é ?</h2>
+				<p class="main-color lead text-justify">A sede campestre é um <b class="sriracha">belíssimo espaço de 6 hectares</b> que destina-se ao lazer, esportes, diversão, eventos e encontro entre amigos. Além de estarmos conectados diretamente com a <b class="sriracha">natureza</b> oferecemos todo o <b class="sriracha">conforto</b> que sua <b class="sriracha">família merece</b>.</p>
+				<h2 class="secundary-color text-center">O que preciso levar ?</h2>
+				<p class="lead main-color no-break text-left"><i class="fa fa-check"></i> Roupas de cama e banho.</p>
+				<p class="lead main-color no-break text-left"><i class="fa fa-check"></i> Utensílios de higiene pessoal.</p>
+				<p class="lead main-color no-break text-left"><i class="fa fa-check"></i> Itens alimentares e consumíveis.</p>
 			</div>
-		</div>
-	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="row sede-content">
+			<div class="col-md-6 text-left services">
 				<h2 class="secundary-color text-center">O que oferecemos ?</h2>
-				<div class="col-md-6 text-left services">
-					<blockquote>
-						<p class="text-left lead main-color no-break">
-							<i class="fa fa-check main-color" aria-hidden="true"></i> Área para camping
-						</p>
-						<p class="text-left lead main-color no-break">
-							<i class="fa fa-check main-color" aria-hidden="true"></i> Galpão grande de festas com churrasqueira
-						</p>
-						<p class="text-left lead main-color no-break">
-							<i class="fa fa-check main-color" aria-hidden="true"></i> Mesa de Sinuca / Mesa de pebolim
-						</p>
-						<p class="text-left lead main-color no-break">
-							<i class="fa fa-check main-color" aria-hidden="true"></i> Campo de futebol
-						</p>
-						<p class="text-left lead main-color no-break">
-							<i class="fa fa-check main-color" aria-hidden="true"></i> Poço de água mineral com 100% de pureza
-						</p>
-					</blockquote>
-				</div>
-				<div class="col-md-6 text-left services">
-					<blockquote>
-						<p class="text-left lead main-color no-break">
-							<i class="fa fa-check main-color" aria-hidden="true"></i> Piscinas (Adulto e Infantil)
-						</p>
-						<p class="text-left lead main-color no-break">
-							<i class="fa fa-check main-color" aria-hidden="true"></i> Galpão grande de festas com churrasqueira
-						</p>
-						<p class="text-left lead main-color no-break">
-							<i class="fa fa-check main-color" aria-hidden="true"></i> Wifi
-						</p>
-						<p class="text-left lead main-color no-break">
-							<i class="fa fa-check main-color" aria-hidden="true"></i> Churrasqueiras
-						</p>
-						<p class="text-left lead main-color no-break">
-							<i class="fa fa-check main-color" aria-hidden="true"></i> Playground
-						</p>
-					</blockquote>
-				</div>
+				<blockquote>
+					<!-- <p class="text-left lead main-color no-break">
+						<i class="fa fa-check main-color" aria-hidden="true"></i> Área para camping
+					</p> -->
+					<p class="text-left lead main-color no-break">
+						<i class="fa fa-check main-color" aria-hidden="true"></i> 
+						<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/19.PNG' %>">
+							Salão de festas para 300 pessoas c/ churrasqueira
+						<a>
+					</p>
+					<p class="text-left lead main-color no-break">
+						<i class="fa fa-check main-color" aria-hidden="true"></i>
+						<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/23.PNG' %>">
+							Galpão crioulo com churrasqueira 
+						</a>
+					</p>
+					<p class="text-left lead main-color no-break">
+						<i class="fa fa-check main-color" aria-hidden="true"></i> 
+						<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/22.PNG' %>">
+							Mesas de sinuca/pobolim
+						</a>
+					</p>
+					<p class="text-left lead main-color no-break">
+						<i class="fa fa-check main-color" aria-hidden="true"></i> 
+						<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/03.PNG' %>">
+							Campo de futebol sete
+						</a>
+					</p>
+					<p class="text-left lead main-color no-break">
+						<i class="fa fa-check main-color" aria-hidden="true"></i> 
+						Churrasqueiras ao ar livre
+					</p>
+					<p class="text-left lead main-color no-break">
+						<i class="fa fa-check main-color" aria-hidden="true"></i> 
+						<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/04.PNG' %>">
+							Piscinas (Adulto e Infantil)
+						</a>
+					</p>
+					<p class="text-left lead main-color no-break">
+						<i class="fa fa-check main-color" aria-hidden="true"></i> 
+						Wifi gratuíto
+					</p>
+					<p class="text-left lead main-color no-break">
+						<i class="fa fa-check main-color" aria-hidden="true"></i> 
+						<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/10.PNG' %>">
+							Playground
+						</a>
+					</p>
+					<p class="text-left lead main-color no-break">
+						<i class="fa fa-check main-color" aria-hidden="true"></i> 
+						Poço artesiano com água mineral pura
+					</p>
+				</blockquote>
 			</div>
 		</div>
 	</div>
 </div>
+
 <div class="container-fluid gallery">
 	<div class="container">
-		<div class="col-md-12 text-center">
-			<h2 class="main-color text-center" style="font-size: 45px;"><b>#Galeria</b> de fotos  <b style="font-size:60px;"><text style="color:#007b84;">As</text><text style="color: #006600;">ser</text><text style="color:#007b84;"></text><text style="color:#007b84;">ju</text><text style="color: #006600;">fe</b>
-			</h2>
-			<small class="main-color text-center" style="font-family: 'Sriracha', cursive; text-decoration:underline; font-size:16px;">dica: clique na imagem para ampliá-la.</small><br>
-			<small class="main-color text-center" style="font-family: 'Sriracha', cursive; text-decoration:underline; font-size:16px;">Carrosel arrastável.</small>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2 class="main-color text-center" style="font-size: 45px;"><b>#Galeria</b> de fotos</h2>
+				<small class="main-color text-center" style="font-family: 'Sriracha', cursive; text-decoration:underline; font-size:16px;">dica: Clique na imagem para ampliá-la.</small><br>
+				<small class="main-color text-center" style="font-family: 'Sriracha', cursive; text-decoration:underline; font-size:16px;">Carrosel arrastável.</small>
+			</div>	
 		</div>
 	</div>
 	<div class="col-md-12">
-		<div class="owl-carousel owl-theme owl-gallery">
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/01.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/01.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/02.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/02.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/03.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/03.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/04.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/04.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/05.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/05.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/07.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/07.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/08.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/08.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/10.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/10.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/11.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/11.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/12.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/12.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/13.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/13.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/14.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/14.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/15.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/15.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/16.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/16.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/17.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/17.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/18.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/18.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/19.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/19.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/20.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/20.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/21.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/21.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/22.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/22.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/23.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/23.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/25.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/25.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/26.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/26.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/27.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/27.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/28.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/28.PNG' %>">
-			</a>
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/29.PNG' %>">
-				<img class="img-rounded" src="<%= image_path 'gallery/general/29.PNG' %>">
-			</a>
+		<div class="row">
+			<div class="owl-carousel owl-theme owl-gallery">
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/01.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/01.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/02.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/02.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/03.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/03.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/04.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/04.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/05.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/05.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/07.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/07.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/08.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/08.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/10.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/10.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/11.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/11.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/12.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/12.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/13.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/13.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/14.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/14.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/15.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/15.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/16.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/16.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/17.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/17.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/18.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/18.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/19.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/19.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/20.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/20.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/21.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/21.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/22.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/22.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/23.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/23.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/25.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/25.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/26.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/26.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/27.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/27.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/28.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/28.PNG' %>">
+				</a>
+				<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" href="<%= image_path 'gallery/larg/29.PNG' %>">
+					<img class="img-rounded" src="<%= image_path 'gallery/general/29.PNG' %>">
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
 
-<!-- creditos fotógrafa -->
-<p class="main-color text-left" style="font-size: 16px; margin-left: 30px;">
-	Fotos de <b>Evelyn Duarte</b>, 
-	<a href="https://www.instagram.com/clicknotempofotografia"  target="_blank" data-toggle="tooltip" data-placement="bottom" data-original-title="Clique e confira meu trabalho!">Click no Tempo.</a>
-</p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 assoc">
+			<div class="bs-example" data-example-id="block-btns" style="margin-top: 40px;"> 
+				<div class="well center-block" style="max-width:400px"> 
+					<button class="btn-block sriracha btn btn-lg btn-success btn-pre-reserva" data-toggle="modal" data-target="#pre-reserva">
+						Faça uma pré reserva !
+					</button>
+					<button class="hidden-xs btn-block sriracha btn btn-lg btn-primary" data-toggle="modal" data-target="#lembretes">
+						<span>Regulamento de uso da sede campestre</span>
+					</button>
+					<button class="visible-xs btn-block sriracha btn btn-lg btn-primary" data-toggle="modal" data-target="#lembretes">
+						<span>Regulamento sede campestre</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" style="padding:25px 1px;">
+		<div class="col-md-6 text-center assoc">
+			<h2 class="main-color"></i><b>Associados</b></h2>
+			<div class="second" style="background-color: #244235; border-radius: 100px;">
+				<div class="pad">
+					<p class="lead white-color sriracha" style="margin-bottom: 0px;">Pernoite: <b style="font-size:30px;">R$ 40,00</b></p>
+					<p class="lead white-color sriracha" style="margin-bottom: 0px;">Diária: <b style="font-size:30px;">R$ 35,00</b></p>
+				</div>
+			</div>
+			<div class="price">
+				<p class="lead bolder no-break"><i class="fa fa-check"></i> Pais, marido, esposa, filhos e netos não pagam!</p>
+				<p class="lead main-color" style="margin-bottom: 0px;">Demais familiares de associados:</p>
+				<p class="lead main-color sriracha" style="margin-bottom: 0px;">Pernoite: <b style="font-size:30px;">R$ 35,00</b></p>
+				<p class="lead main-color sriracha">Diária: <b style="font-size:30px;">R$ 30,00</b></p>
+			</div>
+		</div>
+		<div class="col-md-6 text-center nssoc">
+			<h2 class="main-color"></i><b>Não sócios</b></h2>
+			<div class="second" style="background-color: #3c8dbc; border-radius: 100px;">
+				<div class="pad">
+					<p class="lead white-color sriracha" style="margin-bottom: 0px;">Pernoite: <b style="font-size:30px;">R$ 35,00</b></p>
+					<p class="lead white-color sriracha" style="margin-bottom: 0px;">Diária: <b style="font-size:30px;">R$ 30,00</b></p>
+				</div>
+			</div>
+			<div class="price">
+				<p class="lead main-color no-break"><i class="fa fa-check"></i> Preços super assessíveis.<a href="<%= associe_se_path %>"  data-toggle="tooltip" data-placement="bottom" data-original-title="Quero associar-me !"> Associe-se</a> hoje mesmo e garanta uma infinidade de benefícios. </p>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div class="container big-house">
 	<div class="row">
+		<div class="col-md-12" style="background-color: #eee; margin-bottom: 15px;">
+			<h2 class="main-color text-center" style="padding:25px 5px; font-size: 40px;"><b>Instalações</b></h2>
+		</div>
 		<div class="col-md-6">
+			<h2 class="visible-xs main-color text-center text-capitalize"><b>Casa grande</b></h2>
 			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/16.PNG' %>">
 				<img class="img-responsive img-rounded" src="<%= image_path 'gallery/general/16.PNG' %>">
 			</a>
-			<small class="main-color">clique para ampliar</small>
+			<small class="main-color">clique para ampliar <i class="fa fa-search"></i></small>
 		</div>
 		<div class="col-md-6">
-			<h2 class="main-color text-center text-capitalize"><b>Casa grande</b></h2>
+			<h2 class="hidden-xs main-color text-center text-capitalize"><b>Casa grande</b></h2>
 			<blockquote>
 				<p class="main-color text-justify">
 					<i class="fa fa-check main-color" aria-hidden="true"></i>
@@ -219,7 +277,14 @@
 <div class="container small-house">
 	<div class="row">
 		<div class="col-md-6">
-			<h2 class="main-color text-center text-capitalize"><b>Casa pequena</b></h2>
+			<h2 class="visible-xs main-color text-center text-capitalize"><b>Casa pequena</b></h2>
+			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/18.PNG' %>">
+				<img class="img-responsive img-rounded" src="<%= image_path 'gallery/general/18.PNG' %>">
+			</a>
+			<small class="main-color">clique para ampliar <i class="fa fa-search"></i></small>
+		</div>
+		<div class="col-md-6">
+			<h2 class="hidden-xs main-color text-center text-capitalize"><b>Casa pequena</b></h2>
 			<blockquote>
 				<p class="main-color text-justify">
 					<i class="fa fa-check main-color" aria-hidden="true"></i>
@@ -247,12 +312,6 @@
 				</p>
 			</blockquote>
 		</div>
-		<div class="col-md-6">
-			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/18.PNG' %>">
-				<img class="img-responsive img-rounded" src="<%= image_path 'gallery/general/18.PNG' %>">
-			</a>
-			<small class="main-color">clique para ampliar</small>
-		</div>
 	</div>
 </div>
 <!-- banner background-->
@@ -261,13 +320,14 @@
 <div class="container small-house">
 	<div class="row">
 		<div class="col-md-6">
+			<h2 class="visible-xs main-color text-center text-capitalize"><b>Salão de Festas</b></h2>
 			<a data-fancybox="gallery" href="<%= image_path 'gallery/larg/19.PNG' %>">
 				<img class="img-responsive img-rounded" src="<%= image_path 'gallery/general/19.PNG' %>">
 			</a>
-			<small class="main-color">clique para ampliar</small>
+			<small class="main-color">clique para ampliar <i class="fa fa-search"></i></small>
 		</div>
 		<div class="col-md-6 text-center">
-			<h2 class="main-color text-center text-capitalize"><b>Galpão criolo</b></h2>
+			<h2 class="hidden-xs main-color text-center text-capitalize"><b>Salão de Festas</b></h2>
 			<small class="main-color text-center">Eventos, reuniões de negócio, datas comemorativas, shows e muito mais.</small>
 			<blockquote>
 				<p class="main-color text-justify">
@@ -382,6 +442,15 @@
 		</div>
 	</div>
 </div>
+<div class="container">
+	<div class="row" style="padding:15px 0px;">
+		<div class="col-md-12 text-center">
+			<button class="btn btn-lg btn-success btn-pre-reserva" data-toggle="modal" data-target="#pre-reserva">
+				Faça uma pré reserva !
+			</button>
+		</div>	
+	</div>
+</div>
 <!-- Google Maps -->
 <div class="map container-fluid">
 	<div class="row">
@@ -410,3 +479,12 @@
 	</div>
 </div>
 <%= render 'modal_lembretes' %>
+
+<% if flash[:error].present? %>
+	<script type="text/javascript">
+		$(document).on('turbolinks:load', function(){
+			$('#pre-reserva').modal('show')
+		});
+	</script>
+<% end %>
+<%= render 'modal_pre_reserva' %>

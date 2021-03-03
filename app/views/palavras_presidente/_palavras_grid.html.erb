@@ -2,8 +2,8 @@
 
 	g.blank_slate  do content_tag :div, "Nenhum registro encontrado", class: 'well' end
 
-	g.column name: 'Descrição'do |palavra|
-		palavra.description
+	g.column name: 'Vídeo'do |palavra|
+		video_tag(palavra.video, :controls => true, style: 'object-fit: cover; width: 100%; height: 500px;')
 	end
 
 	g.column do |palavra|

@@ -6,6 +6,7 @@ class AsserjufeController < ApplicationController
   	@page_title = "Página Inicial"
     @noticias = Noticia.all.order(created_at: :asc).limit(4)
     @palavras = PalavraPresidente.all
+    @banners = Banner.where(status: :ativo)
   end
   
   def a_asserjufe
@@ -35,7 +36,10 @@ class AsserjufeController < ApplicationController
   end
 
   def noticia
+    # current noticia
     @page_title = @noticia.title
+
+    #todas noticias
     @noticias = Noticia.where.not(slug: @noticia.slug)
   end
 

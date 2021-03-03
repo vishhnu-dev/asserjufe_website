@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_01_055526) do
+ActiveRecord::Schema.define(version: 2021_03_01_182656) do
+
+  create_table "banners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "status", default: 0
+    t.string "imagem"
+    t.string "url"
+  end
 
   create_table "contatos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -43,7 +49,7 @@ ActiveRecord::Schema.define(version: 2021_02_01_055526) do
   end
 
   create_table "palavras_presidente", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "description"
+    t.string "video"
   end
 
   create_table "pre_reservas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -67,6 +73,7 @@ ActiveRecord::Schema.define(version: 2021_02_01_055526) do
     t.string "email", default: "", null: false
     t.string "nome_completo"
     t.date "data_nascimento"
+    t.integer "atualizacao", default: 0
     t.string "encrypted_password", default: "", null: false
     t.integer "role", default: 0, null: false
     t.string "reset_password_token"

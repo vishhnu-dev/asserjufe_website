@@ -52,7 +52,7 @@ $font-small: 12px;
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:20px;
+	bottom:60px;
 	right:20px;
 	background-color:#25d366;
 	border-radius:50px;
@@ -71,12 +71,13 @@ $font-small: 12px;
 	position:fixed;
 	width:50px;
 	height:50px;
-    bottom: 86px;
+    bottom: 126px;
     right: 26px;
 	background-color: $secundary-color;
 	border-radius:50px;
 	text-align:center;
 	display: none;
+	z-index: 9999;
 	.fa-arrow-up {
 		margin-top: 6px;
     	font-size: 35px;
@@ -167,4 +168,13 @@ body {
 			color: #eee !important;
 		}
 	}	
+}
+.modal-header {
+	button {
+		outline: none;
+		span {
+		    line-height: 0.2;
+			font-size: 60px;
+		}
+	}
 }

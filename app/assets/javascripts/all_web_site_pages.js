@@ -3,6 +3,9 @@ $(document).on('turbolinks:load', function(){
     //data-fancybox gallery
     $('[data-fancybox="gallery"]').fancybox({
         buttons : ['close', 'thumbs', 'slideShow'],
+        thumbs : {
+            autoStart : true
+        },
         hash : false,
         share : {
             url : function( instance, item ) {
@@ -133,9 +136,9 @@ $(document).on('turbolinks:load', function(){
     
     $('.owl-banners').owlCarousel({
         dots: false,
-        autoHeight: true,
+        autoHeight: false,
         items: 1,
-        loop: false,
+        loop: true,
         nav: true,
         navText:["<i class='fa fa-chevron-left' aria-hidden='true'></i>","<i class='fa fa-chevron-right' aria-hidden='true'></i>"],
         autoplay: true,
@@ -153,32 +156,26 @@ $(document).on('turbolinks:load', function(){
       }
     };
     $('.phone_with_ddd').mask(pwdbehavior, pwdptions);
-    // datetime
-    $('.date_time').mask('00/00/0000 00:00:00',{placeholder:"__/__/____ __:__:__"});
 
+    // datetime
+    $('.date_time').mask('00/00/0000 00:00',{placeholder:"__/__/____ __:__"});
     $('body').on('focus', '.date_time', function() {
         $('.date_time').datetimepicker({
-            sideBySide: true,
+            sideBySide: false,
+            showClose: true,
+            showClear: true,
+            calendarWeeks: true,
             format: 'DD/MM/YYYY HH:mm',
             icons: {
-              time: "fa fa-clock-o",
-              date: "fa fa-calendar",
-              up: "fa fa-arrow-up",
-              down: "fa fa-arrow-down",
-              next: "fa fa-arrow-right",
-              previous: "fa fa-arrow-left"
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-arrow-up",
+                down: "fa fa-arrow-down",
+                next: "fa fa-arrow-right",
+                previous: "fa fa-arrow-left",
+                clear: 'fa fa-refresh',
+                close: 'fa fa-close'
             }
-        });
-    });
-    
-    /* Menu scroll */
-    $('a[href^="#"]').on('click',function (e) {
-        e.preventDefault();
-        var target = this.hash;
-        $target = $(target);
-        $('html, body').stop().animate({
-            'scrollTop':  $target.offset().top
-        }, 900, 'swing', function () {
         });
     });
 

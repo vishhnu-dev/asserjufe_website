@@ -1,6 +1,6 @@
 <% contflash = 0 %>
 <% flash.each do |name, msg| %>
-  <% if msg.is_a?(String) && msg!='' %>
+  <% if msg.is_a?(Array) && msg!='' %>
 
     <%
       contflash += 1
@@ -26,9 +26,15 @@
     <div class="alert alert-<%= msgclass %> alert-dismissable" style="<%= contflash<flash.count ? 'margin-bottom: 2px' : '' %>">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <h4><i class="icon fa fa-<%=icon%>"></i> Atenção!</h4>
-      <%= msg.html_safe %>
+
+      <%# 
+        if msg == 'E-mail ou senha inválidos.'
+          msg = "E-mail ou senha inválidos.<br>Para recuperar sua senha clique <strong>#{link_to('aqui', resetar_senha_path)}</strong>."
+        end 
+      %>
+
+      <%= msg %>
     </div>
-    
   <% end %>  
 <% end %>
 <% flash.clear %>

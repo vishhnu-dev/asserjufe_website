@@ -7,7 +7,18 @@ pt-BR:
         title: 'Título'
         description: 'Descrição'
       palavra_presidente:
-        description: 'Descrição'
+        video: 'Vídeo'
+      pre_reserva:
+        nome_completo: 'Nome completo'
+        casa: 'Onde deseja ficar?'
+        data_chegada: 'Data de entrada'
+        data_saida: 'Data de saída'
+        email: 'Email'
+        celular: 'Celular, telefone ou WhatsApp'
+      banners:
+        status: 'Status'
+        imagem: 'Banner'
+        url: 'Link do banner'
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
