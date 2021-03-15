@@ -39,7 +39,7 @@ $(document).on('turbolinks:load', function(){
     // END
     $('.owl-multiple-news').owlCarousel({
         dots: false,
-        loop: true,
+        loop: false,
         nav: true,
         navText:["<i class='fa fa-chevron-left' aria-hidden='true'></i>","<i class='fa fa-chevron-right' aria-hidden='true'></i>"],
         autoplay: true,
@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function(){
             },
             // breakpoint from 768 up
             1200 : {
-                items: 2
+                items: 3
             }
         }
     });
@@ -158,14 +158,11 @@ $(document).on('turbolinks:load', function(){
     $('.phone_with_ddd').mask(pwdbehavior, pwdptions);
 
     // datetime
-    $('.date_time').mask('00/00/0000 00:00',{placeholder:"__/__/____ __:__"});
+    $('.date_time').mask('00/00/0000',{placeholder:"__/__/____"});
     $('body').on('focus', '.date_time', function() {
         $('.date_time').datetimepicker({
-            sideBySide: false,
-            showClose: true,
-            showClear: true,
             calendarWeeks: true,
-            format: 'DD/MM/YYYY HH:mm',
+            format: 'DD/MM/YYYY',
             icons: {
                 time: "fa fa-clock-o",
                 date: "fa fa-calendar",
@@ -181,7 +178,7 @@ $(document).on('turbolinks:load', function(){
 
     $('.phone_with_ddd').mask(pwdbehavior, pwdptions);
 
-    // MASCARA DE TELEFONE //
+    /* phone */
     var pwdbehavior = function (val) {
         return val.replace(/\D/g, '').length == 11 ? '(00) 00000-0000' : '(00) 0000-00009';
     },
@@ -191,4 +188,5 @@ $(document).on('turbolinks:load', function(){
         field.mask(pwdbehavior.apply({}, arguments), options);
       }
     };
+    /* end phone*/
 });

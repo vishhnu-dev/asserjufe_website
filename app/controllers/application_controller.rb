@@ -39,6 +39,6 @@
 		
 		def user_not_authorized
 			flash[:error] = 'Você não tem permissão para realizar esta ação'
-			redirect_to dashboard_path
+			redirect_to backend_path
 		end
 end

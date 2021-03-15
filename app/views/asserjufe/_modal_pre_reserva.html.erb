@@ -4,42 +4,48 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span></button>
-          <h4 class="modal-title main-color"><b>Pré-reserva da Sede Campestre</b></h4>
+          <h3 class="modal-title main-color text-center"><b>Pré-reserva da Sede Campestre</b></h3>
       </div>
 
-      <div class="modal-body modal-height text-center">
+      <div class="modal-body modal-height">
         <div style="padding: 15px 30px;">
            <%= form_for @pre_reserva, :url => {:controller => "pre_reservas", :action => "create" } do |f| %>
+           
            <div class="row">
               <div class="col-md-12">
                 <%= render partial: 'layouts/messages' %>
               </div>
             </div>
+
             <div class="row contatos-form">
               <div class="col-xs-12 col-md-6 text-left">
                 <div class="form-group">
                   <%= f.label 'Nome completo', class: 'main-color' %>
-                  <%= f.text_field :nome_completo, class: 'form-control captalize' %>
+                  <%= f.text_field :nome_completo, value: @pre_reserva.nome_completo, class: 'form-control' %>
                 </div>
               </div>
+
               <div class="col-xs-12 col-md-6 text-left">
                 <div class="form-group">
                   <%= f.label 'Email', class: 'main-color' %>
-                  <%= f.email_field :email, class: 'form-control' %>                                  
+                  <%= f.email_field :email, value: @pre_reserva.nome_completo, class: 'form-control' %>                                  
                 </div>
               </div>
+
               <div class="col-xs-12 col-md-6 text-left">
                 <div class="form-group">
                   <%= f.label 'Telefone', class: 'main-color' %>
-                  <%= f.text_field :celular, class: 'form-control phone_with_ddd' %>
+                  <%= f.text_field :celular, value: @pre_reserva.nome_completo, class: 'form-control phone_with_ddd' %>
                 </div>
               </div>
+
               <div class="col-xs-12 col-md-6 text-left">
                 <div class="form-group">
                   <%= f.label 'Onde deseja ficar ?', class: 'main-color' %>
-                  <%= f.select :casa, options_for_casa, { include_blank: 'Selecione...' }, class: 'form-control'%>
+                  <%= f.select :casa, options_for_select(options_for_casa, @pre_reserva.nome_completo), { include_blank: 'Selecione...' }, class: 'form-control'%>
                 </div>
               </div>
+
               <div class="col-xs-12 col-md-6 text-left">
                 <div class="form-group">
                   <%= f.label 'Data de entrada', class: 'main-color' %>
@@ -53,12 +59,13 @@
                      </div>
                 </div>
               </div>
+
               <div class="col-xs-12 col-md-6 text-left">
                 <div class="form-group">
                   <%= f.label 'Data de saída', class: 'main-color' %>
                   <div class="form-group">
                         <div class='input-group date' id='datetimepicker1'>
-                           <input type='text' name="pre_reserva[data_saida]" class="form-control date_time" />
+                           <input type='text' name="pre_reserva[data_saida]" class="form-control date_time" value="pe" />
                            <span class="input-group-addon">
                            <span class="fa fa-calendar"></span>
                            </span>
@@ -66,40 +73,45 @@
                      </div>
                 </div>
               </div>
-              <!-- <div class="col-xs-6 col-md-12">
-                    <div class="row">
-                      <div class="col-xs-12 col-md-6 text-left">
-                    <div class="form-group">
-                      <%# f.label 'Quantas?', class: 'main-color captalize'%>
-                      <%# f.number_field :dependentes, class: 'form-control uppercase'%>
-                    </div>
-                      </div>
-                    </div>
-                  </div> -->
-                  <div class="col-xs-6 col-md-6 text-left">
-                <div class="form-group">
-                  <%= f.label 'Número de acompanhantes', class: 'main-color' %>
-                  <%= f.number_field :nao_dependentes, class: 'form-control uppercase' %>
-                </div>
-                  </div>
-                  <div class="col-xs-6 col-md-6 text-left">
+
+              <div class="col-xs-6 col-md-6 text-left">
                 <div class="form-group">
                   <%= f.label 'Número de crianças', class: 'main-color' %>
-                  <%= f.number_field :criancas, class: 'form-control uppercase' %>
+                  <%= f.number_field :numero_criancas, class: 'form-control' %>
                 </div>
+              </div>
+
+              <div class="col-xs-6 col-md-6 text-left">
+                <div class="form-group">
+                  <%= f.label 'Número de acompanhantes', class: 'main-color' %>
+                  <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" data-original-title="Pagantes"></i>
+                  <%= f.number_field :numero_acompanhantes, class: 'form-control' %>
                 </div>
-              <!-- <div class="col-xs-4 col-md-6 text-left">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#lembretes">
-                  <b>Lembretes</b>
-                </button>
-              </div> -->
-                <div class="col-xs-6 col-xs-offset-3">
+              </div>
+
+              <div class="col-xs-6 col-md-6 text-left">
+                <div class="form-group">
+                  <%= f.label 'Pérfil do cliente', class: 'main-color' %>
+                  <%= f.select :tipo_cliente, options_for_tipo_cliente, { include_blank: 'Selecione...'}, value: 5, class: 'form-control perfil' %>
+                  <small class="white-color">/</small>
+                </div>
+              </div>
+
+              <div class="col-xs-6 col-md-6 text-left">
+                <div class="form-group">
+                  <%= f.label 'Número de dependentes', class: 'main-color perfil_for', style: 'display:none;' %>
+                  <%= f.number_field :numero_dependentes, class: 'form-control perfil_for', style: 'display:none;' %>
+                  <small  style="display:none;" class="main-color perfil_for">São eles: Pai, mãe, filhos, esposa ou marido e netos. Não pagam !</small>
+                </div>
+              </div>
+
+              <div class="col-xs-6 col-xs-offset-3">
                 <div class="form-group button">                 
                   <%= invisible_recaptcha_tags text: 'Enviar', class: 'btn btn-success btn-block' %>
                 </div>
-                </div>
               </div>
-            <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

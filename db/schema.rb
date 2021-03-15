@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_182656) do
+ActiveRecord::Schema.define(version: 2021_03_15_122322) do
+
+  create_table "assinaturas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nome"
+    t.integer "sexo"
+    t.date "data_nascimento"
+    t.string "nome_mae"
+    t.string "nome_pai"
+    t.string "celular"
+    t.string "celular2"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "banners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "status", default: 0
@@ -58,13 +71,11 @@ ActiveRecord::Schema.define(version: 2021_03_01_182656) do
     t.datetime "data_chegada"
     t.datetime "data_saida"
     t.string "email"
+    t.integer "tipo_cliente"
+    t.integer "numero_acompanhantes"
+    t.integer "numero_criancas"
+    t.integer "numero_dependentes"
     t.string "celular"
-    t.string "possui_dependentes"
-    t.integer "dependentes"
-    t.string "possui_nao_dependentes"
-    t.integer "nao_dependentes"
-    t.string "possui_criancas"
-    t.integer "criancas"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

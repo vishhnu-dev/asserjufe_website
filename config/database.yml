@@ -19,14 +19,10 @@ default: &default
 
 development:
   <<: *default
-  database: asserjufe
-
-test:
-  <<: *default
-  database: asserjufe_website_test
+  database: db_asserjufe
 
 production:
   <<: *default
-  database: asserjufe_website_production
+  database: db_asserjufe_production
   username: asserjufe_website
   password: <%= ENV['ASSERJUFE_WEBSITE_DATABASE_PASSWORD'] %>

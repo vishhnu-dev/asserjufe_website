@@ -65,6 +65,21 @@ $font-small: 12px;
 	}
 }
 
+/* Efeito zoom imagens => aplicar classe na tag img*/
+.zoom {
+  transition: transform .6s;
+  &:hover {
+  	-ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
+  }
+  @media screen and (max-width: 480px){
+  	transition: none;
+  	&:hover {
+  		transform: none;
+  	}
+  }
+}
 /* arrow-up pop-up*/ 
 .ancor-up {
 	cursor: pointer;
@@ -96,6 +111,11 @@ $font-small: 12px;
 				color: $white-color;
 				small {
 					color: $white-color;
+				}
+			}
+			@media (max-width: 480px) {
+				h1 {
+					text-align: center;
 				}
 			}
 		}

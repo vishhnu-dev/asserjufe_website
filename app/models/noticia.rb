@@ -9,7 +9,8 @@ class Noticia < ApplicationRecord
 	before_save :set_slug
 
 	private
-	def	set_slug
-		self.slug = self.title.gsub(/[.' ']/, '.' => ' ', ' ' => '-')
-	end
+		def	set_slug
+			self.slug = self.title.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s
+			self.slug = self.slug.gsub(/[.' ']/, '.' => ' ', ' ' => '-')
+		end
 end

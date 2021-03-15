@@ -12,7 +12,7 @@ class PreReservaPolicy < ApplicationPolicy
 	end
 
 	def show?
-		false
+		user.administrador?
 	end
 
 	def create?
@@ -20,11 +20,11 @@ class PreReservaPolicy < ApplicationPolicy
 	end
 
 	def update?
-		user.administrador? or (user.id == record.id)
+		user.administrador?
 	end
 
 	def destroy?
-		user.administrador? and (user.id != record.id)
+		user.administrador?
 	end
 
 	class Scope < Scope

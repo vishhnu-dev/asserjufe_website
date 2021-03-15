@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 	get 'noticia/:slug' => 'asserjufe#noticia', as: :noticia_visualizar
 
 	# /administracao
-	get 'entrar' => 'backend#dashboard', :as => 'backend'
+	get 'dashboard' => 'backend#dashboard', :as => 'backend'
 
 	resources :noticias, path: 'noticias', path_names: { new: 'cadastrar', edit: 'atualizar'}
 	resources :palavras_presidente, path: 'palavra-do-presidente', path_names: { new: 'cadastrar', edit: 'atualizar'}
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 	resources :documentos, path: 'biblioteca', path_names: { new: 'cadastrar', edit: 'atualizar'}
 	resources :pre_reservas, path: 'pre-reserva', path_names: { new: 'reservar', edit: 'atualizar'}
 	resources :banners, path: 'banners', path_names: { new: 'cadastrar', edit: 'atualizar'}
+	resources :assinaturas, path: 'assinaturas', path_names: { new: 'cadastrar', edit: 'atualizar'}
 	
 	# visualizador de arquivos/noticias
 	get 'noticias/uploads/:id/:filetype' => 'noticias#file'

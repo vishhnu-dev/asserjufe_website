@@ -69,7 +69,7 @@ class ControleUsuariosController < ApplicationController
 			if @usuario.destroy
 				format.html { redirect_to usuarios_path, notice: 'Usuário exclído com sucesso!'}
 			else
-				format.html { redirect_to usuarios_path, notice: 'Usuário não pôde ser atualizado!'}
+				format.html { redirect_to usuarios_path, notice: 'Usuário não pôde ser exclído!'}
 			end
 		end
 	end

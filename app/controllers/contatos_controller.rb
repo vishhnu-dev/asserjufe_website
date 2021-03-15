@@ -6,7 +6,7 @@ class ContatosController < ApplicationController
 			if  verify_recaptcha(model: @contato) and @contato.save
 				format.html { redirect_to contato_path , notice: "Mensagem enviada com sucesso !"}
 			else
-				flash[:error] = @contato.errors.full_messages.map { |v| v}.join('<br>').html_safe 
+				flash[:error] = @contato.errors.full_messages.join('</br>')
 				format.html { redirect_to contato_path }
 			end
 		end
