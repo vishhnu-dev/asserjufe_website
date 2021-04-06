@@ -18,12 +18,13 @@
 						}
 					}
 					@media (min-width: 	768px) and (max-width: 	1199px) {
-							text-align: center;	
+						text-align: center;	
 					}
 				}
 				.sociais {
 					@media (max-width: 991px) {
 						text-align: center !important;
+					    display: inline !important;
 					}
 					a{
 						font-size: 26px;

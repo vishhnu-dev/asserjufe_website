@@ -9,7 +9,7 @@
         </a>
       </li>
       <!-- Pré reservas -->
-      <% if policy(User).index? %>
+      <% if policy(PreReserva).index? %>
         <li>
           <a href="<%= pre_reservas_path %>">
             <i class="fa fa-book"></i> 
@@ -28,8 +28,8 @@
       <% end %>
 
       <!-- Palavra do Presidente -->
-      <% if policy(User).index? %>
-        <li class="">
+      <% if policy(PalavraPresidente).index? %>
+        <li>
           <a href="<%= palavras_presidente_path %>">
             <i class="fa fa-commenting-o"></i>
             <span>PALAVRA DO PRESIDENTE</span>
@@ -37,81 +37,31 @@
         </li>
       <% end %>
 
-      <% if policy(User).index? %>
-        <li class="treeview">
-          <a href="">
-            <i class="fa fa-newspaper-o"></i> <span>NOTÍCIAS</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+      <% if policy(Noticia).index? %>
+        <li>
+          <a href="<%= noticias_path %>">
+            <i class="fa fa-newspaper-o"></i> 
+            <span>NOTÍCIAS</span>
           </a>
-          <ul class="treeview-menu">
-            <li>
-              <a href="<%= noticias_path %>">
-                <i class="fa fa-eye"></i>
-                <span>Ver todas</span>
-              </a>
-            </li>
-            <li>
-              <a href="<%= new_noticia_path %>">
-                <i class="fa fa-plus-circle"></i>
-                <span>Cadastrar</span>
-              </a>
-            </li>
-          </ul>
+        </li>
+      <% end %>
+
+      <% if policy(Documento).index? %>
+        <li>
+          <a href="<%= documentos_path %>">
+            <i class="fa fa-folder"></i> 
+            <span>BIBLIOTECA</span>
+          </a>
         </li>
       <% end %>
 
       <% if policy(User).index? %>
-        <li class="treeview">
-          <a href="">
-            <i class="fa fa-folder"></i> <span>BIBLIOTECA</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li>
-              <a href="<%= documentos_path %>">
-                <i class="fa fa-eye"></i>
-                <span>Ver todos</span>
-              </a>
-            </li>
-            <li>
-              <a href="<%= new_documento_path %>">
-                <i class="fa fa-plus-circle"></i>
-                <span>Cadastrar</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-      <% end %>
-
-      <% if policy(User).index? %>
-        <li class="treeview">
-          <a href="">
+        <li>
+          <a href="<%= usuarios_path %>">
             <i class="fa fa-users"></i> <span>USUÁRIOS</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
           </a>
-          <ul class="treeview-menu">
-            <li>
-              <a href="<%= usuarios_path %>">
-                <i class="fa fa-eye"></i>
-                <span>Ver Todos</span>
-              </a>
-            </li>
-            <li>
-              <a href="<%= new_usuario_path %>">
-                <i class="fa fa-plus-circle"></i>
-                <span>Cadastrar</span>
-              </a>
-            </li>
-          </ul>
         </li>
       <% end %>
-
     </ul>
   </section>
 </aside>

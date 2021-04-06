@@ -1,5 +1,6 @@
 class ControleUsuariosController < ApplicationController
 	before_action :set_usuario, only: [:edit, :update, :destroy]
+	before_action :set_current_user, only: [:atualizacao_cadastral]
 
 	# Get /usuarios
 	def index
@@ -16,6 +17,9 @@ class ControleUsuariosController < ApplicationController
 	def edit
 		authorize @usuario
 		session[:page_title] = "Editar Usuário"
+		if @usuario.atualizacao_necessaria?
+			redirect_to atualizacao_cadastral_path
+		end
 	end
 
 	# GET /usuarios/novo
@@ -57,7 +61,11 @@ class ControleUsuariosController < ApplicationController
 			if @usuario.update(usuario_params)
 				format.html { redirect_to usuarios_path, notice: 'Usuário atualizado com sucesso!'}
 			else
-				format.html { render :edit}
+				if @usuario.atualizacao_necessaria?
+					format.html { redirect_to atualizacao_cadastral_path }
+				else
+					format.html { render :edit}
+				end
 			end
 		end
 	end
@@ -69,13 +77,14 @@ class ControleUsuariosController < ApplicationController
 			if @usuario.destroy
 				format.html { redirect_to usuarios_path, notice: 'Usuário exclído com sucesso!'}
 			else
-				format.html { redirect_to usuarios_path, notice: 'Usuário não pôde ser exclído!'}
+				format.html { redirect_to usuarios_path, notice: 'Usuário não pôde ser excluído!'}
 			end
 		end
 	end
 
 	def atualizacao_cadastral
-				
+		authorize @usuario
+		session[:page_title] = "Atualização Cadastral"
 	end
 
 	private	
@@ -86,11 +95,15 @@ class ControleUsuariosController < ApplicationController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def usuario_params
-			params.require(:user).permit(:email, :password, :role)
+			params.require(:user).permit(:email, :nome_completo, :data_nascimento, :password, :role)
 		end
 
 		# Verifica email em uso
 		def verifica_email_em_uso
 			@exist = User.find_by(' email = ? ', usuario_params[:email])
+		end
+
+		def set_current_user
+			@usuario = User.find(current_user.id)
 		end
 end

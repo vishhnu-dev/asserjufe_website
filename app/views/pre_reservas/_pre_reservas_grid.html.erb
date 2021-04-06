@@ -2,7 +2,7 @@
 
 	g.blank_slate  do content_tag :div, "Nenhum registro encontrado", class: 'well' end
 
-	g.column name: 'Nome completo', attribute: 'nome_completo' do |pre_reserva|
+	g.column name: 'Nome completo', attribute: 'nome_completo', html: { width: '250px;'} do |pre_reserva|
 		pre_reserva.nome_completo
 	end
 
@@ -14,35 +14,35 @@
 		pre_reserva.email
 	end
 
-	g.column name: 'Celular', attribute: 'celular', html: { style: 'width:150px;' } do |pre_reserva|
+	g.column name: 'Celular', attribute: 'celular', html: { width: '120px;'} do |pre_reserva|
 		pre_reserva.celular
 	end
 
-	g.column name: 'Data de chegada', html: { style: 'width:150px;' } do |pre_reserva|
-		pre_reserva.data_chegada.strftime('%d-%m-%Y %H:%M:%S')
+	g.column name: 'Data de chegada' do |pre_reserva|
+		pre_reserva.data_chegada.strftime('%d/%m/%Y')
 	end
 
-	g.column name: 'Data de Saída', html: { style: 'width:150px;' } do |pre_reserva|
-		pre_reserva.data_saida.strftime('%d-%m-%Y %H:%M:%S')
+	g.column name: 'Data de Saída' do |pre_reserva|
+		pre_reserva.data_saida.strftime('%d/%m/%Y')
 	end
 
-	g.column name: 'Tipo de cliente', attribute: 'tipo_cliente',custom_filter: tipo_client_grid, auto_reload: true, html: { style: 'text-align:center' } do |pre_reserva|
+	g.column name: 'Tipo de cliente', attribute: 'tipo_cliente',custom_filter: tipo_client_grid, auto_reload: true do |pre_reserva|
 		pre_reserva.tipo_cliente
 	end
 	
-	g.column name: 'Número de acompanhantes pagantes', attribute: 'numero_acompanhantes', html: { style: 'text-align:center' } do |pre_reserva|
+	g.column name: 'Número de acompanhantes pagantes', attribute: 'numero_acompanhantes' do |pre_reserva|
 		pre_reserva.numero_acompanhantes
 	end
 	
-	g.column name: 'Número de crianças', attribute: 'numero_criancas', html: { style: 'text-align:center' } do |pre_reserva|
+	g.column name: 'Número de crianças', attribute: 'numero_criancas' do |pre_reserva|
 		pre_reserva.numero_criancas
 	end
 
-	g.column name: 'Número de dependentes', attribute: 'numero_dependentes', html: { style: 'text-align:center' } do |pre_reserva|
+	g.column name: 'Número de dependentes', attribute: 'numero_dependentes' do |pre_reserva|
 		pre_reserva.numero_dependentes
 	end
 
-	g.column name: 'Solicitado em:', html: { style: 'text-align:center' } do |pre_reserva|
+	g.column name: 'Solicitado em:' do |pre_reserva|
 		pre_reserva.created_at.strftime('%d-%m-%Y')
 	end
 

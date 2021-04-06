@@ -29,12 +29,12 @@ Rails.application.routes.draw do
 	get 'biblioteca/docs/:id/:file' => 'asserjufe#visualizar_doc'
 
 	# Usuarios # has to stand before devise routes
-	get    'usuarios'            => 'controle_usuarios#index'
-	get    'usuarios/novo'       => 'controle_usuarios#new',  as: :new_usuario
-	get	   'usuarios/:id/editar' => 'controle_usuarios#edit',  as: :edit_usuario
-	get    'atualizacao-cadastral' => 'controle_usuarios#atualizacao_cadastral', as: :atualizacao_cadastral
-	post   'usuarios'            => 'controle_usuarios#create'
-	patch  'usuarios/:id'        => 'controle_usuarios#update'
+	get   'usuarios'            => 'controle_usuarios#index'
+	get   'usuarios/novo'       => 'controle_usuarios#new',  as: :new_usuario
+	get	  'usuarios/:id/editar' => 'controle_usuarios#edit',  as: :edit_usuario
+	get   'atualizacao-cadastral' => 'controle_usuarios#atualizacao_cadastral', as: :atualizacao_cadastral
+	post  'usuarios'            => 'controle_usuarios#create'
+	patch 'usuarios/:id'        => 'controle_usuarios#update'
 
 	# Devise routes
   	devise_for :users , path_names: { sign_in: :entrar, sign_out: :sair }

@@ -1,10 +1,10 @@
-<% if flash.errors.any? %> 
+<% if model.errors.any? %> 
   <div id="error_explanation" class="alert alert-danger">
   	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&#215;</button>
-  	<h2><%= pluralize(flash.errors.count, "erro") %> ao salvar o registro:</h2>
+  	<h2><%= pluralize(model.errors.count, "erro") %> ao salvar o registro:</h2>
 
     <ul>
-	    <% flash.errors.full_messages.each do |message| %>
+	    <% model.errors.full_messages.each do |message| %>
 	      <li><%= message %></li>
 	    <% end %>
     </ul>

@@ -10,7 +10,7 @@ class BannerUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "public/uploads/banners/#{model.id}"
+    "public/uploads/banners/#{model.id+13}"
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
