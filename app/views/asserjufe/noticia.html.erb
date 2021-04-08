@@ -66,16 +66,26 @@
 							<h2 class="white-color text-center" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %> padding: 15px auto; margin-top: 0px;"> 
 								<b style="vertical-align: -webkit-baseline-middle; line-height: 2;"><%= truncate(allnews.title, :lenght =>16, :omission => '...') %></b>
 							</h2>
+							<div class="row">
+								<div class="col-md-6">
+									<p class="main-color sriracha" style="display: inline;">
+										<b class="sriracha"> <%= l(allnews.created_at, format: '%d de %B, de %Y às %Hh%M') %></b>
+									</p>
+								</div>
+								<div class="col-md-6 text-right">
+									<!-- Your share button code -->
+									<div class="fb-share-button" 
+										 data-href="<%= noticia_visualizar_path(allnews.slug) %>" 
+										 data-layout="button"
+										 style="display: inline; margin-left: 5px;">
+									</div>
+								</div>
+							</div>
 							<blockquote>
-								<p class="lead main-color text-center" style="margin-bottom: 0px;">
-									” <%= truncate(allnews.description, :length => 144, :omission => '[Ler mais...]' )%> ”
+								<p class="lead main-color text-center description" style="margin-bottom: 0px;">
+									<%= truncate(allnews.description, :length => 135, :omission => ' [Ler mais...]' )%>
 								</p>
 							</blockquote>
-							
-							<p class="main-color sriracha">
-								<small style="font-size: 14px;">Publicado em:</small>
-								<b class="sriracha"> <%= allnews.created_at.strftime("%d/%m/%Y às %Hh%M") %></b>
-							</p>
 						</a>
 					<% end %>
 				</div>

@@ -18,9 +18,9 @@ $(document).on('turbolinks:load', function(){
 
 	$('.btn-banner').click(function(){
 		let id = this.dataset.id;
-
+		let campo = this.dataset.campo;
 		$.ajax({
-			url: 'banners/uploads/'+id,
+			url: 'banners/uploads/'+id+'/'+campo,
 			method: 'GET',
 			success: function(data){
 				$('#banners .modal-title').html('Pré-visualização do banner');

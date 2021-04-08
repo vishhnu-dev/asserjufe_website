@@ -19,10 +19,11 @@ pt-BR:
         numero_acompanhantes: 'Número de acompanhantes'
         numero_criancas: 'Número de crianças'
         numero_dependentes: 'Número de dependentes'
-      banners:
+      banner:
         status: 'Status'
-        imagem: 'Banner'
-        url: 'Link do banner'
+        imagem: 'Banner Desktop'
+        imagem_mobile: 'Banner Mobile'
+        url: 'Link do Banner'
       assinatura:
         nome: 'Nome completo'
         sexo: 'Sexo'

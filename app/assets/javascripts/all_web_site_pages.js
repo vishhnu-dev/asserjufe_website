@@ -40,8 +40,7 @@ $(document).on('turbolinks:load', function(){
     $('.owl-multiple-news').owlCarousel({
         dots: false,
         loop: false,
-        nav: true,
-        navText:["<i class='fa fa-chevron-left' aria-hidden='true'></i>","<i class='fa fa-chevron-right' aria-hidden='true'></i>"],
+        nav: false,
         autoplay: true,
         margin: 35,
         autoplayTimeout: 4000,
@@ -136,13 +135,28 @@ $(document).on('turbolinks:load', function(){
     
     $('.owl-banners').owlCarousel({
         dots: false,
-        autoHeight: false,
+        autoHeight: true,
         items: 1,
-        loop: true,
+        loop: false,
         nav: true,
         navText:["<i class='fa fa-chevron-left' aria-hidden='true'></i>","<i class='fa fa-chevron-right' aria-hidden='true'></i>"],
         autoplay: true,
-        autoplayTimeout: 4000
+        autoplayTimeout: 4000,
+        responsive: {
+             // breakpoint from 0 up
+            0 : {
+                items: 1
+
+            },
+            // breakpoint from 480 up
+            480 : {
+                items: 1
+            },
+            // breakpoint from 768 up
+            1200 : {
+                items: 1
+            }
+        }
     });
 
     // MASCARA DE TELEFONE //

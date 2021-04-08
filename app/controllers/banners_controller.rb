@@ -50,6 +50,7 @@ class BannersController < ApplicationController
 
   def visualizar
     authorize @banner
+    @campo = params[:campo] if params[:campo].present?
     render partial: 'arquivo'
   end
 
@@ -61,6 +62,6 @@ class BannersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def banner_params
-      params.require(:banner).permit(:status, :imagem, :url)
+      params.require(:banner).permit(:status, :imagem, :imagem_mobile, :url)
     end
 end

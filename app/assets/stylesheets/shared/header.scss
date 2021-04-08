@@ -33,6 +33,12 @@
 							padding: 5px 0px;
 						}
 					}
+					.whats-mob {
+						display: none;
+						@media (max-width: 480px) {
+						  display: inline-block !important;
+						}	
+					}
 					
 					.barra{
 						color: $white-color;

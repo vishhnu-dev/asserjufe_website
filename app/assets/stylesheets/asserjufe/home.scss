@@ -56,6 +56,17 @@
 				}
 			}
 		}
+		.description {
+			word-break: break-all !important;
+   			text-align: justify;
+   			font-size: 18px;
+   			color: $main-color;
+		}
+		.fb-share-button {
+			&:hover {
+				color: $main-color;
+			}
+		}
 	}
 }
 .msg-presidente {
@@ -85,7 +96,7 @@
 	    	font-size: 45px;
 		}
 		img {
-			-webkit-clip-path: polygon(0 19%, 100% 0, 77% 100%, 0% 100%);
+			-webkit-clip-path: polygon(0 13%, 100% 0, 100% 100%, 0% 100%);
 		}
 		a {
 			&:hover {

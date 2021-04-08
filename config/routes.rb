@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 	# visualizador de arquivos/documentos
 	get 'documentos/uploads/:id/:file' => 'documentos#file'
 	# visualizar de banners
-	get 'banners/uploads/:id' => 'banners#visualizar'
+	get 'banners/uploads/:id/:campo' => 'banners#visualizar'
 	# header biblioteca
 	get 'biblioteca/docs/:id/:file' => 'asserjufe#visualizar_doc'
 

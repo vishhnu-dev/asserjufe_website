@@ -3,7 +3,7 @@
   <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -53,6 +53,10 @@
     </head>
 
   <body>
+    <!-- fb sdk -->
+    <div data-turbolinks="true" id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0&appId=763869207799905&autoLogAppEvents=1" nonce="YYUUgGSD"></script>
+
     <!-- Header -->
     <section class="asserjufe-header">
         <%= render partial: 'shared/header' %>
@@ -77,16 +81,5 @@
     <div class="ancor-up hidden-xs" data-toggle="tooltip" data-placement="left" data-original-title="Voltar ao topo do site.">
         <i class="fa fa-arrow-up"></i>
     </div>
-
-    <!-- fb sdk -->
-    <div data-turbolinks="true" id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0&appId=763869207799905&autoLogAppEvents=1" nonce="YYUUgGSD"></script>
-
-    <!-- Your share button code -->
-    <div data-turbolinks="true" class="fb-share-button hidden-xs fb_iframe_widget" data-href="https://fontawesome.com/v4.7.0/icons/" data-layout="button" data-size="large" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; border:none; overflow:hidden;" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=763869207799905&amp;container_width=80&amp;href=http%3A%2F%2Flocalhost%3A3000%2Fa-asserjufe&amp;layout=button&amp;locale=pt_BR&amp;sdk=joey&amp;size=large">
-        <span style="vertical-align: bottom; width: 121px; height: 28px;">
-            <iframe name="f2523fe8546e77" width="1000px" height="1000px" data-testid="fb:share_button Facebook Social Plugin" title="fb:share_button Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://web.facebook.com/v10.0/plugins/share_button.php?app_id=763869207799905&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df1eb0af06b2654c%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%253A3000%252Ff393031fdf6b7a8%26relation%3Dparent.parent&amp;container_width=80&amp;href=http%3A%2F%2Flocalhost%3A3000%2Fa-asserjufe&amp;layout=button&amp;locale=pt_BR&amp;sdk=joey&amp;size=large" style="border: none; visibility: visible; width: 121px; height: 28px;" class="">
-            </iframe>
-        </span></div>
   </body>
 </html>

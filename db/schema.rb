@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_15_122322) do
+ActiveRecord::Schema.define(version: 2021_04_07_154943) do
 
   create_table "assinaturas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nome"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_03_15_122322) do
     t.integer "status", default: 0
     t.string "imagem"
     t.string "url"
+    t.string "imagem_mobile"
   end
 
   create_table "contatos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

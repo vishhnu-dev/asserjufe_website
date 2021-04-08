@@ -12,16 +12,23 @@
               </div>
             </div>
             <div class="col-md-6">
+              <%= f.label 'Link do Banner', class: 'main-color' %>
+              <%= f.select :url, options_for_url, { include_blank: 'Selecione...' }, class: 'form-control' %>
+              <small class="secundary-color">Página onde o cliente irá cair ao clicar no banner.</small>
+            </div>
+            <div class="col-md-6">
               <div class="form-group">
-                <%= f.label 'Imagem', class: 'main-color' %>
+                <%= f.label 'Banner Desktop', class: 'main-color' %>
                 <%= f.file_field :imagem, class: 'form-control' %>
               </div>
             </div>
-            <div class="col-md-12">
-              <%= f.label 'Link do banner', class: 'main-color' %>
-              <%= f.text_field :url, class: 'form-control' %>
-              <small class="main-color">Copie e cole aqui o endereço da página do site que o banner deverá linkar.</small>
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= f.label 'Banner Mobile', class: 'main-color' %>
+                <%= f.file_field :imagem_mobile, class: 'form-control' %>
+              </div>
             </div>
+            
           </div>
         </div>
         <div class="box-footer">

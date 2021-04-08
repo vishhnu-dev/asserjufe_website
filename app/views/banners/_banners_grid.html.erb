@@ -8,7 +8,11 @@
 	end
 
 	g.column name: 'Banner' do |banner|
-		banner.imagem.present? ? button_tag(fa_icon('search', text: 'Visualizar Banner'), type: 'button', class: 'btn btn-banner text-success', data: { id: banner.id }) : 'nenhum banner encontrado'
+		banner.imagem.present? ? button_tag(fa_icon('search', text: 'Visualizar Banner'), type: 'button', class: 'btn btn-banner text-success', data: { id: banner.id, campo: 'desktop' }) : 'nenhum banner encontrado'
+	end
+
+	g.column name: 'Banner' do |banner|
+		banner.imagem_mobile.present? ? button_tag(fa_icon('search', text: 'Visualizar Banner'), type: 'button', class: 'btn btn-banner text-success', data: { id: banner.id, campo: 'mobile' }) : 'nenhum banner encontrado'
 	end
 	
 	g.column do |banner|
