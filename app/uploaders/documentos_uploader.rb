@@ -10,7 +10,7 @@ class DocumentosUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "public/uploads/documentos/#{model.id+13}"
+    "public/asserjufe/documentos"
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -22,6 +22,11 @@ class DocumentosUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-    "#{mounted_as}.#{file.extension}" if original_filename.present?
+    "#{secure_string}.#{(file.extension=='jpeg' ? 'jpg' : file.extension)}" if original_filename.present?
   end
+
+  protected
+    def secure_string
+      "#{original_filename.split('.').first.gsub(/[!@%&"]/,'')}".parameterize
+    end
 end

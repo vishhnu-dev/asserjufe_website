@@ -8,15 +8,19 @@
 		usuario.role.humanize
 	end
 
-	g.column name: 'Nome completo', attribute: 'nome_completo', custom_filter: User.all.pluck(:nome_completo), auto_reload: true do |usuario|
+	g.column name: 'Nome completo', attribute: 'nome_completo' do |usuario|
 		usuario.nome_completo if usuario.nome_completo.present?
 	end
 
 	g.column name: 'Data de Nacimento' do |usuario|
-		usuario.data_nascimento.strftime('%m/%d/%Y')
+		usuario.data_nascimento.strftime('%m/%d/%Y') if usuario.data_nascimento.present?
 	end
 
 	g.column name: 'Idade' do |usuario|
-		usuario.idade
+		usuario.idade if usuario.data_nascimento.present?
+	end
+
+	g.column name: 'Criado em:' do |usuario|
+		usuario.created_at.strftime('%d/%m/%Y')
 	end
 end %>

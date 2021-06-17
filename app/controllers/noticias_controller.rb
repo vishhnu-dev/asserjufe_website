@@ -3,15 +3,15 @@ class NoticiasController < ApplicationController
 
 	def index
 		authorize Noticia
-    	session[:page_title] = "Lista de Notícias"
+  	session[:page_title] = "Lista de Notícias"
 
-		@noticia = initialize_grid(Noticia.all, order: 'id')	
+		@noticia = initialize_grid(Noticia.all, order: 'created_at', order_direction: 'desc')	
 	end
 
 	def new
 		authorize Noticia
-    	session[:page_title] = "Cadastro de notícia"
-    	@noticia = Noticia.new		
+  	session[:page_title] = "Cadastro de notícia"
+  	@noticia = Noticia.new		
 	end
 
 	def show

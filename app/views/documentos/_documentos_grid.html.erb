@@ -13,12 +13,21 @@
 	g.column name: 'Regulamento' do |doc|
 		doc.regulamento.present? ? button_tag(fa_icon('search', text: 'Visualizar Regulamento'), type: 'button', class: 'btn btn-doc text-success', data: { toggle: "tooltip", placement: "bottom", title: "Visualizar", id: doc.id, file: 'regulamento' }) : label_status('N/A', 'red')
 	end
+	
 	g.column do |doc|
 		if policy(Documento).edit?
 			link_to edit_documento_path(doc), data: { toggle: "tooltip", placement: "left", title: "Editar documentos" } do
 	          	fa_icon 'pencil', style: 'font-size:20px;', class: 'main-color'
 	      	end
 	    end
+	end
+
+	g.column do |doc|
+		if policy(Documento).destroy?
+			link_to documento_path(doc), method: :delete, data: { toggle: "tooltip", placement: "left", title: "Excluir documentos" }do
+	        fa_icon 'trash', style: 'color:#dd4b39; font-size:20px;'
+	      end 
+		end
 	end
 end %>
 

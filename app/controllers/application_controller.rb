@@ -3,7 +3,7 @@
 
 	before_action :set_current_page_url
 	before_action :set_url_ambiente
-	
+
 	include Pundit
 
 	rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized

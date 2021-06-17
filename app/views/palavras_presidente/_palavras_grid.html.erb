@@ -9,16 +9,16 @@
 	g.column do |palavra|
 		if policy(PalavraPresidente).edit?
 			link_to edit_palavra_presidente_path(palavra), data: { toggle: "tooltip", placement: "left", title: "Atualizar" } do
-	          	fa_icon 'refresh', class: 'main-color'
+	          	fa_icon 'refresh', class: 'main-color', style: 'font-size:20px;'
 	      	end
 	    end
 	end
 
 	g.column do |palavra|
 		if policy(palavra).destroy?
-			link_to palavras_presidente_path(palavra).gsub(".","/"), method: :delete, data: { toggle: "tooltip", placement: "left", title: "Excluir palavra do presidente?" } do
-	          	fa_icon 'trash', style: 'color:#dd4b39; font-size:20px;'
-	      	end 
+			link_to palavras_presidente_path(palavra).gsub(".","/"), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir a pré-reserva?', backdrop: 'static', commit: 'Sim', cancel: 'Cancelar', title: "Você tem certeza que deseja excluir a palavra do presidente ? "} do
+        	fa_icon 'trash', style: 'color:#dd4b39; font-size:20px;'
+    	end 
 		end
 	end
  end %>

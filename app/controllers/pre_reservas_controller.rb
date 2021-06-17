@@ -4,7 +4,7 @@ class PreReservasController < ApplicationController
 	def index
 		authorize PreReserva
 		session[:page_title] = "Lista de Pré reservas"
-		@pre_reserva_grid = initialize_grid(PreReserva.all, per_page: 5)
+		@pre_reserva_grid = initialize_grid(PreReserva.all)
 	end
 
 	def new

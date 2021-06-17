@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function(){
-	
+
 	$('.btn-doc').click(function(){
 		let id = this.dataset.id;
 		let file = this.dataset.file;

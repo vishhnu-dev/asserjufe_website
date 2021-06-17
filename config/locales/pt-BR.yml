@@ -33,6 +33,11 @@ pt-BR:
         celular: 'Celular 1'
         celular2: 'Celular 2'
         email: 'Email'
+      documento:
+        estatuto: "Estatuto"
+        tabela_valores: "Tabela de Valores"
+        regimento_interno: "Regimento Interno"
+        regulamento: "Regulamento"
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

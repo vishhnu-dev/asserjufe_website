@@ -21,7 +21,7 @@
 		<div class="<%= @noticia.imagem.present? ? 'col-md-7 ' : 'col-md-12' %> ">
 			<blockquote style="margin-top: 20px;">
 				<p class="lead main-color text-justify">
-					<%= @noticia.description %>
+					<%= @noticia.description.html_safe %>
 				</p>
 			</blockquote>
 		</div>

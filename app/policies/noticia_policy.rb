@@ -1,6 +1,6 @@
 class NoticiaPolicy < ApplicationPolicy
 	def index?
-		user.administrador?
+		user.administrador? or user.apenas_leitura?
 	end
 
 	def new?

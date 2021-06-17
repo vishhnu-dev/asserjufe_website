@@ -1,16 +1,17 @@
 class User < ApplicationRecord
-	enum role: [:default, :administrador]
+	enum role: [:apenas_leitura, :administrador]
 	enum atualizacao: [:atualizacao_necessaria, :atualizacao_desnecessaria]
 
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  	devise :database_authenticatable, :rememberable, :validatable
+	devise :database_authenticatable, :rememberable, :validatable
   	
-  	validates :email, presence: true, uniqueness: true, :on => :create
+	validates :email, presence: true, uniqueness: true, :on => :create
 	validates :password, presence: true, :length => { :minimum => 6 }, :on => :create
 	validates :nome_completo, :data_nascimento, presence: true, :on => :update, if: :atualizacao_necessaria?
+	validates :password, :password_confirmation, presence: true, on: :update
 
-	after_commit :atualiza_status, on: :update
+	after_commit :atualiza_status, on: :update, if: -> { self.atualizacao_necessaria? }
 
 	def idade
     	return nil if !self.data_nascimento

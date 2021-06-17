@@ -5,7 +5,7 @@
 			<div class="owl-carousel owl-theme owl-banners hidden-xs">
 				<% @banners.each do |banner| %>
 					<a href="<%= banner.url %>">
-							<img src="<%= image_path banner.imagem %>">
+							<img src="<%= image_path banner.imagem.url %>">
 					</a>
 				<% end %>
 			</div>
@@ -34,8 +34,9 @@
 				<!-- corpo -->
 				<div class="row news">
 					<% @noticias.each.with_index(1) do |news, index| %>
-						<div class="<%= index.odd? ? 'col-md-4' : 'col-md-4' %>">
+						<div class="<%= index.odd? ? 'col-lg-4' : 'col-lg-4' %> news-container">
 							<a href="<%= noticia_visualizar_path(news.slug)%>">
+								
 								<div class="news-slide" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %>"></div>
 
 								<div class="content-notice-image" style="overflow: hidden;">
@@ -46,16 +47,19 @@
 									<% end %>
 								</div>
 
-								<h2 class="white-color text-center" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %> padding: 15px auto; margin-top: 0px;"> 
+								<h2 class="white-color text-center news-title" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %> padding: 15px auto; margin-top: 0px;"> 
 									<b style="vertical-align: -webkit-baseline-middle; line-height: 2;"><%= truncate(news.title, :lenght =>16, :omission => '...') %></b>
 								</h2>
+
 								<div class="row">
-									<div class="col-md-6">
+
+									<div class="col-md-6  hidden-xs">
 										<p class="main-color sriracha" style="display: inline;">
 											<b class="sriracha"> <%= l(news.created_at, format: '%d de %B, de %Y às %Hh%M') %></b>
 										</p>
 									</div>
-									<div class="col-md-6 text-right">
+
+									<div class="col-md-6  hidden-xs text-right">
 										<!-- Your share button code -->
 										<div class="fb-share-button" 
 											 data-href="<%= noticia_visualizar_path(news.slug) %>" 
@@ -64,12 +68,12 @@
 											 style="display: inline; margin-left: 5px;">
 										</div>
 									</div>
+
 								</div>
-								<blockquote>
-									<p class="lead main-color text-center description" style="margin-bottom: 0px;">
-										<%= truncate(news.description, :length => 135, :omission => ' [Ler mais...]' )%>
-									</p>
-								</blockquote>
+								
+								<p class="lead main-color text-center description" style="margin-bottom: 0px; height: 45px; margin-bottom: 15px;    overflow: hidden;">
+									<%= truncate(news.description.html_safe, :length => 100, :omission => ' Ler mais...', :escape => false )%>
+								</p>
 							</a>
 						</div>		
 					<% end %>	
@@ -107,7 +111,7 @@
 		<!-- sede campestre -->
 		<div class="container">
 			<div class="row sede-campestre">
-				<div class="col-md-6">
+				<div class="col-md-6 mobile-center">
 					<h2 class="visible-xs secundary-color title title-mob"><b>Sede Campestre</b></h2>
 					<img src="<%= image_path 'gallery/general/01.PNG' %>" class="img-responsive">
 				</div>
@@ -125,14 +129,13 @@
 		<div class="container">
 			<div class="row sede-campestre">
 				<div class="col-md-6 mobile-center">
-					<h2 class="hidden-xs secundary-color title title-mob"><b>Seja um associado</b></h2>
+					<h2 class="secundary-color title title-mob"><b>Seja um associado</b></h2>
 					<p class="lead main-color text-justify">São muitas <b>vantagens</b> para você e sua <b>família.</b> Nossos <b>associados</b> possuem uma gama de convênios como planos telefônicos, UnimedOdonto e muito mais. <b>Confira !</b></p>
 					<a href="<%= associe_se_path %>">
 						<button style="text-decoration: none;" class="main-color btn btn-link btn-lg">Saiba mais</button>
 					</a>
 				</div>
 				<div class="col-md-6 text-center">
-					<h2 class="visible-xs secundary-color title title-mob"><b>Seja um associado</b></h2>
 					<img src="<%= image_path 'asserjufe-22-anos.jpg' %>" style="margin-top: 50px;">
 				</div>
 			</div>
@@ -141,7 +144,8 @@
 		<!-- convenios -->
 		<div class="container">
 			<div class="row convenios">
-				<div class="col-md-6">
+				<div class="col-md-6 mobile-center">
+					<h2 class="secundary-color title title-mob visible-xs"><b>Convênios Asserjufe</b></h2>
 					<div class="owl-carousel owl-theme owl-conv">
 						<img class="img-responsive" src="<%= image_path 'logosParceiros/Tim.png' %>" style="background-color: #004691; padding: 6px 6px; display: inline; margin-top: 13px;">
 						<img src="<%= image_path 'logosParceiros/Unimed.png' %>">
@@ -149,7 +153,7 @@
 					</div>
 				</div>
 				<div class="col-md-6 mobile-center">
-					<h2 class="secundary-color title title-mob"><b>Convênios Asserjufe</b></h2>
+					<h2 class="secundary-color title title-mob hidden-xs"><b>Convênios Asserjufe</b></h2>
 					<p class="lead main-color text-justify"><b> Oferecemos</b> muitos <b>benefícios</b> e <b>facilidades</b> para nossos <b> associados !</b> <b>Convênios</b> com preços lá em <b>baixo</b> em relação ao <b>mercado.</b></p>
 					<a href="<%= convenios_path %>">
 						<button style="text-decoration: none;" class="main-color btn btn-link btn-lg">Saiba mais</button>

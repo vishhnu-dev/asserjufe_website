@@ -4,6 +4,6 @@ class Contato < ApplicationRecord
 	after_create :envia_email
 
 	def envia_email
-		ContatoMailer.envia_email(self).deliver_later
+		ContatoMailer.envia_email(self).deliver_now
 	end
 end

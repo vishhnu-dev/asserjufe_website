@@ -32,11 +32,11 @@ class ControleUsuariosController < ApplicationController
 	# POST /usuarios
 	def create
 		authorize User
-	    @usuario = User.new(usuario_params)
-	    if usuario_params[:email].present? and usuario_params[:password].present?
-	    	verifica_email_em_uso
-	    	if !@exist
-			    respond_to do |format|
+    @usuario = User.new(usuario_params)
+    if usuario_params[:email].present? and usuario_params[:password].present?
+    	verifica_email_em_uso
+    	if !@exist
+		    respond_to do |format|
 					if @usuario.save
 		         		format.html { redirect_to usuarios_path, notice: 'Usuário criado com sucesso!' }
 					else
@@ -59,13 +59,9 @@ class ControleUsuariosController < ApplicationController
 		authorize @usuario
 		respond_to do |format|
 			if @usuario.update(usuario_params)
-				format.html { redirect_to usuarios_path, notice: 'Usuário atualizado com sucesso!'}
+				format.html { redirect_to backend_path, notice: 'Usuário atualizado com sucesso!'}
 			else
-				if @usuario.atualizacao_necessaria?
-					format.html { redirect_to atualizacao_cadastral_path }
-				else
-					format.html { render :edit}
-				end
+				format.html { render :edit }
 			end
 		end
 	end

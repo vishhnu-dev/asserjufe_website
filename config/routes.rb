@@ -14,8 +14,8 @@ Rails.application.routes.draw do
 	resources :noticias, path: 'noticias', path_names: { new: 'cadastrar', edit: 'atualizar'}
 	resources :palavras_presidente, path: 'palavra-do-presidente', path_names: { new: 'cadastrar', edit: 'atualizar'}
 	resources :contatos, path: 'fale-conosco'
-	resources :documentos, path: 'biblioteca', path_names: { new: 'cadastrar', edit: 'atualizar'}
-	resources :pre_reservas, path: 'pre-reserva', path_names: { new: 'reservar', edit: 'atualizar'}
+	resources :documentos, path: 'bibliotecas', path_names: { new: 'cadastrar', edit: 'atualizar'}
+	resources :pre_reservas, path: 'pre-reservas', path_names: { new: 'reservar', edit: 'atualizar'}
 	resources :banners, path: 'banners', path_names: { new: 'cadastrar', edit: 'atualizar'}
 	resources :assinaturas, path: 'assinaturas', path_names: { new: 'cadastrar', edit: 'atualizar'}
 	
@@ -37,9 +37,9 @@ Rails.application.routes.draw do
 	patch 'usuarios/:id'        => 'controle_usuarios#update'
 
 	# Devise routes
-  	devise_for :users , path_names: { sign_in: :entrar, sign_out: :sair }
+  devise_for :users , path_names: { sign_in: :entrar, sign_out: :sair }
 	as :user do
-	  	get 'usuarios/alterar-senha' => 'usuarios/registrations#edit',   :as => 'edit_usuario_registration'
+	  get 'usuarios/alterar-senha' => 'usuarios/registrations#edit',   :as => 'edit_usuario_registration'
 		put 'usuarios/alterar-senha' => 'usuarios/registrations#update', :as => 'update_usuario_registration'
 	end
 

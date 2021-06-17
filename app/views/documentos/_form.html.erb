@@ -1,9 +1,8 @@
 <div class="row">
-	<div class="col-lg-6">
+	<div class="col-lg-8">
       <%= render partial: 'layouts/form_errors', locals: {model: @documentos} %>
 		<div class="box box-success">
 			<%= form_for @documentos do |f| %>
-				
 				<div class="box-body">
 					<div class="row">
 						<div class="col-lg-6">
@@ -36,13 +35,11 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="box-footer">
-			        <%= f.submit action_name == 'edit' ? 'Atualizar' : 'Cadastrar', class: 'btn btn-success btn-flat', role: 'button' %>
-			        <%= link_to 'Voltar', documentos_path, class: 'btn btn-danger btn-flat', role: 'button' %>
-		    	</div>
-
-    		<% end %>
+	        <%= f.submit action_name == 'edit' ? 'Atualizar' : 'Cadastrar', class: 'btn btn-success btn-flat', role: 'button' %>
+	        <%= link_to 'Voltar', documentos_path, class: 'btn btn-danger btn-flat', role: 'button' %>
+	    	</div>
+  		<% end %>
 		</div>
 	</div>
 </div>

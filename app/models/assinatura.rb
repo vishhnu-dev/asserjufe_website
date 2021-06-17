@@ -6,6 +6,6 @@ class Assinatura < ApplicationRecord
 	after_create :envia_email
 
 	def envia_email
-		AssinaturaMailer.envia_email(self).deliver_later
+		AssinaturaMailer.envia_email(self).deliver_now
 	end
 end

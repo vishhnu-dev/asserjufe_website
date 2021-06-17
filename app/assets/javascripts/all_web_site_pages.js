@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function(){
-
+    
     //data-fancybox gallery
     $('[data-fancybox="gallery"]').fancybox({
         buttons : ['close', 'thumbs', 'slideShow'],
@@ -12,7 +12,6 @@ $(document).on('turbolinks:load', function(){
                 if (item.type === 'inline' && item.contentType === 'video') {
                     return item.$content.find('source:first').attr('src');
                 }
-
                 return item.src;
             }
         }
@@ -134,29 +133,15 @@ $(document).on('turbolinks:load', function(){
     });
     
     $('.owl-banners').owlCarousel({
-        dots: false,
-        autoHeight: true,
-        items: 1,
-        loop: false,
-        nav: true,
-        navText:["<i class='fa fa-chevron-left' aria-hidden='true'></i>","<i class='fa fa-chevron-right' aria-hidden='true'></i>"],
+        // base config
         autoplay: true,
-        autoplayTimeout: 4000,
-        responsive: {
-             // breakpoint from 0 up
-            0 : {
-                items: 1
-
-            },
-            // breakpoint from 480 up
-            480 : {
-                items: 1
-            },
-            // breakpoint from 768 up
-            1200 : {
-                items: 1
-            }
-        }
+        autoplayTimeout: 6000,
+        dots: false,
+        items:1,
+        loop: true,
+        // nav
+        nav: true,
+        navText:["<i class='fa fa-chevron-left' aria-hidden='true'></i>","<i class='fa fa-chevron-right' aria-hidden='true'></i>"]
     });
 
     // MASCARA DE TELEFONE //
@@ -203,4 +188,30 @@ $(document).on('turbolinks:load', function(){
       }
     };
     /* end phone*/
+
+    // Text area
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5({
+        locale: "pt-BR",
+        toolbar:
+        {
+          "font-styles": true,
+          "emphasis": true,
+          "lists": false,
+          "html": false,
+          "link": true,
+          "image": false,
+          "color": true,
+          "blockquote": false,
+          parser: function(html) {
+              return html.text();
+          }
+        }
+      });
+    });
+});
+
+// If using Turbolinks with gem 'bootstrap-wysihtml5-rails'
+$(document).on('page:load', function(){
+  window['rangy'].initialized = false
 });
