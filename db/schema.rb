@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_04_07_154943) do
 
-  create_table "assinaturas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "assinaturas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "nome"
     t.integer "sexo"
     t.date "data_nascimento"
@@ -25,14 +25,14 @@ ActiveRecord::Schema.define(version: 2021_04_07_154943) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "banners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "banners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "status", default: 0
     t.string "imagem"
     t.string "url"
     t.string "imagem_mobile"
   end
 
-  create_table "contatos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "contatos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "email"
     t.string "nome"
     t.string "assunto"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_154943) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "documentos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "documentos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "estatuto"
     t.string "tabela_valores"
     t.string "regimento_interno"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_154943) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "noticias", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "noticias", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "imagem"
@@ -62,11 +62,11 @@ ActiveRecord::Schema.define(version: 2021_04_07_154943) do
     t.string "slug"
   end
 
-  create_table "palavras_presidente", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "palavras_presidente", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "video"
   end
 
-  create_table "pre_reservas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "pre_reservas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "nome_completo"
     t.string "casa"
     t.datetime "data_chegada"
@@ -77,11 +77,13 @@ ActiveRecord::Schema.define(version: 2021_04_07_154943) do
     t.integer "numero_criancas"
     t.integer "numero_dependentes"
     t.string "celular"
+    t.string "possui_dependentes"
+    t.integer "dependentes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "nome_completo"
     t.date "data_nascimento"

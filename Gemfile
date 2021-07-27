@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.8'
+ruby '2.5.8'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 
 # Native gems #
@@ -23,7 +23,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Custom gems #
-
 # Sass-rails
 gem 'sassc-rails', '>= 2.1.0'
 # FontAwesome
@@ -74,8 +73,7 @@ group :test do
 end
 
 group :production do
-  # Use Puma as the app server
-  gem 'puma', '~> 4.1'
+  gem 'rails_same_site_cookie'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
