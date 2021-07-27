@@ -6,6 +6,8 @@ namespace :feed do
 		###############################################################
 		########################### Usuarios ##########################
 		###############################################################
-		User.create( email: 'avitassibanac@gmail.com', password: 'ff269545' )
+		User.create( email: 'avitassibanac@gmail.com', password: 'asserjuferspoa' )
+		User.create( email: 'jorgegpimentel@gmail.com', password: 'asserjuferspoa' )
+		User.create( email: 'asserjufe.poa@gmail.com', password: 'asserjuferspoa' )
 	end
 end
