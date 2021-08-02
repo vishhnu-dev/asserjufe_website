@@ -17,9 +17,6 @@ class ControleUsuariosController < ApplicationController
 	def edit
 		authorize @usuario
 		session[:page_title] = "Editar Usuário"
-		if @usuario.atualizacao_necessaria?
-			redirect_to atualizacao_cadastral_path
-		end
 	end
 
 	# GET /usuarios/novo
@@ -33,24 +30,19 @@ class ControleUsuariosController < ApplicationController
 	def create
 		authorize User
     	@usuario = User.new(usuario_params)
-    	if usuario_params[:email].present? and usuario_params[:password].present?
-    		verifica_email_em_uso
-    		if !@exist
-		    	respond_to do |format|
-					if @usuario.save
-		         		format.html { redirect_to usuarios_path, notice: 'Usuário criado com sucesso!' }
-					else
-						flash[:error] = 'Usuário não pôde ser cadastrado, tente novamente preenchendo pelo menos email e senha!'
-						redirect_to new_usuario_path 
-					end
+		verifica_email_em_uso
+		if !@exist
+	    	respond_to do |format|
+				if @usuario.save
+	         		format.html { redirect_to usuarios_path, notice: 'Usuário criado com sucesso!' }
+				else
+					flash[:error] = 'Usuário não pôde ser cadastrado, tente novamente preenchendo pelo menos email e senha!'
+					redirect_to new_usuario_path 
 				end
-			else
-				flash[:error] = "O email #{usuario_params[:email]} já está em uso, por favor insira outro email!"
-				redirect_to new_usuario_path 
 			end
 		else
-			flash[:error] = 'Os campos email e senha são obrigatórios!'
-			redirect_to new_usuario_path
+			flash[:error] = "O email #{usuario_params[:email]} já está em uso, por favor insira outro email!"
+			redirect_to new_usuario_path 
 		end
 	end
 
@@ -80,12 +72,6 @@ class ControleUsuariosController < ApplicationController
 				format.html { redirect_to usuarios_path, notice: 'Usuário não pôde ser excluído!'}
 			end
 		end
-	end
-
-	def atualizacao_cadastral
-		authorize @usuario
-		session[:page_title] = "Atualização Cadastral"
-		@usuario.atualizacao = 1
 	end
 
 	private	

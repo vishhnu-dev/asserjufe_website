@@ -27,7 +27,7 @@
 
 		def set_url_ambiente
 			if Rails.env.production?
-				@url = "https://asserjufers.com"
+				@url = "asserjufers.vps-kinghost.net"
 			else
 				@url = "http://localhost:3000"
 			end

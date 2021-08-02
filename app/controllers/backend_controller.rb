@@ -17,6 +17,6 @@ class BackendController < ApplicationController
 	protected
 		def configure_permitted_parameters
 			devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :nome_completo, :data_nascimento, :password, :role])
-			devise_parameter_sanitizer.permit(:account_update, keys: [:email, :nome_completo, :data_nascimento, :role])
+			devise_parameter_sanitizer.permit(:account_update, keys: [:email,  :role])
 		end	
 end

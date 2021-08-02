@@ -8,7 +8,6 @@ class User < ApplicationRecord
   	
 	validates :email, presence: true, uniqueness: true, :on => :create
 	validates :password, presence: true, :length => { :minimum => 6 }, :on => :create
-	validates :nome_completo, :data_nascimento, presence: true, :on => :update, if: :atualizacao_necessaria?
 	validates :password, :password_confirmation, presence: true, on: :update
 
 	def idade
