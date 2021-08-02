@@ -99,10 +99,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: '587',
-    domain: 'asserjufers.vps-kinghost.net',
+    domain: 'mail.google.com',
     user_name: 'avitassibanac@gmail.com',
     password: 'ff269545',
-    authentication: :plain,
-    openssl_verify_mode: 'none'
+    authentication: :login,
+    enable_starttls_auto: true
   }
 end
