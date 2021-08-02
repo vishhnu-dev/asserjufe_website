@@ -14,6 +14,6 @@ class PreReserva < ApplicationRecord
 	end
 
 	def envia_email
-		PreReservaMailer.envia_email(self).deliver_now
+		PreReservaMailer.envia_email(self).deliver_later
 	end
 end
