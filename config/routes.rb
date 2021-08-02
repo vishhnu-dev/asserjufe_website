@@ -32,7 +32,6 @@ Rails.application.routes.draw do
 	get   'usuarios'            => 'controle_usuarios#index'
 	get   'usuarios/novo'       => 'controle_usuarios#new',  as: :new_usuario
 	get	  'usuarios/:id/editar' => 'controle_usuarios#edit',  as: :edit_usuario
-	get   'atualizacao-cadastral' => 'controle_usuarios#atualizacao_cadastral', as: :atualizacao_cadastral
 	post  'usuarios'            => 'controle_usuarios#create'
 	patch 'usuarios/:id'        => 'controle_usuarios#update'
 

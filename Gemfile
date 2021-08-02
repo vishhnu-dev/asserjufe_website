@@ -4,7 +4,6 @@ ruby '2.5.8'
 gem 'rails', '= 5.2.3'
 
 # Native gems #
-
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Server #

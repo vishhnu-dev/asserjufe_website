@@ -11,19 +11,10 @@ class User < ApplicationRecord
 	validates :nome_completo, :data_nascimento, presence: true, :on => :update, if: :atualizacao_necessaria?
 	validates :password, :password_confirmation, presence: true, on: :update
 
-	after_commit :atualiza_status, on: :update, if: -> { self.atualizacao_necessaria? }
-
 	def idade
     	return nil if !self.data_nascimento
 	    now = Time.now.to_date
 	    dob = self.data_nascimento
 	    now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
   	end
-
-	private
-		def atualiza_status
-			if self.nome_completo.present? and self.data_nascimento.present?
-				self.update_column(:atualizacao, :atualizacao_desnecessaria)
-			end	
-		end
 end

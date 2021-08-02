@@ -49,6 +49,15 @@ end
 before 'deploy:starting', 'puma:make_dirs'
 end
 namespace :deploy do
+  after :restart do
+    on roles(:web), in: :sequence, wait: 5 do
+      within release_path do
+         execute :rake, 'feed:users'
+      end
+    end
+  end
+end
+namespace :deploy do
 desc "Make sure local git is in sync with remote."
 task :check_revision do
 on roles(:app) do

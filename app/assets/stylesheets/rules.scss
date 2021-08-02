@@ -22,6 +22,11 @@ $font-small: 12px;
 
 
 /* CLASSES GERAIS DO SISTEMA */
+.mob-left {
+	@media (max-width: 480px) {
+		text-align: left;
+	}
+}
 .main-color {
 	color: $main-color;
 }
