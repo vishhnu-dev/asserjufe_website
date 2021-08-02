@@ -47,7 +47,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 gem 'bootstrap-wysihtml5-rails'
 # data-confirm-moda-b3
 gem 'data-confirm-modal'
-
+# rails_same_site_cookie
 gem 'rails_same_site_cookie'
 
 # ED25519 Supoport #
