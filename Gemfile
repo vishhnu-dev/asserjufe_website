@@ -48,6 +48,8 @@ gem 'bootstrap-wysihtml5-rails'
 # data-confirm-moda-b3
 gem 'data-confirm-modal'
 
+gem 'rails_same_site_cookie'
+
 # ED25519 Supoport #
 gem 'ed25519', '>= 1.2', '<= 1.2.4'
 gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
