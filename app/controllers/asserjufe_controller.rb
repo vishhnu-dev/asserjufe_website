@@ -3,14 +3,14 @@ class AsserjufeController < ApplicationController
   before_action :docs
 
   def home
-  	@page_title = "Página Inicial"
+  	@page_title = "Asserjufe | Servidores da Justiça Federal"
     @noticias = Noticia.all.order(created_at: :desc).limit(6)
     @palavras = PalavraPresidente.all
     @banners = Banner.where(status: :ativo)
   end
   
   def a_asserjufe
-  	@page_title = "A Asserjufe"
+  	@page_title = "A Asserjufe | Porto Alegre RS"
   end
 
   def diretoria
@@ -18,21 +18,21 @@ class AsserjufeController < ApplicationController
   end
 
   def sede_campestre
-  	@page_title = "Sede campestre"
+  	@page_title = "Sede campestre | Viamão RS"
     @pre_reserva = PreReserva.new
   end
 
   def associe_se
-  	@page_title = "Associe-se"
+  	@page_title = "Associe-se | São muitas Vantangens, confira !"
     @assinatura = Assinatura.new
   end
 
   def convenios
-  	@page_title = "Convênios"
+  	@page_title = "Convênios | Vantagens e Benefícios"
   end
 
   def contato
-  	@page_title = "Contato"
+  	@page_title = "Contato | Como podemos ajudar?"
     @contato = Contato.new
   end
 
