@@ -78,7 +78,7 @@ on roles(:app), in: :sequence, wait: 5 do
 invoke!("puma:restart")
 end
 end
-before :starting, :check_revision
+#before :starting, :check_revision
 after :finishing, :compile_assets
 after :finishing, :cleanup
 #after :finishing, :restart
