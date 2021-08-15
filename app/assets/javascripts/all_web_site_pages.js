@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function(){
     $('[data-fancybox="gallery"]').fancybox({
         buttons : ['close', 'thumbs', 'slideShow'],
         thumbs : {
-            autoStart : true
+            autoStart : false
         },
         hash : false,
         share : {

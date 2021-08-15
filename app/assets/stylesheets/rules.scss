@@ -23,7 +23,7 @@ $font-small: 12px;
 
 /* CLASSES GERAIS DO SISTEMA */
 .mob-left {
-	@media (max-width: 480px) {
+	@media (max-width: 768px) {
 		text-align: left;
 	}
 }
