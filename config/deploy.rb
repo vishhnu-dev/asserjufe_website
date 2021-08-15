@@ -48,12 +48,6 @@ invoke 'puma:start'
 end
 before 'deploy:starting', 'puma:make_dirs'
 end
-task :usuarios do
-on roles(:worker) do
-execute :rake, "feed:users"
-end
-end
-after "deploy:starting", "usuarios"
 namespace :deploy do
 desc "Make sure local git is in sync with remote."
 task :check_revision do
