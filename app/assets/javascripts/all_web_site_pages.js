@@ -199,7 +199,7 @@ $(document).on('turbolinks:load', function(){
           "emphasis": true,
           "lists": false,
           "html": false,
-          "link": true,
+          "link": false,
           "image": false,
           "color": true,
           "blockquote": false,
