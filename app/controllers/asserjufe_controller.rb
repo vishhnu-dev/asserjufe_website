@@ -3,18 +3,18 @@ class AsserjufeController < ApplicationController
   before_action :docs
 
   def home
-  	@page_title = "Asserjufe | Servidores da Justiça Federal"
+  	@page_title = "Servidores da Justiça Federal"
     @noticias = Noticia.all.order(created_at: :desc).limit(6)
     @palavras = PalavraPresidente.all
     @banners = Banner.where(status: :ativo)
   end
   
   def a_asserjufe
-  	@page_title = "A Asserjufe | Porto Alegre RS"
+  	@page_title = "Sobre a Asserjufe | Porto Alegre RS"
   end
 
   def diretoria
-  	@page_title = "Diretoria"
+  	@page_title = "Diretoria | Gestão 2020-2023"
   end
 
   def sede_campestre

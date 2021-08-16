@@ -53,19 +53,28 @@
 
 								<div class="row">
 
-									<div class="col-md-6  hidden-xs">
+									<div class="col-xs-12 col-md-6">
 										<p class="main-color sriracha" style="display: inline;">
 											<b class="sriracha"> <%= l(news.created_at, format: '%d de %B, de %Y às %Hh%M') %></b>
 										</p>
 									</div>
 
-									<div class="col-md-6  hidden-xs text-right">
+									<div class="col-md-6 hidden-xs text-right">
 										<!-- Your share button code -->
 										<div class="fb-share-button" 
 											 data-href="<%= noticia_visualizar_path(news.slug) %>" 
 											 data-layout="button"
 											 data-turbolinks="true"
 											 style="display: inline; margin-left: 5px;">
+										</div>
+									</div>
+									<div class="col-xs-12 visible-xs text-left">
+										<!-- Your share button code -->
+										<div class="fb-share-button" 
+											 data-href="<%= noticia_visualizar_path(news.slug) %>" 
+											 data-layout="button"
+											 data-turbolinks="true"
+											 style="display: inline; margin-bottom: 5px;">
 										</div>
 									</div>
 
