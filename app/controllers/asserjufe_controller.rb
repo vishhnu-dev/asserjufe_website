@@ -3,7 +3,7 @@ class AsserjufeController < ApplicationController
   before_action :docs
 
   def home
-  	@page_title = "Servidores da Justiça Federal"
+  	@page_title = "Servidores da Justiça Federal RS"
     @noticias = Noticia.all.order(created_at: :desc).limit(6)
     @palavras = PalavraPresidente.all
     @banners = Banner.where(status: :ativo)

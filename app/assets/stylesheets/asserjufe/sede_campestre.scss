@@ -40,7 +40,9 @@
 	}
 }
 #pre-reserva {
-	background-color: $black-color; 
+ 	.grecaptcha-badge {
+	  display: none !important;
+	}
 	.contatos-form {
 		.form-control {
 			border: 1px solid #ccc !important;
@@ -48,7 +50,6 @@
 		}
 		.area {
 			resize: none;
-
 		}
 	}	
 }

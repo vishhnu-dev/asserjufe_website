@@ -8,11 +8,11 @@
       </div>
 
       <div class="modal-body modal-height">
-        <div style="padding: 15px 30px;">
+        <div style="padding: 15px 30px; background-color: #eee;">
            <%= form_for @pre_reserva, :url => {:controller => "pre_reservas", :action => "create" } do |f| %>
            
            <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12 text-justify">
                 <%= render partial: 'layouts/messages' %>
               </div>
             </div>
@@ -90,14 +90,14 @@
                 </div>
               </div>
 
-              <div class="col-xs-6 col-md-6 text-left">
+              <div class="col-xs-12 col-md-6 text-left">
                 <div class="form-group">
                   <%= f.label 'N° de crianças', class: 'main-color sriracha', style:'text-transform: capitalize; font-size:16px;' %>
                   <%= f.number_field :numero_criancas, class: 'form-control' %>
                 </div>
               </div>
 
-              <div class="col-xs-6 col-md-6 text-left">
+              <div class="col-xs-12 col-md-6 text-left">
                 <div class="form-group">
                   <%= f.label 'N° de acompanhantes', class: 'main-color sriracha', style:'text-transform: capitalize; font-size:16px;' %>
                   <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" data-original-title="Pagantes"></i>

@@ -69,7 +69,13 @@ $font-small: 12px;
     	color: $white-color;
 	}
 }
-
+#new_assinatura {
+	padding: 15px;
+	background-color: #eee;
+}
+.grecaptcha-badge {
+  display: none !important;
+}
 /* Efeito zoom imagens => aplicar classe na tag img*/
 .zoom {
   transition: transform .6s;
