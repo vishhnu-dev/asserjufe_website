@@ -54,8 +54,6 @@ GEM
     bindex (0.8.1)
     bootsnap (1.7.6)
       msgpack (~> 1.0)
-    bootstrap-wysihtml5-rails (0.3.3.8)
-      railties (>= 3.0)
     bootstrap3-datetimepicker-rails (4.14.30)
       momentjs-rails (>= 2.8.1)
     builder (3.2.4)
@@ -118,6 +116,7 @@ GEM
     ed25519 (1.2.4)
     erubi (1.10.0)
     execjs (2.8.1)
+    fastimage (2.2.5)
     ffi (1.15.3)
     font-awesome-rails (4.7.0.7)
       railties (>= 3.2, < 7)
@@ -298,7 +297,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt_pbkdf (>= 1.0, < 2.0)
   bootsnap (>= 1.1.0)
-  bootstrap-wysihtml5-rails
   bootstrap3-datetimepicker-rails (~> 4.14.30)
   capistrano
   capistrano-bundler
@@ -313,6 +311,7 @@ DEPENDENCIES
   devise
   devise-i18n
   ed25519 (>= 1.2, <= 1.2.4)
+  fastimage
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails

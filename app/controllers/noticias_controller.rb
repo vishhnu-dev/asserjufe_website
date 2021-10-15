@@ -23,7 +23,7 @@ class NoticiasController < ApplicationController
 		@noticia = Noticia.new(noticia_params)
 		respond_to do |format|
 			if @noticia.save
-				format.html { redirect_to noticias_path }
+				format.html { redirect_to noticias_path, notice: 'Notícia criada com sucesso !' }
 			else
 				format.html { render :edit }
 			end
@@ -71,6 +71,6 @@ class NoticiasController < ApplicationController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def noticia_params
-			params.require(:noticia).permit(:title, :description, :imagem, :video, :doc, :slug)
+			params.require(:noticia).permit(:title, :description, :imagem, :social_image, :video, :doc, :slug)
 		end
 end

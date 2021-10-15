@@ -22,7 +22,5 @@
 //= require moment
 //= require jquery/moment-pt-BR
 //= require bootstrap-datetimepicker
-//= require bootstrap-wysihtml5
-//= require bootstrap-wysihtml5/locales/pt-BR
 //= require data-confirm-modal
 //= require_tree .

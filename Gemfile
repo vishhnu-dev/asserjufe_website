@@ -43,12 +43,12 @@ gem 'carrierwave', '~> 2.0'
 # datetime
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
-# text_area
-gem 'bootstrap-wysihtml5-rails'
 # data-confirm-moda-b3
 gem 'data-confirm-modal'
 # rails_same_site_cookie
 gem 'rails_same_site_cookie'
+# easy image size option to validate
+gem 'fastimage'
 
 # ED25519 Supoport #
 gem 'ed25519', '>= 1.2', '<= 1.2.4'

@@ -15,26 +15,33 @@
 						<div class="col-lg-12">
 							<div class="form-group">
 								<%= f.label 'Descrição', class: 'main-color uppercase' %>
-								<%= f.text_area :description, class: 'form-control wysihtml5', rows: '10', value: (@noticia.description if @noticia.description.present?) %>			
+								<%= f.text_area :description, class: 'form-control', rows: '10', value: (@noticia.description if @noticia.description.present?) %>			
 							</div>
 						</div>
 
 						<div class="col-lg-6">
 							<div class="form-group">
-								<%= f.label 'Imagem (opcional)', class: 'main-color uppercase' %>
+								<%= f.label 'Imagem (Opcional)', class: 'main-color uppercase' %>
 								<%= f.file_field :imagem, class: 'form-control' %>
 							</div>
 						</div>
 
 						<div class="col-lg-6">
 							<div class="form-group">
-								<%= f.label 'Vídeo (opcional)', class: 'main-color uppercase' %>
+								<%= f.label 'Imagem do facebook (Opcional)', class: 'main-color uppercase' %>
+								<%= f.file_field :social_image, class: 'form-control' %>
+							</div>
+						</div>
+
+						<div class="col-lg-6">
+							<div class="form-group">
+								<%= f.label 'Vídeo (Opcional)', class: 'main-color uppercase' %>
 								<%= f.file_field :video, class: 'form-control' %>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<%= f.label 'Documento (opcional)', class: 'main-color uppercase' %>
+								<%= f.label 'Documento (Opcional)', class: 'main-color uppercase' %>
 								<%= f.file_field :doc, class: 'form-control' %>
 								<small class="main-color" style="font-size: 16px;">formato aceito: PDF</small>
 							</div>

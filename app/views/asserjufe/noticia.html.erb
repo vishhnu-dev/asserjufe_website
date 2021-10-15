@@ -2,7 +2,7 @@
 	<div class="container page-title">
 		<div class="row">
 			<div class="col-md-12 title">
-	            <h1><i class="fa fa-comments-o"></i> <%= @noticia.title %></h1>
+          <h1><i class="fa fa-comments-o"></i> <%= @noticia.title %> </h1>
 			</div>
 		</div>
 	</div>
@@ -15,6 +15,12 @@
 					<%= image_tag(@noticia.imagem.url, class: 'img-responsive') %>
 				</a>
 				<small class="main-color">clique para ampliar <i class="fa fa-search"></i></small>
+				<div class="fb-share-button" 
+						 data-href="<%= noticia_visualizar_path(@noticia.slug) %>" 
+						 data-layout="button"
+						 data-turbolinks="true"
+						 style="display: inline; margin-left: 5px;">
+					</div>
 			</div>
 		<% end %>
 
@@ -54,7 +60,7 @@
 				<div class="owl-carousel owl-theme owl-multiple-news news">
 					<% @noticias.each do |allnews| %>
 						<a href="<%= noticia_visualizar_path(allnews.slug) %>" style="cursor:drag;">
-							<div class="news-slide" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %>"></div>
+							<div class="news-slide" style="background-color:<%= cycle("darkcyan;", "darkgreen;", "coral;", name: "cores") %>"></div>
 							<div class="content-notice-image" style="overflow: hidden;">
 								<% if allnews.imagem.present? %>
 									<div class="notice-image zoom" style="background-image: url(<%= allnews.imagem %>);"></div>	
@@ -63,22 +69,14 @@
 								<% end %>
 							</div>
 
-							<h2 class="white-color text-center" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %> padding: 15px auto; margin-top: 0px;"> 
+							<h2 class="white-color text-center" style="background-color:<%= cycle("darkcyan;", "darkgreen;", "coral;", name: "cores") %> padding: 15px auto; margin-top: 0px;"> 
 								<b style="vertical-align: -webkit-baseline-middle; line-height: 2;"><%= truncate(allnews.title, :lenght =>16, :omission => '...') %></b>
 							</h2>
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-12">
 									<p class="main-color sriracha" style="display: inline;">
 										<b class="sriracha"> <%= l(allnews.created_at, format: '%d de %B, de %Y às %Hh%M') %></b>
 									</p>
-								</div>
-								<div class="col-md-6 text-right">
-									<!-- Your share button code -->
-									<div class="fb-share-button" 
-										 data-href="<%= noticia_visualizar_path(allnews.slug) %>" 
-										 data-layout="button"
-										 style="display: inline; margin-left: 5px;">
-									</div>
 								</div>
 							</div>
 							<blockquote>

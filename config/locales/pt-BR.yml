@@ -2,6 +2,7 @@ pt-BR:
   activerecord:
     attributes:
       noticia:
+        social_image: 'Imagem de compartilhamento facebook'
         doc: 'Documento'
         video: 'Video'
         title: 'Título'
