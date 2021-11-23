@@ -63,7 +63,7 @@
 							<div class="news-slide" style="background-color:<%= cycle("darkcyan;", "darkgreen;", "coral;", name: "cores") %>"></div>
 							<div class="content-notice-image" style="overflow: hidden;">
 								<% if allnews.imagem.present? %>
-									<div class="notice-image zoom" style="background-image: url(<%= allnews.imagem %>);"></div>	
+									<div class="notice-image zoom" style="background-image: url(<%= asset_path allnews.imagem %>);"></div>
 								<% else %>
 									<div class="notice-image-auto zoom" style="background-image: url('<%= asset_path 'asserjufe.png' %>');"></div>	
 								<% end %>

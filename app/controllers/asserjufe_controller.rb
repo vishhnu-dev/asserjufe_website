@@ -44,6 +44,11 @@ class AsserjufeController < ApplicationController
     @noticias = Noticia.where.not(slug: @noticia.slug)
   end
 
+  def visualizar_doc
+    @documento = Documento.find_by("id = ?", @documentos.ids)
+    render partial: 'arquivo'
+  end
+
   private
     def set_noticia
       @noticia = Noticia.find_by(slug: params[:slug])
@@ -51,9 +56,5 @@ class AsserjufeController < ApplicationController
 
     def docs
       @documentos = Documento.all
-    end
-
-    def visualizar_doc
-      render 'arquivo'
     end
 end

@@ -37,10 +37,11 @@ $(document).on('turbolinks:load', function(){
 		let title = this.dataset.title
 
 		$.ajax({
-			url: 'documentos/uploads/'+id+'/'+file,
+			// url: 'documentos/uploads/'+id+'/'+file,
+			url: 'biblioteca/docs/'+id+'/'+file,
 			method: 'GET',
 			success: function(data){
-				$('#docs .modal-title').html(title);
+				$('#docs .modal-title').html('Pré-visualização de '+file);
 				$('#docs').modal('hide');
 				$('#docs .modal-body').html(data);
 				$('#docs').modal('show');

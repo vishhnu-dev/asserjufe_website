@@ -10,7 +10,7 @@ class Noticia < ApplicationRecord
 	validates :description, presence: { message: 'não pode ficar em branco.' }
 	validate :validates_fb_size, if: :has_fb_img
 
-	before_save :set_slug
+	before_save :set_slug, only: :create
 
 	def	set_slug
 		# Perform transliteration to replace non-ascii characters with an ascii

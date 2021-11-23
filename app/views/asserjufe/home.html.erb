@@ -41,7 +41,7 @@
 
 								<div class="content-notice-image" style="overflow: hidden;">
 									<% if news.imagem.present? %>
-										<div class="notice-image zoom" style="background-image: url(<%= news.imagem %>);"></div>	
+										<div class="notice-image zoom" style="background-image: url(<%= asset_path news.imagem %>);"></div>
 									<% else %>
 										<div class="notice-image-auto zoom" style="background-image: url('<%= asset_path 'asserjufe.png' %>');"></div>	
 									<% end %>
@@ -80,7 +80,7 @@
 							<i class="fa fa-comments-o"></i><b> Mensagem do Presidente</b>
 						</h2>
 						<% @palavras.each do |palavra| %>
-							<%= video_tag(palavra.video,  poster: image_path('gallery/general/29.PNG'),:autobuffer => true, :controls => true, style: 'object-fit: cover; width: 100%; height: 500px; outline:none;') %>
+							<%= video_tag(palavra.video,  poster: image_path('gallery/general/lessgb/29.PNG'),:autobuffer => true, :controls => true, style: 'object-fit: cover; width: 100%; height: 500px; outline:none;') %>
 						<% end %>
 					</div>
 				</div>
@@ -102,7 +102,7 @@
 			<div class="row sede-campestre">
 				<div class="col-md-6 mobile-center">
 					<h2 class="visible-xs secundary-color title title-mob"><b>Sede Campestre</b></h2>
-					<img src="<%= image_path 'gallery/general/01.PNG' %>" class="img-responsive">
+					<img src="<%= image_path 'gallery/general/lessgb/01.png' %>" class="img-responsive">
 				</div>
 				<div class="col-md-6 mobile-center">
 					<h2 class="hidden-xs secundary-color title title-mob"><b>Sede Campestre</b></h2>

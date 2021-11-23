@@ -1,13 +1,13 @@
 .asserjufe-banners {
 	.owl-prev, .owl-next {
-        height: 500px !important;
+      height: 500px !important;
     	width: 150px !important;
-        position: absolute;
-        top: 50% !important;
-        transform: translateY(-50%);
-        display: block !important;
-        border:0px solid black;
-        background-color: unset !important;
+      position: absolute;
+      top: 50% !important;
+      transform: translateY(-50%);
+      display: block !important;
+      border:0px solid black;
+      background-color: unset !important;
 	    outline: none;
 	    @media screen and ( max-width: 992px ) {
 	    	display: none !important;
@@ -159,7 +159,7 @@
 	}
 }
 .background2 {
-	background-image: url(asset_path('gallery/larg/15.PNG'));
+	background-image: url(asset_path('gallery/general/lessgb/15.PNG'));
   background-size: cover !important;
   background-attachment: fixed !important;
   height:  450px !important;
