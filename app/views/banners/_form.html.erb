@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-lg-6">
+    <%= render partial: 'layouts/form_errors', locals: {model: @banner} %>
+    <div class="box box-success">
+      <%= form_with(model: banner, local: true) do |f| %>
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= f.label 'Status', class: 'main-color' %>
+                <%= f.select :status, options_for_select([['Ativo', 'ativo'],['Inativo', 'inativo']]), { include_blank: false }, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <%= f.label 'Link do Banner', class: 'main-color' %>
+              <%= f.select :url, options_for_url, { include_blank: 'Selecione...' }, class: 'form-control' %>
+              <small class="secundary-color">Página onde o cliente irá cair ao clicar no banner.</small>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= f.label 'Banner Desktop', class: 'main-color' %>
+                <%= f.file_field :imagem, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= f.label 'Banner Mobile', class: 'main-color' %>
+                <%= f.file_field :imagem_mobile, class: 'form-control' %>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="box-footer">
+            <%= f.submit action_name == 'edit' ? 'Atualizar' : 'Cadastrar', class: 'btn btn-success btn-flat', role: 'button' %>
+            <%= link_to 'Voltar', banners_path, class: 'btn btn-danger btn-flat', role: 'button' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

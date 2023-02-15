@@ -1,6 +1,8 @@
 class PalavraPresidente < ApplicationRecord
-	validates :description, presence: { message: "não pode ficar em branco." }
+	validates :video, presence: { message: "não pode ficar em branco." }
 	
+	mount_uploader :video, PalavraPresidenteUploader
+
 	after_create :exclui_palavra_anterior
 
 	def exclui_palavra_anterior

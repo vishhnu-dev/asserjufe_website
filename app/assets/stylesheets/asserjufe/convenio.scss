@@ -3,7 +3,7 @@
     padding: 19px 15px;
     .pad {
     	.col-md-4 {
-            padding: 20px 0px;
+            padding: 20px 3px;
             border: 2px solid #eee;
             border-radius: 40px;
             p {
@@ -46,6 +46,10 @@
         margin-bottom: 0px;
         font-size: 30px;
         line-height: 0.4;
+        @media (max-width: 379px) {
+            font-size: 28px;
+            line-height: 1;
+        }
     }
     .b0b {
         font-size: 30px;

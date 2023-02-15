@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-lg-8">
+    <%= link_to fa_icon('plus', text: 'Cadastrar Banner'), new_banner_path, class: 'btn btn-success btn-flat', role: 'button', data: { toggle: "tooltip", placement: "right", title: "Cadastre um novo banner no site" } %>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-success">
+      <div class="box-header with-border">
+        <h3 class="box-title">Banners</h3>
+      </div>
+      <div class="box-body">
+        <%= render 'banners_grid' %>
+      </div>
+    </div>
+  </div>
+</div>

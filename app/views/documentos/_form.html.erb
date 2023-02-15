@@ -1,48 +1,45 @@
 <div class="row">
-	<div class="col-lg-6">
+	<div class="col-lg-8">
       <%= render partial: 'layouts/form_errors', locals: {model: @documentos} %>
 		<div class="box box-success">
 			<%= form_for @documentos do |f| %>
-				
 				<div class="box-body">
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="form-group">
 								<%= f.label 'Estatuto', class: 'main-color uppercase' %>
-								<small class="main-color" style="font-size: 16px;">formato aceito: PDF</small>
 								<%= f.file_field :estatuto, class: 'form-control' %>
+								<small class="text-danger">Formato aceito: PDF</small>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<%= f.label 'Tabela de valores da sede campestre', class: 'main-color uppercase' %>
-								<small class="main-color" style="font-size: 16px;">formato aceito: PDF</small>
 								<%= f.file_field :tabela_valores, class: 'form-control' %>
+								<small class="text-danger">Formato aceito: PDF</small>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<%= f.label 'Regimento Interno', class: 'main-color uppercase' %>
-								<small class="main-color" style="font-size: 16px;">formato aceito: PDF</small>
 								<%= f.file_field :regimento_interno, class: 'form-control' %>
+								<small class="text-danger">Formato aceito: PDF</small>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<%= f.label 'Regulamento', class: 'main-color uppercase' %>
-								<small class="main-color" style="font-size: 16px;">formato aceito: PDF</small>
 								<%= f.file_field :regulamento, class: 'form-control' %>
+								<small class="text-danger">Formato aceito: PDF</small>
 							</div>
 						</div>
 					</div>
 				</div>
-
 				<div class="box-footer">
-			        <%= f.submit action_name == 'edit' ? 'Atualizar' : 'Cadastrar', class: 'btn btn-success btn-flat', role: 'button' %>
-			        <%= link_to 'Voltar', documentos_path, class: 'btn btn-danger btn-flat', role: 'button' %>
-		    	</div>
-
-    		<% end %>
+	        <%= f.submit action_name == 'edit' ? 'Atualizar' : 'Cadastrar', class: 'btn btn-success btn-flat', role: 'button' %>
+	        <%= link_to 'Voltar', documentos_path, class: 'btn btn-danger btn-flat', role: 'button' %>
+	    	</div>
+  		<% end %>
 		</div>
 	</div>
 </div>

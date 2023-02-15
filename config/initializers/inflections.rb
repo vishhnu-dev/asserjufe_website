@@ -68,4 +68,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular "palavra_presidente", "palavras_presidente"
   inflect.irregular "documento", "documentos"
   inflect.irregular "pre_reserva", "pre_reservas"
+  inflect.irregular "banner", "banners"
 end

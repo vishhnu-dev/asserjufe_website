@@ -1,0 +1,36 @@
+<%= grid(@banners_grid) do |g|
+	
+	g.blank_slate  do content_tag :div, "Nenhum registro encontrado", class: 'well' end
+
+	g.column name: 'Status', attribute: 'status', custom_filter: [['Ativo',0],['Inativo',1]], auto_reload: true do |banner|
+		link_to edit_banner_path(banner), data: { toggle: "tooltip", placement: "bottom", title: "Editar Banner" } do
+			banner.ativo? ? label_status('Ativo', 'green') : label_status('Inativo', 'red')
+		end
+	end
+
+	g.column name: 'Banner' do |banner|
+		banner.imagem.present? ? button_tag(fa_icon('search', text: 'Visualizar Banner'), type: 'button', class: 'btn btn-banner text-success', data: { id: banner.id, campo: 'desktop' }) : 'nenhum banner encontrado'
+	end
+
+	g.column name: 'Banner' do |banner|
+		banner.imagem_mobile.present? ? button_tag(fa_icon('search', text: 'Visualizar Banner'), type: 'button', class: 'btn btn-banner text-success', data: { id: banner.id, campo: 'mobile' }) : 'nenhum banner encontrado'
+	end
+	
+	g.column do |banner|
+		if policy(Banner).edit?
+			link_to edit_banner_path(banner), data: { confirm: 'Você tem certeza que deseja editar o banner ?', backdrop: 'static', commit: 'Sim', cancel: 'Cancelar', title: 'Você tem certeza ?'} do
+	          	fa_icon 'refresh', style: 'font-size:20px;', class: 'main-color'
+	      	end
+	    end
+	end
+
+	g.column do |banner|
+		if policy(banner).destroy?
+			link_to banner_path(banner), method: :delete,  data: { confirm: 'Você tem certeza que deseja excluir o banner ?', backdrop: 'static', commit: 'Sim', cancel: 'Cancelar', title: 'Você tem certeza ?'} do
+      	fa_icon 'trash', style: 'color:#dd4b39; font-size:20px;'
+    	end 
+		end
+	end
+end %>
+
+<%= render 'modal' %>

@@ -1,0 +1,14 @@
+Pré reserva
+
+Nova pré reserva recebida através do site.
+Seguem o email abaixo:
+
+Nome Completo: <%= @pre_reserva.nome_completo %>
+Email: <%= @pre_reserva.casa %>
+Telefone: <%= @pre_reserva.data_chegada.strftime('%d/%m/%Y %H:%M') %>	
+Assunto: <%= @pre_reserva.data_saida.strftime('%d/%m/%Y %H:%M') %>	
+Mensagem: <%= @pre_reserva.celular %>
+Mensagem: <%= @pre_reserva.tipo_cliente %>
+Mensagem: <%= @pre_reserva.numero_acompanhantes %>
+Mensagem: <%= @pre_reserva.numero_criancas %>
+Enviado em: <%= @pre_reserva.created_at.strftime('%d/%m/%Y %H:%M') %>

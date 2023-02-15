@@ -2,7 +2,7 @@
 	<div class="container page-title">
 		<div class="row">
 			<div class="col-md-12 title">
-	            <h1><i class="fa fa-comments-o"></i> <%= @noticia.title %></h1>
+          <h1><i class="fa fa-comments-o"></i> <%= @noticia.title %> </h1>
 			</div>
 		</div>
 	</div>
@@ -11,14 +11,23 @@
 	<div class="row">
 		<% if @noticia.imagem.present? %>
 			<div class="col-md-5" style="margin-top: 5px;">
-				<%= image_tag(@noticia.imagem.url, class: 'img-responsive') %>
+				<a data-caption="Seja um associado !" data-fancybox="gallery" href="<%= @noticia.imagem %>">
+					<%= image_tag(@noticia.imagem.url, class: 'img-responsive') %>
+				</a>
+				<small class="main-color">clique para ampliar <i class="fa fa-search"></i></small>
+				<div class="fb-share-button" 
+						 data-href="<%= noticia_visualizar_path(@noticia.slug) %>" 
+						 data-layout="button"
+						 data-turbolinks="true"
+						 style="display: inline; margin-left: 5px;">
+					</div>
 			</div>
 		<% end %>
 
 		<div class="<%= @noticia.imagem.present? ? 'col-md-7 ' : 'col-md-12' %> ">
 			<blockquote style="margin-top: 20px;">
 				<p class="lead main-color text-justify">
-					<%= @noticia.description %>
+					<%= @noticia.description.html_safe %>
 				</p>
 			</blockquote>
 		</div>
@@ -26,45 +35,59 @@
 	<div class="row">
 		<% if @noticia.video.present? %>
 			<div class="<%= @noticia.doc.present? ? 'col-md-6 ' : 'col-md-12'  %>" style="margin-top: 5px;">
-				<%= video_tag(@noticia.video, :controls => true, style: 'object-fit: cover;
-    width: 100%; height: 500px;')  %>
+				<%= video_tag(@noticia.video, :controls => true, style: 'object-fit: cover; width: 100%; height: 500px;  oouutlliine:none;')  %>
 			</div>
 		<% end %>
 
 		<% if @noticia.doc.present? %>
-			<div class="col-md-6" style="margin-top: 5px;">
+			<div class="col-md-6 hidden-xs" style="margin-top: 5px;">
 				<object data="<%= @noticia.doc.url %>" style="width:100%; height: 500px"></object>	
 			</div>	
 			
 		<% end %>
 	</div>
-	<% if @noticias.count != 1 and @noticias.count != 0 %>
-		<div class="row multiple-noticias">
-			<div class="container">
-			  	<div class="noticias">					
-					<h1 class="main-color">
-						<i class="fa fa-newspaper-o"> </i> 
-						<b>Mais novidades</b>
-					</h1>
-					<div style="width:175px; height:5px; background-color: #007C61;"></div>
-					<div class="owl-carousel owl-theme owl-multiple-news">
-						<% @noticias.each do |news| %>
-							<a class="news-link" href="<%= noticia_visualizar_path(news.slug)  %>">
-								<h2 class="white-color text-center" style="background-color:<%= cycle("turquoise;", "wheat;", "thistle;", name: "cores") %> padding: 15px auto;"> 
-								<b style="vertical-align: -webkit-baseline-middle; line-height: 2;"><%= truncate(news.title, :lenght =>16, :omission => '...') %></b>
+</div>
+<% if @noticias.count != 1 and @noticias.present? and @noticias.count != 0  %>
+	<div class="container-fluid">
+		<div class="row noticias-noticia" style="margin-top: 15px;">
+		  	<div class="noticias">					
+				<!-- Título -->
+				<h2 class="secundary-color text-center">
+					<!-- #Asserjufe título em cores principais -->
+					<h2 class="main-color text-center">Mais novidades...</h2>
+				</h2>
+
+				<div class="owl-carousel owl-theme owl-multiple-news news">
+					<% @noticias.each do |allnews| %>
+						<a href="<%= noticia_visualizar_path(allnews.slug) %>" style="cursor:drag;">
+							<div class="news-slide" style="background-color:<%= cycle("darkcyan;", "darkgreen;", "coral;", name: "cores") %>"></div>
+							<div class="content-notice-image" style="overflow: hidden;">
+								<% if allnews.imagem.present? %>
+									<div class="notice-image zoom" style="background-image: url(<%= asset_path allnews.imagem %>);"></div>
+								<% else %>
+									<div class="notice-image-auto zoom" style="background-image: url('<%= asset_path 'asserjufe.png' %>');"></div>	
+								<% end %>
+							</div>
+
+							<h2 class="white-color text-center" style="background-color:<%= cycle("darkcyan;", "darkgreen;", "coral;", name: "cores") %> padding: 15px auto; margin-top: 0px;"> 
+								<b style="vertical-align: -webkit-baseline-middle; line-height: 2;"><%= truncate(allnews.title, :lenght =>16, :omission => '...') %></b>
 							</h2>
-								<p class="lead main-color text-justify" style="margin-bottom: 0px;">
-									<b><%= truncate(news.description, :length => 144, :omission => '[Ler mais...]' ) %></b>
+							<div class="row">
+								<div class="col-md-12">
+									<p class="main-color sriracha" style="display: inline;">
+										<b class="sriracha"> <%= l(allnews.created_at, format: '%d de %B, de %Y às %Hh%M') %></b>
+									</p>
+								</div>
+							</div>
+							<blockquote>
+								<p class="lead main-color text-center description" style="margin-bottom: 0px;">
+									<%= truncate(allnews.description, :length => 135, :omission => ' [Ler mais...]' )%>
 								</p>
-								<p class="main-color sriracha">
-									<small style="font-size: 14px;">Publicado em:</small>
-									<b class="sriracha"> <%= news.created_at.strftime("%d/%m/%Y às %Hh%M") %></b>
-								</p>
-							</a>
-						<% end %>
-					</div>
+							</blockquote>
+						</a>
+					<% end %>
 				</div>
 			</div>
 		</div>
-	<% end %>
-</div>
+	</div>
+<% end %>

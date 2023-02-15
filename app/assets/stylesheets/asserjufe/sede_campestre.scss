@@ -1,5 +1,8 @@
 .gallery {
 	.owl-gallery {
+		a {
+			cursor: -webkit-grab;
+		}
 		.owl-prev, .owl-next {
 	        width: 50px !important;
 	        height: 100px !important;
@@ -36,33 +39,29 @@
 		font-size: 18px;
 	}
 }
-.contatos-form {
-	.form-control {
-		border: 1px solid #ccc !important;
-    	border-radius: 4px !important;
+#pre-reserva {
+ 	.grecaptcha-badge {
+	  display: none !important;
 	}
-	.area {
-		resize: none;
+	.contatos-form {
+		.form-control {
+			border: 1px solid #ccc !important;
+	  	border-radius: 4px !important;
+		}
+		.area {
+			resize: none;
+		}
+	}	
+}
 
-	}
-}
-.background1 {
-	background-image: url(asset_path('gallery/larg/10.PNG'));
+.background3 {
+	background-image: url(asset_path('gallery/general/lessgb/05.PNG'));
     background-size: cover !important;
     background-attachment: fixed !important;
     height:  400px !important;
     background-position: bottom;
-    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-    clip-path: polygon(0 30%, 100% 0, 100% 70%, 0 100%);
-}
-.background2 {
-	background-image: url(asset_path('gallery/larg/20.PNG'));
-    background-size: cover !important;
-    background-attachment: fixed !important;
-    height:  400px !important;
-    background-position: bottom;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 .small-house {
 	margin-top: 15px;

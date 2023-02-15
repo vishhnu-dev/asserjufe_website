@@ -31,9 +31,11 @@
 
           <!-- Messages -->
           <%= render partial: 'layouts/messages' %>
+          
           <% if devise_controller? %>
             <%= render partial: 'layouts/devise_messages' %>
           <% end %>
+
           <% if action_name != 'dashboard' %>
             <h1 class="secundary-color"><%= session[:page_title] ? session[:page_title] : 'Defina o título na variável de sessão :page_title' %></h1>
           <% end %>

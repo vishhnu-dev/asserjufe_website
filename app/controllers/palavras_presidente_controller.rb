@@ -65,6 +65,6 @@ class PalavrasPresidenteController < ApplicationController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def palavra_params
-			params.require(:palavra_presidente).permit(:description)
+			params.require(:palavra_presidente).permit(:video)
 		end
 end

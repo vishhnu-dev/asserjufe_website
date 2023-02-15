@@ -1,0 +1,36 @@
+<h3>Pré Reserva</h3>
+
+<p>Nova pré reserva recebida através do site.</p>
+<p>Segue as informações do cliente abaixo::</p>
+<ul style="list-style-type: none">
+	<li>
+		<strong>Nome Completo:</strong> <%= @pre_reserva.nome_completo %>
+	</li>
+	<li>
+		<strong>Casa desejada:</strong> <%= @pre_reserva.casa %>
+	</li>
+	<li>
+		<strong>Data de chegada:</strong> <%= @pre_reserva.data_chegada.strftime('%d/%m/%Y %H:%M') %>
+	</li>
+	<li>	
+		<strong>Data de saída:</strong> <%= @pre_reserva.data_saida.strftime('%d/%m/%Y %H:%M') %>
+	</li>
+	<li>	
+		<strong>Email do cliente:</strong> <%= @pre_reserva.email %>
+	</li>
+	<li>
+		<strong>Celular do cliente:</strong> <%= @pre_reserva.celular %>
+	</li>
+	<li>	
+		<strong>Acompanhantes adultos:</strong> <%= @pre_reserva.tipo_cliente %>
+	</li>
+	<li>
+		<strong>Acompanhantes adultos:</strong> <%= @pre_reserva.numero_acompanhantes %>
+	</li>
+	<li>
+		<strong>Acompanhantes adultos:</strong> <%= @pre_reserva.numero_criancas %>
+	</li>
+	<li>
+		<strong>Enviado em:</strong> <%= @pre_reserva.created_at.strftime('%d/%m/%Y %H:%M') %>
+	</li>
+</ul>

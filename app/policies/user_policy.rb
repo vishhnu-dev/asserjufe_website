@@ -1,6 +1,6 @@
 class UserPolicy < ApplicationPolicy
 	def index?
-		user.administrador?
+		user.administrador? or user.apenas_leitura?
 	end
 
 	def new?
@@ -24,7 +24,11 @@ class UserPolicy < ApplicationPolicy
 	end
 
 	def destroy?
-		user.administrador? and (user.id != record.id)
+		(user.id == record.id)
+	end
+
+	def atualizacao_cadastral?
+		(user.id == record.id)
 	end
 
 	class Scope < Scope

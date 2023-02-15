@@ -1,0 +1,11 @@
+Contato
+
+Novo contato recebido através de site da Asserjufe.
+Seguem o email abaixo:
+
+Nome Completo: <%= @contato.nome %>
+Email: <%= @contato.email %>
+Telefone: <%= @contato.telefone %>	
+Assunto: <%= @contato.assunto %>	
+Mensagem: <%= @contato.mensagem %>
+Enviado em: <%= @contato.created_at.strftime('%d/%m/%Y %H:%M') %>

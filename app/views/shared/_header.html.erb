@@ -4,7 +4,7 @@
 
 			<!-- login -->
 			<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 text-center login">
-				<a href="<%= backend_path %>" class="white-color text-left" data-toggle="tooltip" data-placement="right" data-original-title="Login">
+				<a href="<%= backend_path %>" target="_blank" class="white-color text-left" data-toggle="tooltip" data-placement="bottom" data-original-title="Área restrita">
 					Entrar <i class="fa fa-sign-in"></i> 
 				</a>
 			</div>
@@ -12,20 +12,23 @@
 			<!-- sociais icons -->
 			<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 text-right sociais">
 
-				<a href="https://api.whatsapp.com/send?phone=5551997659983" target="blank" title="Fale conosco no WhatsApp" data-toggle="tooltip" data-placement="bottom" data-original-title="Enviar mensagem no WhatsApp.">
-					<i class="fa fa-whatsapp"></i>
+				<a href="https://api.whatsapp.com/send?phone=5551997659983" target="blank" title="Fale conosco no WhatsApp" data-toggle="tooltip" data-placement="bottom" data-original-title="Enviar mensagem no WhatsApp." class="whats-mob">
+					<i class="fa fa-whatsapp" style="margin-right: 5px;"></i>
 				</a>
 				<a href="https://www.facebook.com/asserjufers/" target="blank" title="Visite-nos no Facebook" data-toggle="tooltip" data-placement="bottom" data-original-title="Conheça nosso facebook.">
 					<i class="fa fa-facebook-square"></i>
 				</a>
-				<a href="https://www.instagram.com/asserjufers/" target="blank" title="Conheça nosso Instagram" data-toggle="tooltip" data-placement="bottom" data-original-title="Visite nosso instagram.">
+				<!-- <a href="https://www.instagram.com/asserjufers/" target="blank" title="Conheça nosso Instagram" data-toggle="tooltip" data-placement="bottom" data-original-title="Visite nosso instagram.">
 					<i class="fa fa-instagram"></i>
-				</a>
+				</a> -->
 				<!--barra/telefone-->
 				<text class="barra"></text>
 				<!-- phone -->
 				<i class="fa fa-phone fone"></i>
-				<text><strong class="numero">51 3225.0356</strong></text>
+				<text><strong class="numero"><a class="linktel" href="tel:+5132250356" target="blank"  data-toggle="tooltip" data-placement="bottom" data-original-title="Fale conosco">51 3225.0356</a></strong></text>
+				<!-- phone -->
+				<i class="fa fa-whatsapp fone hidden-xs" style="font-size: 25px;"></i>
+				<text><strong class="hidden-xs numero"><a class="linktel" href="https://api.whatsapp.com/send?phone=5551997659983" target="blank"  data-toggle="tooltip" data-placement="bottom" data-original-title="Fale conosco">51 9976-59983</a></strong></text>
 			</div>	
 		</div>
 	</div>		
@@ -63,10 +66,14 @@
    					<a class="sriracha" href="<%= convenios_path %>">Convênios</a>
    				</li>
    				<% if @documentos.present? %>
+	   				
 	   				<li class="dropdown">
-	   					<a class="sriracha dropdown-toggle" href="javacript:void(0)">Biblioteca
+	   					
+	   					<a href="#" class="sriracha dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	   						Biblioteca
 	   						<span class="caret"></span>
 	   					</a>
+
 	   					<ul class="dropdown-menu">
 	   						<% @documentos.each do |doc| %>
 		                      	<% if doc.estatuto.present? %>

@@ -1,0 +1,33 @@
+<h3>Proposta de sócio</h3>
+
+<p>Nova proposta de sócio recebido através do site.</p>
+<p>Seguem os dados abaixo:</p>
+<ul style="list-style-type: none">
+	<li>
+		<strong>Nome Completo:</strong> <%= @assinatura.nome %>
+	</li>
+	<li>
+		<strong>Sexo:</strong> <%= @assinatura.sexo %>
+	</li>
+	<li>
+		<strong>Data de nascimento:</strong> <%= @assinatura.data_nascimento.strftime('dd/m/aaaa') %>
+	</li>
+	<li>	
+		<strong>Nome da Mãe:</strong> <%= @assinatura.nome_mae %>
+	</li>
+	<li>	
+		<strong>Nome do Pai:</strong> <%= @assinatura.nome_pai %>
+	</li>
+	<li>	
+		<strong>Celular:</strong> <%= @assinatura.celular %>
+	</li>
+	<li>	
+		<strong>Celular2:</strong> <%= @assinatura.celular2 %>
+	</li>
+	<li>	
+		<strong>Email:</strong> <%= @assinatura.email %>
+	</li>
+	<li>
+		<strong>Criado em:</strong> <%= @assinatura.created_at.strftime('dd/m/aaaa hh:mm') %>
+	</li>
+</ul>

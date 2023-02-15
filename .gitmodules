@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/to_slug"]
+	path = vendor/plugins/to_slug
+	url = git://github.com/ludo/to_slug.git

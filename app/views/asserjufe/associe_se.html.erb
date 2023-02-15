@@ -1,9 +1,166 @@
+<!-- modal pre reserva -->
+<% if flash[:error].present? or flash[:success].present? %>
+	<script type="text/javascript">
+		$(document).on('turbolinks:load', function(){
+			$("html, body").animate({scrollTop: 900}, '1000', 'swing');
+		});
+	</script>
+<% end %>
 <div class="container-fluid page-start">
 	<div class="container page-title">
 		<div class="row">
 			<div class="col-md-12 title">
-	            <h1><strong>Associe-se</strong></h1>
+        <h1><strong>Associe-se</strong></h1>
 			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h2 class="main-color">Quem pode se associar ?</h2>
+			<p class="lead main-color">Conforme o estatuto, podem ser sócios efetivos ( Funcionários concursados da Justiça Federal do Rio Grande do Sul ) as seguintes categorias:</p>
+			<blockquote>
+				<p class="text-left lead main-color no-break"><i class="fa fa-check"></i> Funcionário da Justiça Federal do RS.</p>
+				<p class="text-left lead main-color no-break"><i class="fa fa-check"></i> Funcionário do Trf4-Tribunal Regional Federal da 4° Região.</p>
+				<p class="text-left lead main-color no-break"><i class="fa fa-check"></i> Funcionário do Ministério Público Federal do RS.</p>
+				<p class="text-left lead main-color no-break"><i class="fa fa-check"></i> Juíses Federais e Desembargadores.</p>	
+			</blockquote>
+		</div>
+		<div class="col-md-12 text-center">
+			<h2 class="main-color">Quais as vantagens ?</h2>
+			<p class="lead main-color">São muitas, confira alumas delas a seguir.</p>
+			<blockquote>
+				<p class="text-left lead main-color no-break sriracha">
+					<i class="fa fa-check"></i> Nossos associados possuem uma enorme gama de 
+					<a href="<%= convenios_path %>" data-toggle="tooltip" data-placement="bottom" data-original-title="Acessar página de convênios.">convênios</a>.
+					<blockquote class="text-left">
+						<i class="fa fa-circle" style="font-size:14px;">  </i> Tim
+						<i class="fa fa-circle" style="font-size:14px;">  </i> Unimed
+						<i class="fa fa-circle" style="font-size:14px;">  </i> Upcard
+					</blockquote>
+				</p>
+				<p class="text-left lead main-color no-break sriracha">
+					<i class="fa fa-check"></i> Preços exclusivos e vantagens na diária/pernoite da
+					<a href="<%= sede_campestre_path %>" data-toggle="tooltip" data-placement="bottom" data-original-title="Acessar página da Sede Campestre.">sede campestre</a>.
+					<blockquote class="text-left">
+						<i class="fa fa-circle" style="font-size:14px;">  </i> Pais, marido, esposa, filhos e netos não pagam.
+					</blockquote>
+				</p>
+			</blockquote>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row" style="margin:15px 0px;">
+		<div class="col-xs-12 col-md-4" style="
+																					padding:5px 0px;
+																					border-left:1px solid rgba(255, 255, 255, .5);">
+			<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" data-width="2592" data-height="1728" href="<%= image_path 'gallery/general/new/lessgb/11.jpg' %>">
+				<img class="img-responsive" src="<%= image_path 'gallery/general/new/lessgb/11.jpg' %>">
+			</a>
+		</div>
+		<div class="col-xs-12 col-md-4" style="
+																					padding:5px 0px;
+																					border-left:1px solid rgba(255, 255, 255, .5);">
+			<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" data-width="2592" data-height="1728" href="<%= image_path 'gallery/general/new/lessgb/14.jpg' %>">
+				<img class="img-responsive" src="<%= image_path 'gallery/general/new/lessgb/14.jpg' %>">
+			</a>
+		</div>
+		<div class="col-xs-12 col-md-4" style="
+																					padding:5px 0px;
+																					border-left:1px solid rgba(255, 255, 255, .5);">
+			<a data-caption="Registro de Evelyn Duarte" data-fancybox="gallery" data-width="2592" data-height="1728" href="<%= image_path 'gallery/general/new/lessgb/15.jpg' %>">
+				<img class="img-responsive" src="<%= image_path 'gallery/general/new/lessgb/15.jpg' %>">
+			</a>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row" >
+		<div class="col-lg-12 text-center" style="margin-bottom:15px;">
+			<h3 class="secundary-color">Seja um associado ! Cadastre suas informaçoes abaixo para iniciar o processo.</h3>
+			<a href="https://api.whatsapp.com/send?phone=5551997659983" target="blank" data-toggle="tooltip" data-placement="bottom" data-original-title="Tire suas dúvidas pelo Whatsapp!">
+				<i class="fa fa-whatsapp main-color" style=" margin-bottom:15px; background-color: #25d366; color: #ffffff; font-size: 30px;border-radius: 45%;"></i>
+			</a>
+		</div>
+
+		<div class="col-md-12">
+			<%= form_for @assinatura, :url => {:controller => "assinaturas", :action => "create" } do |f| %>
+
+			  <div class="row contatos-form">
+			  	<div class="col-md-12">
+			      <%= render partial: 'layouts/messages' %>
+			    </div>
+
+			    <div class="col-xs-12 col-md-6 col-lg-4 text-left">
+			      <div class="form-group">
+			        <%= f.label 'Nome completo', class: 'secundary-color' %>
+			        <%= f.text_field :nome, value: @assinatura.nome, class: 'form-control' %>
+			      </div>
+			    </div>
+
+			    <div class="col-xs-12 col-md-6 col-lg-4 text-left">
+			      <div class="form-group">
+			        <%= f.label 'Sexo', class: 'secundary-color' %>
+			        <%= f.select :sexo, options_for_select(options_for_sexo, @assinatura.sexo), { include_blank: 'Selecione...'}, class: 'form-control' %>                                  
+			      </div>
+			    </div>
+
+			    <div class="col-xs-12 col-md-6 col-lg-4 text-left">
+			      <div class="form-group">
+			        <%= f.label 'Data de nascimento', class: 'secundary-color' %>
+			        <div class="form-group">
+	            		<div class='input-group date'>
+			        		<%= f.text_field :data_nascimento, value: @assinatura.data_nascimento, class: 'form-control date_time' %>
+			        		<span class="input-group-addon"><span class="glyphicon fa fa-calendar"></span></span>
+	            		</div>
+	            	</div>
+			      </div>
+			    </div>
+
+			    <div class="col-xs-12 col-md-6 text-left">
+			      <div class="form-group">
+			        <%= f.label 'Nome da mãe completo', class: 'secundary-color' %>
+			        <%= f.text_field :nome_mae, value: @assinatura.nome_mae, class: 'form-control' %>
+			      </div>
+			    </div>
+
+			    <div class="col-xs-12 col-md-6 text-left">
+			      <div class="form-group">
+			        <%= f.label 'Nome do pai completo', class: 'secundary-color' %>
+			        <%= f.text_field :nome_pai, value: @assinatura.nome_pai, class: 'form-control' %>
+			      </div>
+			    </div>
+
+			    <div class="col-xs-12 col-md-6 text-left">
+			      <div class="form-group">
+			        <%= f.label 'Telefone *opcional', class: 'secundary-color' %>
+			        <%= f.text_field :celular, value: @assinatura.celular, class: 'form-control phone_with_ddd' %>
+			      </div>
+			    </div>
+
+			    <div class="col-xs-12 col-md-6 text-left">
+			      <div class="form-group">
+			        <%= f.label 'Celular', class: 'secundary-color' %>
+			        <%= f.text_field :celular2, value: @assinatura.celular2, class: 'form-control phone_with_ddd' %>
+			      </div>
+			    </div>
+
+			    <div class="col-xs-12 col-md-6 text-left">
+			      <div class="form-group">
+			        <%= f.label 'Email', class: 'secundary-color' %>
+			        <%= f.text_field :email, value: @assinatura.email, class: 'form-control' %>
+			      </div>
+			    </div>
+
+			    <div class="col-xs-12 col-md-6 col-md-offset-3">
+			      <div class="form-group button">                 
+			        <%= invisible_recaptcha_tags text: 'Enviar', class: 'btn btn-success btn-block' %>
+			      </div>
+			    </div>
+			  </div>
+			<% end %>
 		</div>
 	</div>
 </div>

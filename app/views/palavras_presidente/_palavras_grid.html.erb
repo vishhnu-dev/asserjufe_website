@@ -2,15 +2,23 @@
 
 	g.blank_slate  do content_tag :div, "Nenhum registro encontrado", class: 'well' end
 
-	g.column name: 'Descrição'do |palavra|
-		palavra.description
+	g.column name: 'Vídeo'do |palavra|
+		video_tag(palavra.video, poster: image_path('gallery/general/29.PNG'), :controls => true, style: 'object-fit: cover; width: 100%; height: 500px;')
 	end
 
 	g.column do |palavra|
 		if policy(PalavraPresidente).edit?
-			link_to edit_palavra_presidente_path(palavra), data: { toggle: "tooltip", placement: "left", title: "Editar" } do
-	          	fa_icon 'pencil', style: 'font-size:20px; line-height: 3.7;', class: 'main-color'
+			link_to edit_palavra_presidente_path(palavra), data: { toggle: "tooltip", placement: "left", title: "Atualizar" } do
+	          	fa_icon 'refresh', class: 'main-color', style: 'font-size:20px;'
 	      	end
 	    end
+	end
+
+	g.column do |palavra|
+		if policy(palavra).destroy?
+			link_to palavras_presidente_path(palavra).gsub(".","/"), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir a pré-reserva?', backdrop: 'static', commit: 'Sim', cancel: 'Cancelar', title: "Você tem certeza que deseja excluir a palavra do presidente ? "} do
+        	fa_icon 'trash', style: 'color:#dd4b39; font-size:20px;'
+    	end 
+		end
 	end
  end %>

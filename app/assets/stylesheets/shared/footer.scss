@@ -96,7 +96,6 @@
 .copyright {
 	margin-top: -1px !important;
 	background-color: #245236 !important;
-	padding: 15px 0px;
 	.text-left {
 		p {
 			color: $white-color;
@@ -114,6 +113,24 @@
 			&:hover, &:visited, &:focus {
 				color: $white-color;
 			}
+		}
+	}
+}
+.social-sdk {
+	.sdk-fb {
+	    padding: 40px 0px;
+		background-color: #5974a9;
+
+	    -webkit-clip-path: polygon(0 4%, 100% 0, 98% 100%, 0 97%);
+	    clip-path: polygon(0 4%, 100% 0, 98% 100%, 0 97%);
+
+		i {
+			font-size: 5rem;
+			color: $white-color;
+		}
+		span {
+			font-size: 45px;
+			margin-left: 5px;
 		}
 	}
 }

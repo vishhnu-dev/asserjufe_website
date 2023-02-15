@@ -1,0 +1,56 @@
+<%=  grid(@pre_reserva_grid) do |g|
+
+	g.blank_slate  do content_tag :div, "Nenhum registro encontrado", class: 'well' end
+
+	g.column name: 'Nome completo', attribute: 'nome_completo', html: { style: 'min-width: 215px !important;' } do |pre_reserva|
+		pre_reserva.nome_completo
+	end
+
+	g.column name: 'Casa', attribute: 'casa', custom_filter: options_for_casa, auto_reload: true do |pre_reserva|
+		pre_reserva.casa
+	end
+
+	g.column name: 'Email', attribute: 'email' do |pre_reserva|
+		pre_reserva.email
+	end
+
+	g.column name: 'Celular', attribute: 'celular', html: { style: 'min-width: 150px !important;' } do |pre_reserva|
+		pre_reserva.celular
+	end
+
+	g.column name: 'Data de chegada', html: { style: 'min-width:130px; color: #337ab7;'} do |pre_reserva|
+		pre_reserva.data_chegada.strftime('%d/%m/%Y')
+	end
+
+	g.column name: 'Data de Saída', html: { style: 'min-width:130px; color: #337ab7;'} do |pre_reserva|
+		pre_reserva.data_saida.strftime('%d/%m/%Y')
+	end
+
+	g.column name: 'Tipo de cliente', attribute: 'tipo_cliente', custom_filter: tipo_client_grid, auto_reload: true do |pre_reserva|
+		pre_reserva.tipo_cliente
+	end
+	
+	g.column name: 'Acompanhantes', attribute: 'numero_acompanhantes' do |pre_reserva|
+		pre_reserva.numero_acompanhantes
+	end
+	
+	g.column name: 'Crianças', attribute: 'numero_criancas' do |pre_reserva|
+		pre_reserva.numero_criancas
+	end
+
+	g.column name: 'Dependentes', attribute: 'numero_dependentes' do |pre_reserva|
+		pre_reserva.numero_dependentes
+	end
+
+	g.column name: 'Solicitado em:', html: { style: 'min-width: 150px !important;' } do |pre_reserva|
+		pre_reserva.created_at.strftime('%d-%m-%Y')
+	end
+
+	g.column do |pre_reserva|
+		if policy(pre_reserva).destroy?
+	      	link_to pre_reservas_path(pre_reserva).gsub(".","/"), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir a pré-reserva?', backdrop: 'static', commit: 'Sim', cancel: 'Cancelar', title: "Você tem certeza que deseja excluir a pré-reserva do cliente #{pre_reserva.nome_completo} ?"} do
+	          	fa_icon 'trash', style: 'color:#dd4b39; font-size:20px;'
+	      	end
+	    end
+    end
+ end %>

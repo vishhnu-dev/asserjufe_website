@@ -16,3 +16,14 @@
 .sobre-maps {
 	background-color: #eee;
 }
+.mob-mb {
+	@media (max-width: 480px) {
+		margin-bottom: 40px;
+	}
+}
+.line-diretoria {
+	@media (max-width: 480px) {
+		width: 100% !important;
+		margin-bottom: 15px;
+	}
+}

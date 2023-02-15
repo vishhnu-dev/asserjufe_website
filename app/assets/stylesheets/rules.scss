@@ -22,6 +22,11 @@ $font-small: 12px;
 
 
 /* CLASSES GERAIS DO SISTEMA */
+.mob-left {
+	@media (max-width: 768px) {
+		text-align: left;
+	}
+}
 .main-color {
 	color: $main-color;
 }
@@ -52,7 +57,7 @@ $font-small: 12px;
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:20px;
+	bottom:60px;
 	right:20px;
 	background-color:#25d366;
 	border-radius:50px;
@@ -64,19 +69,41 @@ $font-small: 12px;
     	color: $white-color;
 	}
 }
-
+#new_assinatura {
+	padding: 15px;
+	background-color: #eee;
+}
+.grecaptcha-badge {
+  display: none !important;
+}
+/* Efeito zoom imagens => aplicar classe na tag img*/
+.zoom {
+  transition: transform .6s;
+  &:hover {
+  	-ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
+  }
+  @media screen and (max-width: 480px){
+  	transition: none;
+  	&:hover {
+  		transform: none;
+  	}
+  }
+}
 /* arrow-up pop-up*/ 
 .ancor-up {
 	cursor: pointer;
 	position:fixed;
 	width:50px;
 	height:50px;
-    bottom: 86px;
+    bottom: 126px;
     right: 26px;
 	background-color: $secundary-color;
 	border-radius:50px;
 	text-align:center;
 	display: none;
+	z-index: 9999;
 	.fa-arrow-up {
 		margin-top: 6px;
     	font-size: 35px;
@@ -95,6 +122,11 @@ $font-small: 12px;
 				color: $white-color;
 				small {
 					color: $white-color;
+				}
+			}
+			@media (max-width: 480px) {
+				h1 {
+					text-align: center;
 				}
 			}
 		}
@@ -120,22 +152,20 @@ body {
 	.sriracha {
 		font-family: 'Sriracha', cursive;
 	}
+
 	font-family: 'Roboto', sans-serif;
 	h1,h2,h3,h4,h5, .btn {
 		font-family: 'Sriracha', cursive;
 	}
+
 	a {
 		&:hover {
 			color: $main-color;
-			font-weight: 400;
 		}
 	}
 }
 
-// recaptcha icon
-.grecaptcha-badge {
-	display: none !important;
-}
+
 
 .overlay {
 	background: rgba(0,0,0,.6);
@@ -167,4 +197,18 @@ body {
 			color: #eee !important;
 		}
 	}	
+}
+.modal-header {
+	button {
+		outline: none;
+		span {
+		    line-height: 0.2;
+			font-size: 60px;
+		}
+	}
+}
+
+// search field wice-grid
+.wice-grid tr.wg-filter-row input[type=text] {
+	width: 100% !important;
 }

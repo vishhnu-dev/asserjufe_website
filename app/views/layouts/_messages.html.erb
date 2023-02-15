@@ -8,27 +8,33 @@
         when 'info'
           msgclass = 'info'
           icon     = 'info'
+          title    = 'Informação'
         when 'notice'
           msgclass = 'success'
           icon     = 'check'
+          title    = 'Aviso'
         when 'success'
           msgclass = 'success'
           icon     = 'check'
+          title    = 'Sucesso'
         when 'warning'
           msgclass = 'warning'
           icon     = 'warning'
+          title    = 'Aviso'
         else
           msgclass = 'danger'
           icon     = 'ban'
+          title    = 'Atenção'
       end
     %>
 
-    <div class="alert alert-<%= msgclass %> alert-dismissable" style="<%= contflash<flash.count ? 'margin-bottom: 2px' : '' %>">
+    <div class="alert alert-<%= msgclass %> alert-dismissable" style="<%= contflash<flash.count ? 'margin-bottom: 10px' : '' %>">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <h4><i class="icon fa fa-<%=icon%>"></i> Atenção!</h4>
-      <%= msg.html_safe %>
+      <h4><i class="icon fa fa-<%=icon%>"></i><%= title %> !</h4>
+      <h4 class="white-color text-justify" style="font-weight: normal; margin:4px 0px;">
+        <%= msg.html_safe %>
+      </h4>
     </div>
-    
   <% end %>  
 <% end %>
 <% flash.clear %>

@@ -20,5 +20,7 @@
 //= require admin-lte/adminlte
 //= require fancy-box
 //= require moment
+//= require jquery/moment-pt-BR
 //= require bootstrap-datetimepicker
+//= require data-confirm-modal
 //= require_tree .

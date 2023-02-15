@@ -1,0 +1,9 @@
+<% if @campo == 'desktop' %>
+	<%= image_tag(@banner.imagem.url, class: 'img-responsive') %>
+<% elsif @campo == 'mobile' %>
+	<%= image_tag(@banner.imagem_mobile.url, class: 'img-responsive') %>
+<% else %>
+	<p class="main-color">
+		Nada para visualizar
+	</p>
+<% end %>

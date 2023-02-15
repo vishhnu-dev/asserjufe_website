@@ -2,12 +2,43 @@ pt-BR:
   activerecord:
     attributes:
       noticia:
+        social_image: 'Imagem de compartilhamento facebook'
         doc: 'Documento'
         video: 'Video'
         title: 'Título'
         description: 'Descrição'
       palavra_presidente:
-        description: 'Descrição'
+        video: 'Vídeo'
+      pre_reserva:
+        nome_completo: 'Nome completo'
+        casa: 'Onde deseja ficar?'
+        data_chegada: 'Data de entrada'
+        data_saida: 'Data de saída'
+        email: 'Email'
+        celular: 'Celular, telefone ou WhatsApp'
+        tipo_cliente: 'Perfil do cliente'
+        numero_acompanhantes: 'Número de acompanhantes'
+        numero_criancas: 'Número de crianças'
+        numero_dependentes: 'Número de dependentes'
+      banner:
+        status: 'Status'
+        imagem: 'Banner Desktop'
+        imagem_mobile: 'Banner Mobile'
+        url: 'Link do Banner'
+      assinatura:
+        nome: 'Nome completo'
+        sexo: 'Sexo'
+        data_nascimento: 'Data de nascimento'
+        nome_mae: 'Nome completo da Mãe'
+        nome_pai: 'Nome completo do Pai'
+        celular: 'Celular 1'
+        celular2: 'Celular 2'
+        email: 'Email'
+      documento:
+        estatuto: "Estatuto"
+        tabela_valores: "Tabela de Valores"
+        regimento_interno: "Regimento Interno"
+        regulamento: "Regulamento"
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

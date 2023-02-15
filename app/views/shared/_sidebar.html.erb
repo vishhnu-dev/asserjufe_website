@@ -5,104 +5,63 @@
       <li class="header">MENU</li>
       <li>
         <a href="<%= backend_path %>">
-          <i class="fa fa-home"></i> <span>Início</span>
+          <i class="fa fa-home"></i> <span>INÍCIO</span>
         </a>
       </li>
       <!-- Pré reservas -->
-      <% if policy(User).index? %>
+      <% if policy(PreReserva).index? %>
         <li>
-          <a href="">
+          <a href="<%= pre_reservas_path %>">
             <i class="fa fa-book"></i> 
-            <span>Pré-reservas</span>
+            <span>PRÉ-RESERVAS</span>
           </a>
         </li>
       <% end %>
-
-      <% if policy(User).index? %>
-        <li class="treeview">
-          <a href="">
-            <i class="fa fa-folder"></i> <span>Notícias</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+      <!-- Banners -->
+      <% if policy(Banner).index? %>
+        <li>
+          <a href="<%= banners_path %>">
+            <i class="fa fa-image"></i> 
+            <span>Banners</span>
           </a>
-          <ul class="treeview-menu">
-            <li>
-              <a href="<%= noticias_path %>">
-                <i class="fa fa-eye"></i>
-                <span>Ver todas</span>
-              </a>
-            </li>
-            <li>
-              <a href="<%= new_noticia_path %>">
-                <i class="fa fa-plus-circle"></i>
-                <span>Cadastrar</span>
-              </a>
-            </li>
-          </ul>
         </li>
       <% end %>
 
       <!-- Palavra do Presidente -->
-      <% if policy(User).index? %>
-        <li class="">
+      <% if policy(PalavraPresidente).index? %>
+        <li>
           <a href="<%= palavras_presidente_path %>">
             <i class="fa fa-commenting-o"></i>
-            <span>Palavra do Presidente</span>
+            <span>PALAVRA DO PRESIDENTE</span>
+          </a>
+        </li>
+      <% end %>
+
+      <% if policy(Noticia).index? %>
+        <li>
+          <a href="<%= noticias_path %>">
+            <i class="fa fa-newspaper-o"></i> 
+            <span>NOTÍCIAS</span>
+          </a>
+        </li>
+      <% end %>
+
+      <% if policy(Documento).index? %>
+        <li>
+          <a href="<%= documentos_path %>">
+            <i class="fa fa-folder"></i> 
+            <span>BIBLIOTECA</span>
           </a>
         </li>
       <% end %>
 
       <% if policy(User).index? %>
-        <li class="treeview">
-          <a href="">
-            <i class="fa fa-folder"></i> <span>Biblioteca</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+        <li>
+          <a href="<%= usuarios_path %>">
+            <i class="fa fa-users"></i> <span>USUÁRIOS</span>
           </a>
-          <ul class="treeview-menu">
-            <li>
-              <a href="<%= documentos_path %>">
-                <i class="fa fa-eye"></i>
-                <span>Ver todas</span>
-              </a>
-            </li>
-            <li>
-              <a href="<%= new_documento_path %>">
-                <i class="fa fa-plus-circle"></i>
-                <span>Cadastrar</span>
-              </a>
-            </li>
-          </ul>
         </li>
       <% end %>
-
-      <% if policy(User).index? %>
-        <li class="treeview">
-          <a href="">
-            <i class="fa fa-cog"></i> <span>Usuários</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li>
-              <a href="<%= usuarios_path %>">
-                <i class="fa fa-eye"></i>
-                <span>Ver Todos</span>
-              </a>
-            </li>
-            <li>
-              <a href="<%= new_usuario_path %>">
-                <i class="fa fa-plus-circle"></i>
-                <span>Cadastrar</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-      <% end %>
-
     </ul>
   </section>
 </aside>

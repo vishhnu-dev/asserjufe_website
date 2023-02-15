@@ -1,13 +1,13 @@
 .asserjufe-banners {
 	.owl-prev, .owl-next {
-        width: 50px !important;
-        height: 100px !important;
-        position: absolute;
-        top: 50% !important;
-        transform: translateY(-50%);
-        display: block !important;
-        border:0px solid black;
-        background-color: unset !important;
+      height: 500px !important;
+    	width: 150px !important;
+      position: absolute;
+      top: 50% !important;
+      transform: translateY(-50%);
+      display: block !important;
+      border:0px solid black;
+      background-color: unset !important;
 	    outline: none;
 	    @media screen and ( max-width: 992px ) {
 	    	display: none !important;
@@ -27,66 +27,79 @@
 		}
 	}
 }
-.noticias, .owl-multiple-noticias {
-	padding: 35px auto;
-	h2, p {
-		font-style: oblique;
-	}
-	h2 {
-		margin-left: 15px;
-		&:hover {
-			b {
+.news-home, .noticias-noticia {
+	.news {
+		.news-container {
+			@media screen and (max-width: 1199px) {
+				margin-top: 25px;
+			}
+		}
+		.news-slide {
+			height: 4px; 
+			width: 0;
+			-webkit-transition: all .4s linear;
+		    -moz-transition: all .4s linear;
+		    -o-transition: all .4s linear;
+		    transition: all .4s linear;
+		}
+		a {
+			&:hover > div.news-slide {
+				background-color: $main-color;
+				width: 100%;
+			}
+			.news-title {
+				@media screen and (max-width: 1357px) {
+					font-size: 22px !important;
+				}
+			}
+			.content-notice-image {
+				.notice-image {
+					height: 250px;
+				    width: 100%;
+				    background-size: cover;
+				    background-position: center;
+				}
+				.notice-image-auto {
+					height: 250px;
+				  width: 100%;
+					background-position: center;
+				}
+			}
+		}
+		.description {
+			word-break: break-all !important;
+ 			text-align: justify;
+ 			font-size: 18px;
+ 			color: $main-color;
+		}
+		.fb-share-button {
+			&:hover {
 				color: $main-color;
 			}
 		}
 	}
-	.news-link {
-		padding: 10px 10px;
-		p, h2 {
-			margin-left: 20px;
-			margin-right: 20px;
-		}
-	}
-	.btn-news {
-		border:1px solid #269abc;
-		font-size: 24px;
-		border-radius: 30px;
-		color: $white-color;
-		background-color: #269abc;
-		&:hover {
-			color: $white-color;
-			background-color: #269abc;
-			border:1px solid #269abc;
-			font-weight: bold;
-		}
-	}
-
-	.owl-prev, .owl-next {
-        width: 50px !important;
-        height: 100px !important;
-        position: absolute;
-        top: 50% !important;
-        transform: translateY(-50%);
-        display: block !important;
-        border:0px solid black;
-        background-color: unset !important;
-	    outline: none;
-	    @media screen and ( max-width: 992px ) {
-	    	display: none !important;
-	    }
-    }
-    .owl-prev { left: -32px; }
-    .owl-next { right: -32px; }
-    .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
 }
 .msg-presidente {
-	background-color: #0D1C21;
+	background-color: #24433A;
 	.row {
-		padding: 55px 0px;
+		padding: 35px 0px;
+		h2 {
+			color: wh
+		}
+	}
+}
+.mobile-center {
+	@media (max-width: 768px) {
+		text-align: center !important;
+	}
+}
+.title-mob {
+	@media (max-width: 480px) {
+		font-size: 30px !important;
 	}
 }
 .banners {
-	background-color: #effdfd;
+	background-color: #fff;
 	.lead {
 		font-size: 24px;
 	}
@@ -96,7 +109,7 @@
 	    	font-size: 45px;
 		}
 		img {
-			-webkit-clip-path: polygon(0 8%, 100% 0, 100% 100%, 0% 100%);
+			-webkit-clip-path: polygon(0 13%, 100% 0, 100% 100%, 0% 100%);
 		}
 		a {
 			&:hover {
@@ -113,27 +126,11 @@
 			}
 		}
 	}
-	.background1 {
-		background-image: url(asset_path('gallery/larg/05.PNG'));
-	    background-size: cover !important;
-	    background-attachment: fixed !important;
-	    height:  450px !important;
-	    background-position: bottom;
-        -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-    	clip-path: polygon(0 30%, 100% 0, 100% 70%, 0 100%);
-	}
-	.background2 {
-		background-image: url(asset_path('gallery/larg/15.PNG'));
-	    background-size: cover !important;
-	    background-attachment: fixed !important;
-	    height:  450px !important;
-	    background-position: bottom;
-	    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
-    	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
-	}
 	.convenios {
-		margin: 100px 0px;
 		padding: 15px 15px;
+		@media (max-width: 480px) {
+			margin: 0px 0px;
+		}
 		.title {
 	    	font-size: 45px;
 		}
@@ -159,5 +156,19 @@
 				margin-top: 35px !important;
 			}
 		}
+	}
+}
+.background2 {
+	background-image: url(asset_path('gallery/general/lessgb/15.PNG'));
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  height:  450px !important;
+  background-position: bottom;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 81%);
+	@media (max-width: 480px) {
+		-webkit-clip-path: polygon(0 100%, 100% 0, 100% 90%, 0 100%);
+		clip-path: polygon(0 35%, 100% 0, 100% 61%, 0 100%);
+		height: 250px !important;
 	}
 }

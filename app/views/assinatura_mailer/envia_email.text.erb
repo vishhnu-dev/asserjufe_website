@@ -1,0 +1,14 @@
+Proposta de sócio
+
+Nova proposta de sócio recebida através do site.
+Seguem o email abaixo:
+
+Nome Completo: <%= @assinatura.nome %>
+Sexo: <%= @assinatura.sexo %>
+Data de nascimento: <%= @assinatura.data_nascimento.strftime('dd/m/aaaa') %>	
+Nome da Mãe: <%= @assinatura.nome_mae %>	
+Nome do Pai: <%= @assinatura.nome_pai %>
+Celular 1: <%= @assinatura.celular %>
+Celular 2: <%= @assinatura.celular2 %>
+
+Enviado em: <%= @assinatura.created_at.strftime('dd/m/aaaa hh:mm') %>

@@ -9,14 +9,13 @@ class DocumentosController < ApplicationController
 
 	def new
 		authorize Documento
-		session[:page_title] = "Cadastrar Documentos"
+		session[:page_title] = "Cadastrar Documento"
 		@documentos = Documento.new
-
 	end
 
 	def edit
 		authorize @documentos
-		session[:page_title] = "Editar Documentos"
+		session[:page_title] = "Editar Documento"
 	end
 
 	def create
@@ -34,10 +33,14 @@ class DocumentosController < ApplicationController
 	def update
 		authorize @documentos
 		respond_to do |format|
-			if @documentos.update(documento_params)
-				format.html { redirect_to documentos_path, notice: "Documentos atualizados com sucesso!" }
+			if !documento_params.nil?
+				if @documentos.update(documento_params)
+					format.html { redirect_to documentos_path, notice: "Documentos atualizados com sucesso!" }
+				else
+					format.html { render :edit }
+				end
 			else
-				format.html { render :edit }
+				format.html { render :edit, notice: "Preencha os campos antes de enviar o formulário" }
 			end
 		end
 	end
@@ -63,7 +66,8 @@ class DocumentosController < ApplicationController
 		def set_documento
 			@documentos = Documento.find(params[:id])
 		end
+
 		def documento_params
-			params.require(:documento).permit(:estatuto, :tabela_valores, :regimento_interno, :regulamento)
+			params.fetch(:documento, {}).permit(:estatuto, :tabela_valores, :regimento_interno, :regulamento)
 		end
 end

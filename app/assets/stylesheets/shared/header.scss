@@ -8,6 +8,7 @@
 					a {
 						color: $white-color;
 						font-size: 18px;
+						font-family: 'Sriracha', cursive;
 						&:hover {
 							text-decoration: underline;
 						}
@@ -17,19 +18,26 @@
 						}
 					}
 					@media (min-width: 	768px) and (max-width: 	1199px) {
-							text-align: center;	
+						text-align: center;	
 					}
 				}
 				.sociais {
 					@media (max-width: 991px) {
 						text-align: center !important;
+					    display: inline !important;
 					}
 					a{
 						font-size: 26px;
 						i {
 							color: $white-color;
-							padding: 5px 2.5px;
+							padding: 5px 0px;
 						}
+					}
+					.whats-mob {
+						display: none;
+						@media (max-width: 480px) {
+						  display: inline-block !important;
+						}	
 					}
 					
 					.barra{
@@ -104,20 +112,20 @@
 							transition: 1000ms;
 							color: $secundary-color;
 						}
-					}
-					.dropdown {
-						display: relative;
-						&:hover ul {
-							display: block;
-  						}
-  						.dropdown-menu {
-							&:hover a {
-								transition: 1000ms;
-  							}
-  						}
 					}	
 				}	
 			}
 		}
 	}	
+}
+
+// alterações website
+.linktel {
+	color: $white-color !important;
+	font-family: 'Sriracha', cursive;
+	font-size: 22px !important;
+	&:hover {
+		font-weight: bold;
+		text-decoration: underline;
+	}
 }

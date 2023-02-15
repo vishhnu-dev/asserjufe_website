@@ -3,40 +3,50 @@ class AsserjufeController < ApplicationController
   before_action :docs
 
   def home
-  	@page_title = "Página Inicial"
-    @noticias = Noticia.all.order(created_at: :asc).limit(4)
+  	@page_title = "Servidores da Justiça Federal RS"
+    @noticias = Noticia.all.order(created_at: :desc).limit(6)
     @palavras = PalavraPresidente.all
+    @banners = Banner.where(status: :ativo)
   end
   
   def a_asserjufe
-  	@page_title = "A Asserjufe"
+  	@page_title = "Sobre a Asserjufe | Porto Alegre RS"
   end
 
   def diretoria
-  	@page_title = "Diretoria"
+  	@page_title = "Diretoria | Gestão 2020-2023"
   end
 
   def sede_campestre
-  	@page_title = "Sede campestre"
+  	@page_title = "Sede campestre | Viamão RS"
     @pre_reserva = PreReserva.new
   end
 
   def associe_se
-  	@page_title = "Associe-se"
+  	@page_title = "Associe-se | São muitas Vantangens, confira !"
+    @assinatura = Assinatura.new
   end
 
   def convenios
-  	@page_title = "Convênios"
+  	@page_title = "Convênios | Vantagens e Benefícios"
   end
 
   def contato
-  	@page_title = "Contato"
+  	@page_title = "Contato | Como podemos ajudar?"
     @contato = Contato.new
   end
 
   def noticia
+    # current noticia
     @page_title = @noticia.title
+
+    #todas noticias
     @noticias = Noticia.where.not(slug: @noticia.slug)
+  end
+
+  def visualizar_doc
+    @documento = Documento.find_by("id = ?", @documentos.ids)
+    render partial: 'arquivo'
   end
 
   private
@@ -46,9 +56,5 @@ class AsserjufeController < ApplicationController
 
     def docs
       @documentos = Documento.all
-    end
-
-    def visualizar_doc
-      render 'arquivo'
     end
 end

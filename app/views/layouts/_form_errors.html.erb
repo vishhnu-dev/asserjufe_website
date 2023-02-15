@@ -1,12 +1,12 @@
 <% if model.errors.any? %> 
   <div id="error_explanation" class="alert alert-danger">
   	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&#215;</button>
-  	<h3><%= pluralize(model.errors.count, "erro") %> ao <%= action_name != 'update_cadastro' ? 'solicitar' : 'completar' %> o cadastro:</h3>
-    <ul style="display: block;">
+  	<h2><%= pluralize(model.errors.count, "erro") %> ao salvar o registro:</h2>
+
+    <ul>
 	    <% model.errors.full_messages.each do |message| %>
-	      <li style="list-style-type: disc;"><%= message %></li>
+	      <li><%= message %></li>
 	    <% end %>
     </ul>
   </div>
 <% end %>
-
